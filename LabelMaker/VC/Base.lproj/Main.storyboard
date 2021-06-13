@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -683,17 +684,41 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="LabelMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Tager" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="930A4890-47E0-448B-BC2F-40058BFBE707" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="9CB-7U-AR8">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="C0BFDEE9-4DC8-4A92-B6E0-B6974C8FF417" label="Add" paletteLabel="" tag="-1" bordered="YES" sizingBehavior="auto" id="gS0-jD-5yk">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                    <connections>
+                                        <action selector="add:" target="B8D-0N-5wS" id="KEW-VP-DfX"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="2F6D7496-698E-4B45-AFE7-46D9BE35C612" explicitItemIdentifier="info" label="Info" paletteLabel="Info" tag="-1" bordered="YES" sizingBehavior="auto" id="zec-Ut-741">
+                                    <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
+                                    <connections>
+                                        <action selector="info:" target="B8D-0N-5wS" id="Zk9-Gm-mNm"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="DjX-3i-Nn1"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="DE3-fh-STR"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="zec-Ut-741"/>
+                                <toolbarItem reference="gS0-jD-5yk"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="infoItem" destination="zec-Ut-741" id="oxX-ff-k1D"/>
+                        <outlet property="toolbar" destination="9CB-7U-AR8" id="xvk-EA-lcJ"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -708,11 +733,51 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFD-Zd-XA8">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <clipView key="contentView" id="Bhu-V2-hNy">
+                                    <rect key="frame" x="1" y="1" width="478" height="268"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="oCB-xO-kKj">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="vZL-5P-VJT">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="fGX-al-g20">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fiS-AL-mGP">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jFD-Zd-XA8" secondAttribute="bottom" id="RsV-XF-Tte"/>
+                            <constraint firstItem="jFD-Zd-XA8" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="cmC-VX-t5i"/>
+                            <constraint firstItem="jFD-Zd-XA8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="da3-pW-6QN"/>
+                            <constraint firstAttribute="trailing" secondItem="jFD-Zd-XA8" secondAttribute="trailing" id="wPH-6l-1OV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="oCB-xO-kKj" id="4LW-A5-4Po"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="763"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info.circle" catalog="system" width="19" height="19"/>
+        <image name="plus" catalog="system" width="17" height="16"/>
+    </resources>
 </document>

@@ -18,6 +18,8 @@
 		13FF6A372675AE2D0043597D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A352675AE2A0043597D /* Helper.swift */; };
 		13FF6A392675AE570043597D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A382675AE570043597D /* Storage.swift */; };
 		13FF6A3A2675AE5B0043597D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A382675AE570043597D /* Storage.swift */; };
+		13FF6A3E2675E45E0043597D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A3D2675E45E0043597D /* MainWindowController.swift */; };
+		13FF6A412675FE580043597D /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A402675FE580043597D /* IconModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		13FF6A2B2675681F0043597D /* Menu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Menu.entitlements; sourceTree = "<group>"; };
 		13FF6A352675AE2A0043597D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		13FF6A382675AE570043597D /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		13FF6A3D2675E45E0043597D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		13FF6A402675FE580043597D /* IconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				13FF6A1C2675680A0043597D /* LabelMaker.entitlements */,
 				13FF6A1B2675680A0043597D /* Info.plist */,
 				13FF6A12267568090043597D /* AppDelegate.swift */,
+				13FF6A402675FE580043597D /* IconModel.swift */,
+				13FF6A3F2675E4650043597D /* Window */,
 				13FF6A3C2675B1280043597D /* VC */,
 			);
 			path = LabelMaker;
@@ -135,6 +141,14 @@
 				13FF6A14267568090043597D /* MainController.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		13FF6A3F2675E4650043597D /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				13FF6A3D2675E45E0043597D /* MainWindowController.swift */,
+			);
+			path = Window;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +253,10 @@
 			files = (
 				13FF6A15267568090043597D /* MainController.swift in Sources */,
 				13FF6A13267568090043597D /* AppDelegate.swift in Sources */,
+				13FF6A412675FE580043597D /* IconModel.swift in Sources */,
 				13FF6A362675AE2A0043597D /* Helper.swift in Sources */,
 				13FF6A392675AE570043597D /* Storage.swift in Sources */,
+				13FF6A3E2675E45E0043597D /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

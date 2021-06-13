@@ -31,6 +31,8 @@ class FinderSync: FIFinderSync {
         FIFinderSyncController.default().selectedItemURLs()?.forEach({ url in
             NSWorkspace.shared.setIcon(nil, forFile: url.path)
         })
+        
+        UserDefaults.appGroup.test = "Clean up"
     }
     
     @IBAction func testAction2(_ sender: AnyObject?) {
