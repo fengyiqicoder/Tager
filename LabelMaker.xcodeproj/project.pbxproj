@@ -20,6 +20,8 @@
 		13FF6A3A2675AE5B0043597D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A382675AE570043597D /* Storage.swift */; };
 		13FF6A3E2675E45E0043597D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A3D2675E45E0043597D /* MainWindowController.swift */; };
 		13FF6A412675FE580043597D /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A402675FE580043597D /* IconModel.swift */; };
+		13FF6A4426765EDE0043597D /* IconItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A4326765EDE0043597D /* IconItems.swift */; };
+		13FF6A4726765F460043597D /* IconItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FF6A4626765F460043597D /* IconItem.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		13FF6A382675AE570043597D /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		13FF6A3D2675E45E0043597D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		13FF6A402675FE580043597D /* IconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
+		13FF6A4326765EDE0043597D /* IconItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconItems.swift; sourceTree = "<group>"; };
+		13FF6A4626765F460043597D /* IconItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconItem.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,8 @@
 				13FF6A1C2675680A0043597D /* LabelMaker.entitlements */,
 				13FF6A1B2675680A0043597D /* Info.plist */,
 				13FF6A12267568090043597D /* AppDelegate.swift */,
-				13FF6A402675FE580043597D /* IconModel.swift */,
+				13FF6A4226765EAC0043597D /* Model */,
+				13FF6A4526765EFF0043597D /* Views */,
 				13FF6A3F2675E4650043597D /* Window */,
 				13FF6A3C2675B1280043597D /* VC */,
 			);
@@ -149,6 +154,23 @@
 				13FF6A3D2675E45E0043597D /* MainWindowController.swift */,
 			);
 			path = Window;
+			sourceTree = "<group>";
+		};
+		13FF6A4226765EAC0043597D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13FF6A402675FE580043597D /* IconModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13FF6A4526765EFF0043597D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				13FF6A4326765EDE0043597D /* IconItems.swift */,
+				13FF6A4626765F460043597D /* IconItem.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13FF6A172675680A0043597D /* Assets.xcassets in Resources */,
+				13FF6A4726765F460043597D /* IconItem.xib in Resources */,
 				13FF6A1A2675680A0043597D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13FF6A4426765EDE0043597D /* IconItems.swift in Sources */,
 				13FF6A15267568090043597D /* MainController.swift in Sources */,
 				13FF6A13267568090043597D /* AppDelegate.swift in Sources */,
 				13FF6A412675FE580043597D /* IconModel.swift in Sources */,
