@@ -14,7 +14,7 @@ class MainController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let flowLayout = NSCollectionViewGridLayout()
-        flowLayout.minimumItemSize = NSSize(width: 160.0, height: 140.0)
+        flowLayout.minimumItemSize = NSSize(width: 160.0, height: 210.0)
         flowLayout.minimumInteritemSpacing = 20.0
         flowLayout.minimumLineSpacing = 20.0
         collectionView.collectionViewLayout = flowLayout
@@ -31,7 +31,7 @@ extension MainController: NSCollectionViewDataSource {
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "IconItem"), for: indexPath) as! IconItem
-        item.label.stringValue = "testing"
+        item.label.stringValue = "代码文件"
         return item
     }
 }
