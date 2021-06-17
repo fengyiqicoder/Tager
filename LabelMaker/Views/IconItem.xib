@@ -9,11 +9,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="283" height="328"/>
+            <rect key="frame" x="0.0" y="0.0" width="235" height="249"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lkz-ke-Uhn">
-                    <rect key="frame" x="122" y="61" width="40" height="16"/>
+                    <rect key="frame" x="98" y="22" width="40" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="XMF-ux-Fvh">
                         <font key="font" textStyle="headline" name=".SFNS-Bold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -21,10 +21,10 @@
                     </textFieldCell>
                 </textField>
                 <visualEffectView blendingMode="withinWindow" material="sidebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="U9b-eq-sP8">
-                    <rect key="frame" x="67" y="89" width="150" height="150"/>
+                    <rect key="frame" x="43" y="50" width="150" height="150"/>
                     <subviews>
                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qS5-P3-VyG">
-                            <rect key="frame" x="28" y="29" width="93" height="92"/>
+                            <rect key="frame" x="28" y="28" width="93" height="93"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="qS5-P3-VyG" secondAttribute="height" id="v0P-bk-SKR"/>
                             </constraints>
@@ -46,7 +46,7 @@
                 <constraint firstItem="U9b-eq-sP8" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="JpU-UB-cRP"/>
                 <constraint firstItem="lkz-ke-Uhn" firstAttribute="centerX" secondItem="U9b-eq-sP8" secondAttribute="centerX" id="R6a-Mr-jPN"/>
             </constraints>
-            <point key="canvasLocation" x="40.5" y="182"/>
+            <point key="canvasLocation" x="16.5" y="142.5"/>
         </customView>
         <collectionViewItem id="RkU-Qg-Due" customClass="IconItem" customModule="LabelMaker" customModuleProvider="target">
             <connections>

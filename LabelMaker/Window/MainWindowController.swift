@@ -9,6 +9,10 @@ import AppKit
 
 class MainWindowController: NSWindowController {
     
+    var mainVC: MainController? {
+        window?.contentViewController as? MainController
+    }
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         window?.title = "Tager 图标库"
@@ -20,6 +24,7 @@ class MainWindowController: NSWindowController {
     
     @IBAction func info(_ sender: NSToolbarItem) {
         print("Info")
+        mainVC?.deselectAll()
     }
     
     @IBAction func add(_ sender: NSToolbarItem) {

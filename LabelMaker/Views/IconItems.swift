@@ -9,6 +9,11 @@ import AppKit
 
 class IconItem: NSCollectionViewItem {
     
+    override var isSelected: Bool {
+        didSet {
+            label.stringValue = isSelected ? "Select" : "NoSelect"
+        }
+    }
     var text: String = "defualt"
     
     @IBOutlet weak var label: NSTextField!

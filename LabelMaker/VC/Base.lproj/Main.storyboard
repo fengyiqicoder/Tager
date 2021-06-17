@@ -740,7 +740,7 @@
                                     <rect key="frame" x="1" y="1" width="478" height="268"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="oCB-xO-kKj">
+                                        <collectionView selectable="YES" id="oCB-xO-kKj">
                                             <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewLayout key="collectionViewLayout" id="9Ph-aJ-eVC"/>

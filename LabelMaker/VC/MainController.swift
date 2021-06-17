@@ -17,11 +17,17 @@ class MainController: NSViewController {
         flowLayout.minimumItemSize = NSSize(width: 160.0, height: 210.0)
         flowLayout.minimumInteritemSpacing = 20.0
         flowLayout.minimumLineSpacing = 20.0
+        
         collectionView.collectionViewLayout = flowLayout
+        collectionView.isSelectable = true
         
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
+    func deselectAll() {
+        collectionView.deselectItems(at: collectionView.selectionIndexPaths)
+    }
 }
 
 extension MainController: NSCollectionViewDataSource {
@@ -36,3 +42,19 @@ extension MainController: NSCollectionViewDataSource {
     }
 }
 
+extension MainController: NSCollectionViewDelegate {
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        indexPaths.forEach {
+            let item = collectionView.item(at: $0) as! IconItem
+            item.isSelected = true
+        }
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
+        indexPaths.forEach {
+            let item = collectionView.item(at: $0) as! IconItem
+            item.isSelected = false
+        }
+    }
+}
