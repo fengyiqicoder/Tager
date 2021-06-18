@@ -11,7 +11,7 @@ class IconItem: NSCollectionViewItem {
     
     override var isSelected: Bool {
         didSet {
-            label.stringValue = isSelected ? "Select" : "NoSelect"
+            setState(isSeleted: isSelected)
         }
     }
     var text: String = "defualt"
@@ -25,6 +25,15 @@ class IconItem: NSCollectionViewItem {
         label.stringValue = text
         iconBackgroundView.wantsLayer = true
         iconBackgroundView.layer?.cornerRadius = 12
+        iconBackgroundView.layer?.cornerCurve = .continuous
     }
     
+    func setState(isSeleted: Bool) {
+        if isSelected {
+            iconBackgroundView.layer?.borderWidth = 3
+            iconBackgroundView.layer?.borderColor = NSColor.blue.cgColor
+        } else {
+            iconBackgroundView.layer?.borderWidth = 0
+        }
+    }
 }
