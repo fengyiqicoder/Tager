@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B5EB69267F372F0018D717 /* IconModelController.swift */; };
 		13FF6A13267568090043597D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A12267568090043597D /* AppDelegate.swift */; };
 		13FF6A15267568090043597D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A14267568090043597D /* MainController.swift */; };
 		13FF6A172675680A0043597D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FF6A162675680A0043597D /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		13B5EB69267F372F0018D717 /* IconModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModelController.swift; sourceTree = "<group>"; };
 		13FF6A0F267568090043597D /* LabelMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FF6A12267568090043597D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FF6A14267568090043597D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				13FF6A402675FE580043597D /* IconModel.swift */,
+				13B5EB69267F372F0018D717 /* IconModelController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				13FF6A4426765EDE0043597D /* IconItems.swift in Sources */,
 				13FF6A15267568090043597D /* MainController.swift in Sources */,
+				13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */,
 				13FF6A13267568090043597D /* AppDelegate.swift in Sources */,
 				13FF6A412675FE580043597D /* IconModel.swift in Sources */,
 				13FF6A362675AE2A0043597D /* Helper.swift in Sources */,
