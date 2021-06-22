@@ -731,7 +731,7 @@
             <objects>
                 <windowController id="5dn-bc-PEu" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="fNC-19-hiZ">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="425" y="462" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
@@ -756,16 +756,16 @@
             <objects>
                 <viewController id="XFD-C7-oq4" customClass="IconEditorViewController" customModule="LabelMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="RW2-JB-GKk">
-                        <rect key="frame" x="0.0" y="0.0" width="426" height="283"/>
+                        <rect key="frame" x="0.0" y="0.0" width="447" height="285"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdY-z6-OSx">
-                                <rect key="frame" x="20" y="70" width="162" height="146"/>
+                                <rect key="frame" x="39" y="78" width="162" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="TestImage" id="fHR-7Z-FbJ"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-dX-DkM">
-                                <rect key="frame" x="255" y="224" width="66" height="19"/>
+                                <rect key="frame" x="255" y="226" width="66" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="图标名称" id="mFI-sh-niY">
                                     <font key="font" size="15" name=".PingFangSC-Regular"/>
@@ -774,25 +774,16 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="umG-Kl-JZ4">
-                                <rect key="frame" x="255" y="152" width="31" height="16"/>
+                                <rect key="frame" x="255" y="154" width="35" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="标签" id="wjM-LF-ATo">
-                                    <font key="font" textStyle="title3" name=".SFNS-Regular"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09O-8I-M9H">
-                                <rect key="frame" x="255" y="71" width="66" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="便签颜色" id="BpO-lo-tEO">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="记号" id="wjM-LF-ATo">
                                     <font key="font" size="15" name=".PingFangSC-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rC-0s-KZm">
-                                <rect key="frame" x="257" y="195" width="148" height="21"/>
+                                <rect key="frame" x="257" y="197" width="148" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" bezelStyle="round" id="UKG-w1-xy7">
                                     <font key="font" metaFont="system"/>
@@ -801,7 +792,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bqb-8Y-JqY">
-                                <rect key="frame" x="257" y="120" width="148" height="21"/>
+                                <rect key="frame" x="257" y="122" width="148" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" bezelStyle="round" id="JvT-7e-upE">
                                     <font key="font" metaFont="system"/>
@@ -810,7 +801,7 @@
                                 </textFieldCell>
                             </textField>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVv-ey-PyJ">
-                                <rect key="frame" x="337" y="147" width="71" height="21"/>
+                                <rect key="frame" x="337" y="149" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <segmentedCell key="cell" controlSize="small" borderStyle="border" alignment="left" style="texturedRounded" trackingMode="selectOne" id="ffl-og-zar">
                                     <font key="font" metaFont="smallSystem"/>
@@ -820,12 +811,36 @@
                                     </segments>
                                 </segmentedCell>
                             </segmentedControl>
+                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="yCl-Sk-tso">
+                                <rect key="frame" x="257" y="44" width="149" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="fBl-CC-1sO">
+                                    <rect key="frame" x="1" y="1" width="147" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09O-8I-M9H">
+                                <rect key="frame" x="255" y="75" width="66" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="记号颜色" id="BpO-lo-tEO">
+                                    <font key="font" size="15" name=".PingFangSC-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="wdY-z6-OSx" id="ISl-m8-IB2"/>
+                        <outlet property="markerColorBox" destination="yCl-Sk-tso" id="tTJ-oI-jbd"/>
+                        <outlet property="markerTextField" destination="bqb-8Y-JqY" id="tBm-4w-Lgw"/>
+                        <outlet property="markerTypeSwitch" destination="yVv-ey-PyJ" id="4fT-2G-RY2"/>
+                        <outlet property="nameTextField" destination="5rC-0s-KZm" id="tlH-s9-VbE"/>
+                    </connections>
                 </viewController>
                 <customObject id="New-Gd-jhQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="756.5"/>
+            <point key="canvasLocation" x="630" y="756"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="hIz-AP-VOD">

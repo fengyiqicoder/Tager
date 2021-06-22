@@ -16,7 +16,7 @@ class MainController: NSViewController {
         super.viewDidLoad()
         let flowLayout = NSCollectionViewGridLayout()
         flowLayout.minimumItemSize = NSSize(width: 160.0, height: 210.0)
-        flowLayout.minimumInteritemSpacing = 20.0
+        flowLayout.minimumInteritemSpacing = 12.0
         flowLayout.minimumLineSpacing = 20.0
         
         collectionView.collectionViewLayout = flowLayout
