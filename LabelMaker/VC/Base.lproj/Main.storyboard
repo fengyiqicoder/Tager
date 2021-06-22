@@ -729,7 +729,7 @@
         <!--Window Controller-->
         <scene sceneID="eDG-Io-f9Q">
             <objects>
-                <windowController id="5dn-bc-PEu" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="IconEditorWindowController" id="5dn-bc-PEu" customClass="IconEditorWindowController" customModule="LabelMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="fNC-19-hiZ">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>

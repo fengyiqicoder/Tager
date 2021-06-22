@@ -29,6 +29,7 @@ class MainWindowController: NSWindowController {
     
     @IBAction func add(_ sender: NSToolbarItem) {
         print("add item")
+        IconEditorWindowController.shared.show(model: IconModel(uuid: UUID().uuidString, name: "Test", markerStr: "tt", image: NSImage(named: "TestImage")!))
     }
     
 }

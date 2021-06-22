@@ -12,7 +12,7 @@ struct IconModel: Codable {
         self.uuid = uuid
         self.name = name
         self.markerStr = markerStr
-        self.image = image
+        self.imageData = image.tiffRepresentation!
     }
     var uuid: String
     var name: String
@@ -23,8 +23,7 @@ struct IconModel: Codable {
              NSImage(data: imageData)!
         }
         set {
-            
-//            let data = newValue.
+            imageData = newValue.tiffRepresentation!
         }
     }
     private var imageData: Data
