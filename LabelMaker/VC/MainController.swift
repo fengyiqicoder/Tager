@@ -10,6 +10,7 @@ import Cocoa
 class MainController: NSViewController {
     
     @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var scrollView: NSScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -17,23 +17,25 @@ class IconItem: NSCollectionViewItem {
     var text: String = "defualt"
     
     @IBOutlet weak var label: NSTextField!
-    @IBOutlet weak var iconBackgroundView: NSVisualEffectView!
     @IBOutlet weak var image: NSImageView!
+    @IBOutlet weak var backgroundBox: NSBox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         label.stringValue = text
-        iconBackgroundView.wantsLayer = true
-        iconBackgroundView.layer?.cornerRadius = 12
-        iconBackgroundView.layer?.cornerCurve = .continuous
+        
+        backgroundBox.fillColor = NSColor.textBackgroundColor.withAlphaComponent(1.0)
+        backgroundBox.borderWidth = 0
+        backgroundBox.cornerRadius = 14
+        backgroundBox.layer?.cornerCurve = .continuous
     }
     
     func setState(isSeleted: Bool) {
         if isSelected {
-            iconBackgroundView.layer?.borderWidth = 3
-            iconBackgroundView.layer?.borderColor = NSColor.blue.cgColor
+            backgroundBox.borderWidth = 3
+            backgroundBox.borderColor = NSColor.blue
         } else {
-            iconBackgroundView.layer?.borderWidth = 0
+            backgroundBox.borderWidth = 0
         }
     }
 }

@@ -20,37 +20,45 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <visualEffectView blendingMode="withinWindow" material="sidebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="U9b-eq-sP8">
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="E8j-CE-r0i">
                     <rect key="frame" x="43" y="50" width="150" height="150"/>
-                    <subviews>
-                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qS5-P3-VyG">
-                            <rect key="frame" x="28" y="28" width="93" height="93"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="qS5-P3-VyG" secondAttribute="height" id="v0P-bk-SKR"/>
-                            </constraints>
-                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="TestImage" id="10l-N9-MA2"/>
-                        </imageView>
-                    </subviews>
+                    <view key="contentView" id="fbz-DM-DlG">
+                        <rect key="frame" x="1" y="1" width="148" height="148"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qS5-P3-VyG">
+                                <rect key="frame" x="27" y="27" width="93" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qS5-P3-VyG" secondAttribute="height" multiplier="1:1" id="Kag-1x-hzQ"/>
+                                    <constraint firstAttribute="height" constant="93" id="djo-hZ-tjM"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="TestImage" id="10l-N9-MA2"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qS5-P3-VyG" firstAttribute="centerY" secondItem="fbz-DM-DlG" secondAttribute="centerY" id="ck5-Xu-Iqt"/>
+                            <constraint firstItem="qS5-P3-VyG" firstAttribute="centerX" secondItem="fbz-DM-DlG" secondAttribute="centerX" id="sSi-AB-PxD"/>
+                        </constraints>
+                    </view>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="U9b-eq-sP8" secondAttribute="height" multiplier="1:1" id="9rp-4a-ag5"/>
-                        <constraint firstItem="qS5-P3-VyG" firstAttribute="width" secondItem="U9b-eq-sP8" secondAttribute="width" multiplier="0.618" id="VRb-Qy-r2B"/>
-                        <constraint firstItem="qS5-P3-VyG" firstAttribute="centerY" secondItem="U9b-eq-sP8" secondAttribute="centerY" id="dVm-x7-eNI"/>
-                        <constraint firstItem="qS5-P3-VyG" firstAttribute="centerX" secondItem="U9b-eq-sP8" secondAttribute="centerX" id="hQg-J5-VTc"/>
-                        <constraint firstAttribute="width" constant="150" id="ptm-21-iKv"/>
+                        <constraint firstAttribute="width" constant="150" id="JqP-Ly-c30"/>
+                        <constraint firstAttribute="width" secondItem="E8j-CE-r0i" secondAttribute="height" multiplier="1:1" id="Y03-kG-kTb"/>
                     </constraints>
-                </visualEffectView>
+                    <color key="borderColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="fillColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                </box>
             </subviews>
             <constraints>
-                <constraint firstItem="U9b-eq-sP8" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="67o-Kz-e7a"/>
-                <constraint firstItem="lkz-ke-Uhn" firstAttribute="top" secondItem="U9b-eq-sP8" secondAttribute="bottom" constant="12" id="8O4-OQ-YcE"/>
-                <constraint firstItem="U9b-eq-sP8" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="JpU-UB-cRP"/>
-                <constraint firstItem="lkz-ke-Uhn" firstAttribute="centerX" secondItem="U9b-eq-sP8" secondAttribute="centerX" id="R6a-Mr-jPN"/>
+                <constraint firstItem="lkz-ke-Uhn" firstAttribute="top" secondItem="E8j-CE-r0i" secondAttribute="bottom" constant="12" id="8O4-OQ-YcE"/>
+                <constraint firstItem="E8j-CE-r0i" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="EBK-MN-YCZ"/>
+                <constraint firstItem="lkz-ke-Uhn" firstAttribute="centerX" secondItem="fbz-DM-DlG" secondAttribute="centerX" id="QI2-lt-S75"/>
+                <constraint firstItem="E8j-CE-r0i" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="pHD-IF-S4c"/>
             </constraints>
             <point key="canvasLocation" x="16.5" y="142.5"/>
         </customView>
         <collectionViewItem id="RkU-Qg-Due" customClass="IconItem" customModule="LabelMaker" customModuleProvider="target">
             <connections>
-                <outlet property="iconBackgroundView" destination="U9b-eq-sP8" id="2cM-fo-PXQ"/>
+                <outlet property="backgroundBox" destination="E8j-CE-r0i" id="I3g-jN-un0"/>
                 <outlet property="image" destination="qS5-P3-VyG" id="pTr-z3-vCu"/>
                 <outlet property="label" destination="lkz-ke-Uhn" id="kjC-JP-ZGj"/>
                 <outlet property="view" destination="c22-O7-iKe" id="qgP-l3-FoH"/>
