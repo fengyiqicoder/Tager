@@ -32,13 +32,20 @@ class MainController: NSViewController {
 }
 
 extension MainController: NSCollectionViewDataSource {
+    
+    var model: IconModelController {
+        IconModelController.shared
+    }
+    
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        model.iconModels.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        let itemModel = model.iconModels[indexPath.item]
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "IconItem"), for: indexPath) as! IconItem
-        item.label.stringValue = "代码文件"
+        item.label.stringValue = itemModel.name
+        item.image.image = itemModel.image
         return item
     }
 }

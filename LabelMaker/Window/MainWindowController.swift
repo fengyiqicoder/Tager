@@ -23,13 +23,12 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var toolbar: NSToolbar!
     
     @IBAction func info(_ sender: NSToolbarItem) {
-        print("Info")
-        mainVC?.deselectAll()
+        
     }
     
     @IBAction func add(_ sender: NSToolbarItem) {
         print("add item")
-        IconEditorWindowController.shared.show(model: IconModel(uuid: UUID().uuidString, name: "Test", markerStr: "tt", image: NSImage(named: "TestImage")!))
+//        IconEditorWindowController.shared.show(model: IconModel(uuid: UUID().uuidString, name: "Test", markerStr: "tt", image: NSImage(named: "TestImage")!))
     }
     
 }

@@ -46,7 +46,8 @@ class IconEditorViewController: NSViewController {
             IconModel(uuid: uuid,
                       name: nameTextField.stringValue,
                       markerStr: markerTextField.stringValue,
-                      image: imageView.image!)
+                      image: imageView.image!,
+                      color: NSColor.white)
         }
     }
     
