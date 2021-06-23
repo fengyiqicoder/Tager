@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" secondItem="qS5-P3-VyG" secondAttribute="height" multiplier="1:1" id="Kag-1x-hzQ"/>
                                     <constraint firstAttribute="height" constant="93" id="djo-hZ-tjM"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="TestImage" id="10l-N9-MA2"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="10l-N9-MA2"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -65,7 +65,4 @@
             </connections>
         </collectionViewItem>
     </objects>
-    <resources>
-        <image name="TestImage" width="256" height="256"/>
-    </resources>
 </document>

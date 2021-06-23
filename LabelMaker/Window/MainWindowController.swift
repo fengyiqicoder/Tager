@@ -16,7 +16,7 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         window?.title = "Tager 图标库"
-        window?.subtitle = "0 个图标"
+        window?.subtitle = "\(IconModelController.shared.iconModels.count) 个图标"
     }
     
     @IBOutlet weak var infoItem: NSToolbarItem!
@@ -27,8 +27,7 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func add(_ sender: NSToolbarItem) {
-        print("add item")
-//        IconEditorWindowController.shared.show(model: IconModel(uuid: UUID().uuidString, name: "Test", markerStr: "tt", image: NSImage(named: "TestImage")!))
+        mainVC?.addNewIcon()
     }
     
 }

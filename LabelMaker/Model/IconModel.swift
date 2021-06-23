@@ -41,16 +41,24 @@ struct IconModel: Codable {
     }
     private var colorData: ColorData
     
-    
+    static var defualt:IconModel {
+        IconModel(uuid: UUID().uuidString,
+                  name: "",
+                  markerStr: "",
+                  image: NSImage(named: "folderIcon")!,
+                  color: NSColor.white)
+        
+    }
 }
 
 fileprivate
 extension NSColor {
     var data: ColorData {
-        ColorData(red: self.redComponent,
-                  green: self.greenComponent,
-                  blue: self.blueComponent,
-                  alpaht: self.alphaComponent)
+        let color = self.usingColorSpace(NSColorSpace.deviceRGB)!
+        return ColorData(red: color.redComponent,
+                         green: color.greenComponent,
+                         blue: color.blueComponent,
+                         alpaht: color.alphaComponent)
     }
 }
 

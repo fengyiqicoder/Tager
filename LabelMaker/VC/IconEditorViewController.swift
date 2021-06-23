@@ -9,20 +9,29 @@ import AppKit
 
 class IconEditorWindowController: NSWindowController {
     static let shared = IconEditorWindowController()
-    
     private var currentWindow: NSWindowController? = nil
+
+    func closeAllEditorWindow() {
+        NSApp.windows.forEach {
+            if $0.contentViewController is IconEditorViewController {
+                $0.close()
+            }
+        }
+    }
+    
     func show(model: IconModel) {
-        currentWindow?.close()
+        closeAllEditorWindow()
         
         let newWindowController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "IconEditorWindowController") as? IconEditorWindowController
         let frame = NSScreen.main!.getCenterFrame(with: newWindowController!.window!.frame.size)
         newWindowController?.window?.setFrame(frame, display: true)
         newWindowController?.vc.model = model
         newWindowController?.showWindow(nil)
-        
+        print("show \(model.uuid)")
         currentWindow = newWindowController
     }
-    var vc: IconEditorViewController {
+    
+    private var vc: IconEditorViewController {
         contentViewController as! IconEditorViewController
     }
 }
@@ -41,6 +50,7 @@ class IconEditorViewController: NSViewController {
             imageView.image = newValue.image
             nameTextField.stringValue = newValue.name
             markerTextField.stringValue = newValue.markerStr
+            uuid = newValue.uuid
         }
         get {
             IconModel(uuid: uuid,
@@ -51,6 +61,10 @@ class IconEditorViewController: NSViewController {
         }
     }
     
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        MainController.shared.deselect(id: uuid)
+    }
 }
 
 extension NSScreen {

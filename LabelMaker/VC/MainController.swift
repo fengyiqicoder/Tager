@@ -9,6 +9,15 @@ import Cocoa
 
 class MainController: NSViewController {
     
+    static var shared: MainController! {
+        for window in NSApp.windows {
+            if let mainWindow = window.contentViewController as? MainController {
+                return mainWindow
+            }
+        }
+        return nil
+    }
+    
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var scrollView: NSScrollView!
     
@@ -26,8 +35,21 @@ class MainController: NSViewController {
         collectionView.delegate = self
     }
     
+    func deselect(id: String) {
+        model.iconModels.enumerated().forEach { (order, itemModel) in
+            if itemModel.uuid == id {
+                collectionView.deselectItems(at: [IndexPath(item: order, section: 0)])
+            }
+        }
+    }
+    
     func deselectAll() {
         collectionView.deselectItems(at: collectionView.selectionIndexPaths)
+    }
+    
+    func addNewIcon() {
+        model.iconModels.append(IconModel.defualt)
+        collectionView.reloadData()
     }
 }
 
@@ -53,10 +75,12 @@ extension MainController: NSCollectionViewDataSource {
 extension MainController: NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        indexPaths.forEach {
-            let item = collectionView.item(at: $0) as! IconItem
-            item.isSelected = true
-        }
+        let index = indexPaths.first!
+        let item = collectionView.item(at: index.item) as! IconItem
+        item.isSelected = true
+        
+        let itemModel = model.iconModels[index.item]
+        IconEditorWindowController.shared.show(model: itemModel)
     }
     
     func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
