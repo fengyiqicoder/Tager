@@ -23,11 +23,13 @@ class MainController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        IconModelController.shared.iconModels.removeAll()
+        
         let flowLayout = NSCollectionViewGridLayout()
         flowLayout.minimumItemSize = NSSize(width: 160.0, height: 210.0)
         flowLayout.minimumInteritemSpacing = 12.0
         flowLayout.minimumLineSpacing = 20.0
-        
+
         collectionView.collectionViewLayout = flowLayout
         collectionView.isSelectable = true
         

@@ -13,8 +13,8 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lkz-ke-Uhn">
-                    <rect key="frame" x="98" y="22" width="40" height="16"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="XMF-ux-Fvh">
+                    <rect key="frame" x="42" y="22" width="152" height="16"/>
+                    <textFieldCell key="cell" alignment="center" title="Label" id="XMF-ux-Fvh">
                         <font key="font" textStyle="headline" name=".SFNS-Bold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -49,6 +49,7 @@
                 </box>
             </subviews>
             <constraints>
+                <constraint firstItem="lkz-ke-Uhn" firstAttribute="width" secondItem="fbz-DM-DlG" secondAttribute="width" id="6S5-3V-7ud"/>
                 <constraint firstItem="lkz-ke-Uhn" firstAttribute="top" secondItem="E8j-CE-r0i" secondAttribute="bottom" constant="12" id="8O4-OQ-YcE"/>
                 <constraint firstItem="E8j-CE-r0i" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="EBK-MN-YCZ"/>
                 <constraint firstItem="lkz-ke-Uhn" firstAttribute="centerX" secondItem="fbz-DM-DlG" secondAttribute="centerX" id="QI2-lt-S75"/>

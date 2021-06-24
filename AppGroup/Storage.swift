@@ -5,12 +5,14 @@
 //  Created by Edmund Feng on 2021/6/13.
 //
 
-import Foundation
+import AppKit
+
+let appGroupSuitName = "group.LabelMaker"
 
 extension UserDefaults {
     
     static var appGroup: UserDefaults {
-        return UserDefaults(suiteName: "group.LabelMaker")!
+        return UserDefaults(suiteName: appGroupSuitName)!
     }
     
     var test: String {

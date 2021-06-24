@@ -12,23 +12,23 @@ struct IconModel: Codable {
         self.uuid = uuid
         self.name = name
         self.markerStr = markerStr
-        self.imageData = image.tiffRepresentation!
+        self.iconImage = IconImage(nsimage: image)
         self.colorData = color.data
     }
     var uuid: String
     var name: String
     var markerStr: String
     
-    //NSImage -> Data
+    //NSImage -> IconImage
     var image: NSImage {
         get {
-             NSImage(data: imageData)!
+            iconImage.nsimage
         }
         set {
-            imageData = newValue.tiffRepresentation!
+            iconImage.nsimage = newValue
         }
     }
-    private var imageData: Data
+    private var iconImage: IconImage
     
     //NSColor -> ColorData
     var color: NSColor {

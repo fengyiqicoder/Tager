@@ -9,8 +9,11 @@ import AppKit
 
 class IconEditorWindowController: NSWindowController {
     static let shared = IconEditorWindowController()
-    private var currentWindow: NSWindowController? = nil
-
+    
+    private var vc: IconEditorViewController {
+        contentViewController as! IconEditorViewController
+    }
+    
     func closeAllEditorWindow() {
         NSApp.windows.forEach {
             if $0.contentViewController is IconEditorViewController {
@@ -27,13 +30,8 @@ class IconEditorWindowController: NSWindowController {
         newWindowController?.window?.setFrame(frame, display: true)
         newWindowController?.vc.model = model
         newWindowController?.showWindow(nil)
-        print("show \(model.uuid)")
-        currentWindow = newWindowController
     }
     
-    private var vc: IconEditorViewController {
-        contentViewController as! IconEditorViewController
-    }
 }
 
 class IconEditorViewController: NSViewController {
@@ -47,7 +45,7 @@ class IconEditorViewController: NSViewController {
     
     var model: IconModel {
         set {
-            imageView.image = newValue.image
+//            imageView.image = newValue.image
             nameTextField.stringValue = newValue.name
             markerTextField.stringValue = newValue.markerStr
             uuid = newValue.uuid
@@ -61,12 +59,29 @@ class IconEditorViewController: NSViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameTextField.delegate = self
+        markerTextField.delegate = self
+    }
+    
     override func viewDidDisappear() {
         super.viewDidDisappear()
         MainController.shared.deselect(id: uuid)
     }
 }
 
+extension IconEditorViewController: NSTextFieldDelegate {
+    
+    func controlTextDidChange(_ obj: Notification) {
+        
+        IconModelController.shared.save(model: model)
+        MainController.shared.collectionView.reloadData()
+    }
+    
+}
+
+//testing
 extension NSScreen {
     func getCenterFrame(with size: CGSize) -> CGRect {
         if let mainSize = NSScreen.main?.frame.size {

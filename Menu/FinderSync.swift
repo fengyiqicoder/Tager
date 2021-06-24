@@ -36,6 +36,8 @@ class FinderSync: FIFinderSync {
     }
     
     @IBAction func testAction2(_ sender: AnyObject?) {
+//        let models = IconModelController.shared.iconModels
+//        print(models.map{ $0.image })
         let testImage = NSImage(named: "TestImage")
         FIFinderSyncController.default().selectedItemURLs()?.forEach({ url in
             NSWorkspace.shared.setIcon(testImage, forFile: url.path)

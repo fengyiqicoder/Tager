@@ -21,4 +21,18 @@ class IconModelController {
             return oldModels
         }
     }
+    
+    func save(model: IconModel) {
+        let order = iconModels.firstIndex { $0.uuid == model.uuid }
+        guard let order = order, order < iconModels.count else {
+            iconModels.append(model)
+            return
+        }
+        iconModels.remove(at: order)
+        iconModels.insert(model, at: order)
+    }
+    
+    func delete(model: IconModel) {
+        
+    }
 }
