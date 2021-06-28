@@ -20,9 +20,11 @@ class FinderSync: FIFinderSync {
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
         // Produce a menu for the extension.
-        let menu = NSMenu(title: "")
-        menu.addItem(withTitle: "Clean Icon", action: #selector(testAction1(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Add Test Icon", action: #selector(testAction2(_:)), keyEquivalent: "")
+        let menu = NSMenu()
+        if menuKind == .contextualMenuForItems {
+            menu.addItem(withTitle: "Clean Icon", action: #selector(testAction1(_:)), keyEquivalent: "")
+            menu.addItem(withTitle: "Add Test Icon", action: #selector(testAction2(_:)), keyEquivalent: "")
+        }
         return menu
     }
     
