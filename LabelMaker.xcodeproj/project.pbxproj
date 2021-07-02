@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		139945EA268EADDB00AD8CCA /* IconImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139945E9268EADDB00AD8CCA /* IconImageGenerator.swift */; };
+		139945ED268EB14700AD8CCA /* ViewSnaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139945EC268EB14700AD8CCA /* ViewSnaper.swift */; };
+		139945EF268EBEF600AD8CCA /* MaxiumFontLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139945EE268EBEF600AD8CCA /* MaxiumFontLabel.swift */; };
 		13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B5EB69267F372F0018D717 /* IconModelController.swift */; };
 		13D11A6C2680701B00182F58 /* IconEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D11A6B2680701B00182F58 /* IconEditorViewController.swift */; };
 		13E57C382684438800EBD74F /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A402675FE580043597D /* IconModel.swift */; };
@@ -55,6 +58,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		139945E9268EADDB00AD8CCA /* IconImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImageGenerator.swift; sourceTree = "<group>"; };
+		139945EC268EB14700AD8CCA /* ViewSnaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnaper.swift; sourceTree = "<group>"; };
+		139945EE268EBEF600AD8CCA /* MaxiumFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxiumFontLabel.swift; sourceTree = "<group>"; };
 		13B5EB69267F372F0018D717 /* IconModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModelController.swift; sourceTree = "<group>"; };
 		13D11A6B2680701B00182F58 /* IconEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconEditorViewController.swift; sourceTree = "<group>"; };
 		13E57C392684489B00EBD74F /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
@@ -95,6 +101,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		139945EB268EADE400AD8CCA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				139945E9268EADDB00AD8CCA /* IconImageGenerator.swift */,
+				139945EC268EB14700AD8CCA /* ViewSnaper.swift */,
+				139945EE268EBEF600AD8CCA /* MaxiumFontLabel.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		13FF6A06267568090043597D = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +136,7 @@
 				13FF6A1C2675680A0043597D /* LabelMaker.entitlements */,
 				13FF6A1B2675680A0043597D /* Info.plist */,
 				13FF6A12267568090043597D /* AppDelegate.swift */,
+				139945EB268EADE400AD8CCA /* Tools */,
 				13FF6A4226765EAC0043597D /* Model (Target Menu) */,
 				13FF6A4526765EFF0043597D /* Views */,
 				13FF6A3F2675E4650043597D /* Window */,
@@ -287,11 +304,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D11A6C2680701B00182F58 /* IconEditorViewController.swift in Sources */,
+				139945EA268EADDB00AD8CCA /* IconImageGenerator.swift in Sources */,
 				13FF6A4426765EDE0043597D /* IconItems.swift in Sources */,
+				139945ED268EB14700AD8CCA /* ViewSnaper.swift in Sources */,
 				13E57C3A2684489B00EBD74F /* IconImage.swift in Sources */,
 				13FF6A15267568090043597D /* MainController.swift in Sources */,
 				13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */,
 				13FF6A13267568090043597D /* AppDelegate.swift in Sources */,
+				139945EF268EBEF600AD8CCA /* MaxiumFontLabel.swift in Sources */,
 				13FF6A412675FE580043597D /* IconModel.swift in Sources */,
 				13FF6A362675AE2A0043597D /* Helper.swift in Sources */,
 				13FF6A392675AE570043597D /* Storage.swift in Sources */,

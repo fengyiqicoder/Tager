@@ -41,9 +41,13 @@ class IconEditorViewController: NSViewController {
     
     var uuid: String!
     
+    //⚠️Image 不对
     var model: IconModel {
         set {
-            imageView.image = newValue.image
+//            imageView.image = newValue.image
+//            iconImageView.image =
+//                newValue.markerStr
+            markerLabel.set(text: newValue.markerStr, with: 50)
             nameTextField.stringValue = newValue.name
             markerTextField.stringValue = newValue.markerStr
             uuid = newValue.uuid
@@ -52,7 +56,7 @@ class IconEditorViewController: NSViewController {
             IconModel(uuid: uuid,
                       name: nameTextField.stringValue,
                       markerStr: markerTextField.stringValue,
-                      image: imageView.image!,
+                      image: iconView.image(),
                       color: NSColor.white)
         }
     }
@@ -84,6 +88,7 @@ class IconEditorViewController: NSViewController {
     
     private var selectedMarker: NSImageView?
     private func selectedColor(order: Int) {
+        //color selected marker
         selectedMarker?.removeFromSuperview()
         
         let selectedColorView = colorViews[order-1]
@@ -92,9 +97,14 @@ class IconEditorViewController: NSViewController {
         colorPickerView.addSubview(selectedImage)
         
         selectedMarker = selectedImage
+        
+        //color save
+        let color = colorViews[order - 1].fillColor
+        markerLabel.textColor = color
+        save()
     }
     
-    
+    //MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,13 +117,25 @@ class IconEditorViewController: NSViewController {
         super.viewDidDisappear()
         MainController.shared.deselect(id: uuid)
     }
+    
+    //MARK: - Icon generator
+    
+    @IBOutlet weak var iconView: NSView!
+    @IBOutlet weak var folderImageView: NSImageView!
+    @IBOutlet weak var symbolImageView: NSImageView!
+    @IBOutlet weak var markerLabel: NSTextField!
+
 }
 
 extension IconEditorViewController: NSTextFieldDelegate {
     
     func controlTextDidChange(_ obj: Notification) {
+        markerLabel.set(text: model.markerStr, with: 50)
+        save()
+    }
+    
+    func save() {
         IconModelController.shared.save(model: model)
         MainController.shared.collectionView.reloadData()
     }
-    
 }
