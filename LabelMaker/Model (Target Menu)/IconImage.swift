@@ -19,7 +19,6 @@ class IconImage: Codable {
 //        var url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
         var url = FileManager().containerURL(forSecurityApplicationGroupIdentifier: appGroupSuitName)!
         url.appendPathComponent(self.uuid)
-        print("image url \(url)")
         return url
     }
     

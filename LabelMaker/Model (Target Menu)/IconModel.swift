@@ -33,13 +33,13 @@ struct IconModel: Codable {
     //NSColor -> ColorData
     var color: NSColor {
         get {
-            colorData.color
+            try! NSKeyedUnarchiver.unarchivedObject(ofClass: NSColor.self, from: colorData)!
         }
         set {
             colorData = newValue.data
         }
     }
-    private var colorData: ColorData
+    private var colorData: Data
     
     static var defualt:IconModel {
         IconModel(uuid: UUID().uuidString,
@@ -51,25 +51,20 @@ struct IconModel: Codable {
     }
 }
 
-fileprivate
+private
 extension NSColor {
-    var data: ColorData {
-        let color = self.usingColorSpace(NSColorSpace.deviceRGB)!
-        return ColorData(red: color.redComponent,
-                         green: color.greenComponent,
-                         blue: color.blueComponent,
-                         alpaht: color.alphaComponent)
+    var deviceRGBColor: NSColor {
+        usingColorSpace(NSColorSpace.deviceRGB)!
     }
 }
 
-fileprivate
-struct ColorData: Codable {
-    var red: CGFloat
-    var green: CGFloat
-    var blue: CGFloat
-    var alpaht: CGFloat
+
+private
+extension NSColor {
     
-    var color: NSColor {
-        NSColor(calibratedRed: red, green: green, blue: blue, alpha: alpaht)
+    var data: Data {
+        try! NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: false) as Data
     }
+    
 }
+

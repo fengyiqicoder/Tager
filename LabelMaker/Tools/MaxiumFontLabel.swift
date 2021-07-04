@@ -19,7 +19,7 @@ extension NSTextField {
             currentTextWidth = stringValue.calculateWidth(font: smallerFont)
         }
         
-        print("Font size \(fitFontSize) \(frame.width - 10) \(currentTextWidth)")
+//        print("Font size \(fitFontSize) \(frame.width - 10) \(currentTextWidth)")
         self.font = self.font!.to(pointSize: fitFontSize)
     }
     

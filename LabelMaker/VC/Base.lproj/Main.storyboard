@@ -848,7 +848,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
-                                            <color key="fillColor" red="0.94293349979999996" green="0.74517416950000004" blue="0.3567640185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="fillColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </box>
                                         <box boxType="custom" borderType="none" borderWidth="0.0" title="5" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="phd-y1-MLg">
                                             <rect key="frame" x="98" y="-2" width="24" height="23"/>
@@ -856,7 +856,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
-                                            <color key="fillColor" red="0.37249732019999998" green="0.63630455730000002" blue="0.97650831940000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="fillColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </box>
                                         <box boxType="custom" borderType="none" borderWidth="0.0" title="6" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="iJd-vX-llo">
                                             <rect key="frame" x="122" y="-2" width="25" height="23"/>
@@ -864,7 +864,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
-                                            <color key="fillColor" red="0.79729288819999999" green="0.5312153101" blue="0.97651094199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="fillColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </box>
                                     </subviews>
                                     <constraints>
@@ -922,7 +922,7 @@
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UpM-XA-3ip">
                                             <rect key="frame" x="6" y="41" width="149" height="60"/>
-                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" title="JB" id="jOh-XH-acU">
+                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" title="dd" id="jOh-XH-acU">
                                                 <font key="font" size="50" name="SFCompact-Semibold"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

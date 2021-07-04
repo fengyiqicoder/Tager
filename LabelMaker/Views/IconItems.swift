@@ -33,7 +33,7 @@ class IconItem: NSCollectionViewItem {
     func setState(isSeleted: Bool) {
         if isSelected {
             backgroundBox.borderWidth = 3
-            backgroundBox.borderColor = NSColor.blue
+            backgroundBox.borderColor = NSColor.darkGray
         } else {
             backgroundBox.borderWidth = 0
         }

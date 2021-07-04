@@ -41,27 +41,28 @@ class IconEditorViewController: NSViewController {
     
     var uuid: String!
     
-    //⚠️Image 不对
     var model: IconModel {
         set {
-//            imageView.image = newValue.image
-//            iconImageView.image =
-//                newValue.markerStr
+            imageView.image = NSImage(named: "folderIcon")
             markerLabel.set(text: newValue.markerStr, with: 50)
             nameTextField.stringValue = newValue.name
             markerTextField.stringValue = newValue.markerStr
             uuid = newValue.uuid
+            selected(color: newValue.color)
         }
         get {
             IconModel(uuid: uuid,
                       name: nameTextField.stringValue,
                       markerStr: markerTextField.stringValue,
                       image: iconView.image(),
-                      color: NSColor.white)
+                      color: selectedColor ?? NSColor.white)
         }
     }
     
     //MARK: - ColorPicker
+    
+    private var selectedColor: NSColor?
+    
     @IBOutlet weak var colorPickerView: NSBox!
     @IBOutlet weak var clickGesture: NSClickGestureRecognizer!
     @IBOutlet weak var color1View: NSBox!
@@ -83,7 +84,10 @@ class IconEditorViewController: NSViewController {
                 selected = selectedColor
                 break
         }
+        
+        selected -= 1
         selectedColor(order: selected)
+        save()
     }
     
     private var selectedMarker: NSImageView?
@@ -91,17 +95,29 @@ class IconEditorViewController: NSViewController {
         //color selected marker
         selectedMarker?.removeFromSuperview()
         
-        let selectedColorView = colorViews[order-1]
+        let selectedColorView = colorViews[order]
         let selectedImage = NSImageView(frame: selectedColorView.frame)
         selectedImage.image = NSImage(named: "checkmark")
         colorPickerView.addSubview(selectedImage)
         
         selectedMarker = selectedImage
         
-        //color save
-        let color = colorViews[order - 1].fillColor
+        //color changed
+        let color = colorViews[order].fillColor
         markerLabel.textColor = color
-        save()
+        selectedColor = color
+    }
+    
+    
+    private func selected(color: NSColor) {
+        var colorOrder = 0
+        colorViews.enumerated().forEach { (order, view) in
+            if view.fillColor.cgColor == color.cgColor {
+                colorOrder = order
+            }   
+
+        }
+        selectedColor(order: colorOrder)
     }
     
     //MARK: - Life cycle
