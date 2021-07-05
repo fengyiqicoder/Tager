@@ -803,14 +803,17 @@
                                 </textFieldCell>
                             </textField>
                             <segmentedControl verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVv-ey-PyJ">
-                                <rect key="frame" x="337" y="151" width="70" height="21"/>
+                                <rect key="frame" x="336" y="151" width="71" height="21"/>
                                 <segmentedCell key="cell" controlSize="small" borderStyle="border" alignment="left" style="texturedRounded" trackingMode="selectOne" id="ffl-og-zar">
                                     <font key="font" metaFont="smallSystem"/>
                                     <segments>
-                                        <segment label="Icon" width="31" selected="YES"/>
-                                        <segment label="Text"/>
+                                        <segment label="文字" width="31"/>
+                                        <segment label="图标" selected="YES"/>
                                     </segments>
                                 </segmentedCell>
+                                <connections>
+                                    <action selector="switchChanged:" target="XFD-C7-oq4" id="RJZ-mF-wp5"/>
+                                </connections>
                             </segmentedControl>
                             <box boxType="custom" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="GdG-Mi-zIa">
                                 <rect key="frame" x="257" y="44" width="148" height="23"/>
@@ -968,7 +971,6 @@
                             <constraint firstItem="5GL-dX-DkM" firstAttribute="top" secondItem="RW2-JB-GKk" secondAttribute="top" constant="43" id="lC6-CB-QvW"/>
                             <constraint firstItem="5GL-dX-DkM" firstAttribute="leading" secondItem="5rC-0s-KZm" secondAttribute="leading" id="mVc-Ov-X9G"/>
                             <constraint firstItem="b32-5i-RqG" firstAttribute="top" secondItem="09O-8I-M9H" secondAttribute="bottom" constant="9" id="t0j-TF-vCD"/>
-                            <constraint firstItem="yVv-ey-PyJ" firstAttribute="leading" secondItem="umG-Kl-JZ4" secondAttribute="trailing" constant="55" id="w3U-Ym-biR"/>
                             <constraint firstItem="umG-Kl-JZ4" firstAttribute="top" secondItem="5rC-0s-KZm" secondAttribute="bottom" constant="27" id="wdf-a3-GXm"/>
                         </constraints>
                     </view>
@@ -994,6 +996,79 @@
                 <customObject id="New-Gd-jhQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="629.5" y="755.5"/>
+        </scene>
+        <!--Symbol Picker View Controller-->
+        <scene sceneID="cmc-58-CTU">
+            <objects>
+                <viewController storyboardIdentifier="SymbolPickerVewController" id="fCJ-aw-aCd" customClass="SymbolPickerViewController" customModule="LabelMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="gGR-ly-j3W">
+                        <rect key="frame" x="0.0" y="0.0" width="408" height="472"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvF-Zn-KLc">
+                                <rect key="frame" x="0.0" y="0.0" width="408" height="422"/>
+                                <clipView key="contentView" drawsBackground="NO" id="7c2-cP-Naf">
+                                    <rect key="frame" x="0.0" y="0.0" width="408" height="422"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="RYN-6P-B0J">
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewGridLayout key="collectionViewLayout" id="fjw-7q-Da3"/>
+                                            <color key="primaryBackgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="yKt-5C-xr1">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="LPG-Hj-bs6">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Td-ll-PdQ">
+                                <rect key="frame" x="139" y="434" width="130" height="21"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="请选择一个图标" id="Mhx-nK-16m">
+                                    <font key="font" textStyle="title2" name=".SFNS-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-h5-jbw">
+                                <rect key="frame" x="17" y="431" width="76" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="All" bezelStyle="rounded" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="prQ-Lz-fTt" id="whl-69-a9p">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="ahr-le-zTS">
+                                        <items>
+                                            <menuItem title="All" state="on" image="rectangle.grid.2x2" catalog="system" hidden="YES" id="prQ-Lz-fTt"/>
+                                            <menuItem title="Item 2" id="zvI-n0-4eO"/>
+                                            <menuItem title="Item 3" id="e2g-dA-aV0"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hvF-Zn-KLc" firstAttribute="top" secondItem="gGR-ly-j3W" secondAttribute="top" constant="50" id="7iP-OF-opc"/>
+                            <constraint firstItem="7Td-ll-PdQ" firstAttribute="centerX" secondItem="gGR-ly-j3W" secondAttribute="centerX" id="KdR-gJ-hUb"/>
+                            <constraint firstItem="7Td-ll-PdQ" firstAttribute="top" secondItem="gGR-ly-j3W" secondAttribute="top" constant="17" id="MEn-jg-CMZ"/>
+                            <constraint firstAttribute="bottom" secondItem="hvF-Zn-KLc" secondAttribute="bottom" id="U4n-hQ-4Q1"/>
+                            <constraint firstItem="hvF-Zn-KLc" firstAttribute="leading" secondItem="gGR-ly-j3W" secondAttribute="leading" id="bZE-dq-hXD"/>
+                            <constraint firstAttribute="trailing" secondItem="hvF-Zn-KLc" secondAttribute="trailing" id="qhY-r2-WIn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="RYN-6P-B0J" id="dVK-MB-LAI"/>
+                        <outlet property="switcherButton" destination="njz-h5-jbw" id="EuO-I6-yAi"/>
+                    </connections>
+                </viewController>
+                <customObject id="S9Q-6F-DH1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1162" y="806"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -1046,8 +1121,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folderIcon" width="256" height="256"/>
+        <image name="folderIcon" width="512" height="512"/>
         <image name="info.circle" catalog="system" width="19" height="19"/>
         <image name="plus" catalog="system" width="17" height="16"/>
+        <image name="rectangle.grid.2x2" catalog="system" width="18" height="14"/>
     </resources>
 </document>

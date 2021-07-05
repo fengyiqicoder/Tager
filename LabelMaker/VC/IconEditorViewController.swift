@@ -140,6 +140,26 @@ class IconEditorViewController: NSViewController {
     @IBOutlet weak var folderImageView: NSImageView!
     @IBOutlet weak var symbolImageView: NSImageView!
     @IBOutlet weak var markerLabel: NSTextField!
+    
+    //MARK: - Popover symbolPicker
+    
+    @IBAction func switchChanged(_ sender: NSSegmentedControl) {
+        if sender.isSelected(forSegment: 1) {
+            showSymbolePicker(from: sender)
+        } else {
+            self.presentingViewController?.dismiss(nil)
+        }
+    }
+    
+    func showSymbolePicker(from sourceView: NSView){
+        let popover = NSPopover()
+        popover.behavior = .semitransient
+        popover.animates = true
+        
+        let vc = NSStoryboard(name: "Main", bundle: nil).instantiateController(identifier: "SymbolPickerVewController") as SymbolPickerViewController
+        popover.contentViewController = vc
+        popover.show(relativeTo: sourceView.bounds, of: sourceView, preferredEdge: .maxX)
+    }
 
 }
 
@@ -155,3 +175,4 @@ extension IconEditorViewController: NSTextFieldDelegate {
         MainController.shared.collectionView.reloadData()
     }
 }
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="141" height="138"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u7R-C1-8Td">
+                    <rect key="frame" x="6" y="7" width="129" height="15"/>
+                    <textFieldCell key="cell" alignment="center" title="Label" id="3R5-DB-ZNi">
+                        <font key="font" metaFont="system" size="12"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="jUB-E4-4xg">
+                    <rect key="frame" x="27" y="25" width="87" height="88"/>
+                    <view key="contentView" id="QTC-vX-cFG">
+                        <rect key="frame" x="1" y="1" width="85" height="86"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PVb-Sf-A6s">
+                                <rect key="frame" x="32" y="36" width="21.5" height="16"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="plus.rectangle.fill.on.rectangle.fill" catalog="system" id="bvM-FP-v4v"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="PVb-Sf-A6s" firstAttribute="centerY" secondItem="QTC-vX-cFG" secondAttribute="centerY" id="DOh-mO-gLA"/>
+                            <constraint firstItem="PVb-Sf-A6s" firstAttribute="centerX" secondItem="QTC-vX-cFG" secondAttribute="centerX" id="fvM-q0-bF3"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jUB-E4-4xg" secondAttribute="height" id="4td-cT-yt0"/>
+                    </constraints>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="u7R-C1-8Td" firstAttribute="top" secondItem="QTC-vX-cFG" secondAttribute="bottom" constant="4" id="8jN-K0-pcc"/>
+                <constraint firstItem="u7R-C1-8Td" firstAttribute="trailing" secondItem="c22-O7-iKe" secondAttribute="trailing" constant="-8" id="CLI-ga-961"/>
+                <constraint firstItem="jUB-E4-4xg" firstAttribute="width" secondItem="c22-O7-iKe" secondAttribute="width" multiplier="0.618" id="EMp-69-nOG"/>
+                <constraint firstItem="jUB-E4-4xg" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="OyD-4q-fEb"/>
+                <constraint firstItem="jUB-E4-4xg" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="Pa4-6f-nA8"/>
+                <constraint firstItem="u7R-C1-8Td" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="RBt-GK-sUc"/>
+                <constraint firstItem="u7R-C1-8Td" firstAttribute="centerX" secondItem="QTC-vX-cFG" secondAttribute="centerX" id="qXM-il-fWu"/>
+            </constraints>
+            <point key="canvasLocation" x="-186.5" y="87"/>
+        </customView>
+        <collectionViewItem id="zJR-wx-2qN" customClass="SymbolItem" customModule="LabelMaker" customModuleProvider="target">
+            <connections>
+                <outlet property="symbolImageView" destination="PVb-Sf-A6s" id="qaB-Wp-n3O"/>
+                <outlet property="symbolNameLabel" destination="u7R-C1-8Td" id="4hO-Bj-gQG"/>
+                <outlet property="symbolView" destination="QTC-vX-cFG" id="cDz-1s-ING"/>
+                <outlet property="view" destination="c22-O7-iKe" id="mWH-74-NV3"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+    <resources>
+        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="20" height="16"/>
+    </resources>
+</document>
