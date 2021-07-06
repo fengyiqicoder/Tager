@@ -147,10 +147,11 @@ class IconEditorViewController: NSViewController {
         if sender.isSelected(forSegment: 1) {
             showSymbolePicker(from: sender)
         } else {
-            self.presentingViewController?.dismiss(nil)
+            popoverVC?.dismissPopover()
         }
     }
     
+    private var popoverVC: NSViewController?
     func showSymbolePicker(from sourceView: NSView){
         let popover = NSPopover()
         popover.behavior = .semitransient
@@ -159,6 +160,7 @@ class IconEditorViewController: NSViewController {
         let vc = NSStoryboard(name: "Main", bundle: nil).instantiateController(identifier: "SymbolPickerVewController") as SymbolPickerViewController
         popover.contentViewController = vc
         popover.show(relativeTo: sourceView.bounds, of: sourceView, preferredEdge: .maxX)
+        popoverVC = vc
     }
 
 }

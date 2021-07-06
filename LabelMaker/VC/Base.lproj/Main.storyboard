@@ -1037,14 +1037,14 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-h5-jbw">
-                                <rect key="frame" x="17" y="431" width="76" height="25"/>
+                                <rect key="frame" x="17" y="429" width="76" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="All" bezelStyle="rounded" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="prQ-Lz-fTt" id="whl-69-a9p">
+                                <popUpButtonCell key="cell" type="push" title="All" bezelStyle="rounded" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="prQ-Lz-fTt" id="whl-69-a9p">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ahr-le-zTS">
                                         <items>
-                                            <menuItem title="All" state="on" image="rectangle.grid.2x2" catalog="system" hidden="YES" id="prQ-Lz-fTt"/>
+                                            <menuItem title="All" state="on" image="rectangle.grid.2x2" catalog="system" id="prQ-Lz-fTt"/>
                                             <menuItem title="Item 2" id="zvI-n0-4eO"/>
                                             <menuItem title="Item 3" id="e2g-dA-aV0"/>
                                         </items>
@@ -1068,7 +1068,7 @@
                 </viewController>
                 <customObject id="S9Q-6F-DH1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="806"/>
+            <point key="canvasLocation" x="1208" y="849"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -1121,7 +1121,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folderIcon" width="512" height="512"/>
+        <image name="folderIcon" width="256" height="256"/>
         <image name="info.circle" catalog="system" width="19" height="19"/>
         <image name="plus" catalog="system" width="17" height="16"/>
         <image name="rectangle.grid.2x2" catalog="system" width="18" height="14"/>
