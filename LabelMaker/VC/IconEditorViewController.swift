@@ -41,21 +41,33 @@ class IconEditorViewController: NSViewController {
     
     var uuid: String!
     
+    private let markerMaxFontSize: CGFloat = 50
     var model: IconModel {
         set {
             imageView.image = NSImage(named: "folderIcon")
-            markerLabel.set(text: newValue.markerStr, with: 50)
             nameTextField.stringValue = newValue.name
-            markerTextField.stringValue = newValue.markerStr
+            
+            if let markerStr = newValue.markerStr {
+                setMarker(string: markerStr)
+            }
+            if let symbolStr = newValue.symbolStr {
+                setSymbol(name: symbolStr)
+            }
+            
             uuid = newValue.uuid
             selected(color: newValue.color)
         }
         get {
-            IconModel(uuid: uuid,
-                      name: nameTextField.stringValue,
-                      markerStr: markerTextField.stringValue,
-                      image: iconView.image(),
-                      color: selectedColor ?? NSColor.white)
+            var model = IconModel(uuid: uuid,
+                                  name: nameTextField.stringValue,
+                                  image: iconView.image(),
+                                  color: selectedColor ?? NSColor.white)
+            if isUsingSymbol {
+                model.set(symbolStr: symbolName ?? "")
+            } else {
+                model.set(markerStr: markerTextField.stringValue)
+            }
+            return model
         }
     }
     
@@ -105,6 +117,7 @@ class IconEditorViewController: NSViewController {
         //color changed
         let color = colorViews[order].fillColor
         markerLabel.textColor = color
+        symbolImageView.contentTintColor = color
         selectedColor = color
     }
     
@@ -126,7 +139,6 @@ class IconEditorViewController: NSViewController {
         super.viewDidLoad()
         nameTextField.delegate = self
         markerTextField.delegate = self
-        
     }
     
     override func viewDidDisappear() {
@@ -140,15 +152,34 @@ class IconEditorViewController: NSViewController {
     @IBOutlet weak var folderImageView: NSImageView!
     @IBOutlet weak var symbolImageView: NSImageView!
     @IBOutlet weak var markerLabel: NSTextField!
+    @IBOutlet weak var symbolLabel: NSImageView!
     
     //MARK: - Popover symbolPicker
     
+    var isUsingSymbol: Bool {
+        set {
+            markerLabel.isHidden = newValue
+            symbolImageView.isHidden = !newValue
+            markerTextField.isHidden = newValue
+            symbolLabel.isHidden = !newValue
+            
+            markerTypeSwitch.selectedSegment = newValue ? 1 : 0
+        }
+        get {
+            markerTypeSwitch.isSelected(forSegment: 1)
+        }
+    }
+    
     @IBAction func switchChanged(_ sender: NSSegmentedControl) {
         if sender.isSelected(forSegment: 1) {
+            isUsingSymbol = true
             showSymbolePicker(from: sender)
         } else {
+            isUsingSymbol = false
             popoverVC?.dismissPopover()
         }
+        
+        markerTextField.isHidden = isUsingSymbol
     }
     
     private var popoverVC: NSViewController?
@@ -158,9 +189,30 @@ class IconEditorViewController: NSViewController {
         popover.animates = true
         
         let vc = NSStoryboard(name: "Main", bundle: nil).instantiateController(identifier: "SymbolPickerVewController") as SymbolPickerViewController
+        vc.symbolDelegate = self
         popover.contentViewController = vc
         popover.show(relativeTo: sourceView.bounds, of: sourceView, preferredEdge: .maxX)
         popoverVC = vc
+    }
+    
+    //Abount symbol
+    private var symbolName: String?
+    private func setSymbol(name: String) {
+        symbolName = name
+        isUsingSymbol = true
+        
+        let symbolSize: CGFloat = 60
+        symbolLabel.image = NSImage(systemSymbolName: name, accessibilityDescription: nil)?.withSymbolConfiguration(NSImage.SymbolConfiguration(pointSize: 20, weight: .regular))
+        symbolImageView.image = NSImage(systemSymbolName: name, accessibilityDescription: nil)?.withSymbolConfiguration(NSImage.SymbolConfiguration(pointSize: symbolSize, weight: .regular))
+        symbolImageView.contentTintColor = selectedColor ?? NSColor.white
+    }
+    
+    private func setMarker(string: String) {
+        isUsingSymbol = false
+        markerLabel.set(text: string, with: 50)
+        if markerTextField.stringValue != string {
+            markerTextField.stringValue = string
+        }
     }
 
 }
@@ -168,7 +220,8 @@ class IconEditorViewController: NSViewController {
 extension IconEditorViewController: NSTextFieldDelegate {
     
     func controlTextDidChange(_ obj: Notification) {
-        markerLabel.set(text: model.markerStr, with: 50)
+        //名称textfield会触发这个
+        setMarker(string: model.markerStr ?? "nil")
         save()
     }
     
@@ -178,3 +231,10 @@ extension IconEditorViewController: NSTextFieldDelegate {
     }
 }
 
+extension IconEditorViewController: SymbolItemDelegate {
+    func didSelect(item: SymbolItem) {
+        setSymbol(name: item.symbol)
+        popoverVC?.dismissPopover()
+        save()
+    }
+}

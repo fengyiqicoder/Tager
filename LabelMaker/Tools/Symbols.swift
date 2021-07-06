@@ -11,16 +11,16 @@ class Symbols {
     static var shared = Symbols()
 
     private let allSymbolsAppleHave: [String] = []
-    private let allSymbolsGroup: [String: [String]] = [
+//    private let allSymbolsGroup: [String: [String]] = [
         
-    ]
+//    ]
     
     lazy var currentAvailables: [String] = {
         return allSymbolsAppleHave.filter{ $0.isAvailable }
     }()
-    lazy var group: [String: [String]] = {
-        
-    }()
+//    lazy var group: [String: [String]] = {
+//        
+//    }()
     
 }
 

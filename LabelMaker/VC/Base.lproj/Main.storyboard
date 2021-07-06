@@ -925,7 +925,7 @@
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UpM-XA-3ip">
                                             <rect key="frame" x="6" y="41" width="149" height="60"/>
-                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" title="dd" id="jOh-XH-acU">
+                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" id="jOh-XH-acU">
                                                 <font key="font" size="50" name="SFCompact-Semibold"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -951,6 +951,11 @@
                                     <constraint firstAttribute="width" constant="162" id="aeH-oR-heQ"/>
                                 </constraints>
                             </box>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pxp-ul-HiG">
+                                <rect key="frame" x="257" y="112" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="MR9-cO-nmi"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="bqb-8Y-JqY" firstAttribute="leading" secondItem="umG-Kl-JZ4" secondAttribute="leading" id="2Dk-aN-w0A"/>
@@ -991,6 +996,7 @@
                         <outlet property="markerTypeSwitch" destination="yVv-ey-PyJ" id="4fT-2G-RY2"/>
                         <outlet property="nameTextField" destination="5rC-0s-KZm" id="tlH-s9-VbE"/>
                         <outlet property="symbolImageView" destination="HGf-xt-0Yc" id="Dyl-lS-mzb"/>
+                        <outlet property="symbolLabel" destination="Pxp-ul-HiG" id="wik-sR-6HB"/>
                     </connections>
                 </viewController>
                 <customObject id="New-Gd-jhQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1075,17 +1081,17 @@
             <objects>
                 <viewController showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="MainController" customModule="LabelMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="399"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFD-Zd-XA8">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFD-Zd-XA8">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="399"/>
                                 <clipView key="contentView" drawsBackground="NO" id="Bhu-V2-hNy">
-                                    <rect key="frame" x="1" y="1" width="478" height="268"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="399"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" id="oCB-xO-kKj">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="399"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewLayout key="collectionViewLayout" id="9Ph-aJ-eVC"/>
                                             <color key="primaryBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1097,7 +1103,7 @@
                                     <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fiS-AL-mGP">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="fiS-AL-mGP">
                                     <rect key="frame" x="234" y="1" width="15" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1117,11 +1123,11 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="763"/>
+            <point key="canvasLocation" x="75" y="827.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="folderIcon" width="256" height="256"/>
+        <image name="folderIcon" width="512" height="512"/>
         <image name="info.circle" catalog="system" width="19" height="19"/>
         <image name="plus" catalog="system" width="17" height="16"/>
         <image name="rectangle.grid.2x2" catalog="system" width="18" height="14"/>
