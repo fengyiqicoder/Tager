@@ -33,13 +33,6 @@ class SymbolPickerViewController: NSViewController {
     
 }
 
-//extension SymbolPickerViewController: SymbolItemDelegate{
-//    func didSelect(item: SymbolItem) {
-//        print(item.symbol)
-//        dismissPopover()
-//    }
-//}
-
 extension SymbolPickerViewController: NSCollectionViewDataSource, NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {

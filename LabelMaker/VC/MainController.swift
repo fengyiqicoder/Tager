@@ -35,6 +35,10 @@ class MainController: NSViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+//        model.iconModels.forEach { model in
+//            print(model.image.size)
+//        }
     }
 
     func deselect(id: String) {

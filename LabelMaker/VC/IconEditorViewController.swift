@@ -58,6 +58,7 @@ class IconEditorViewController: NSViewController {
             selected(color: newValue.color)
         }
         get {
+            //FIXME: ICON image 分辨率不够高
             var model = IconModel(uuid: uuid,
                                   name: nameTextField.stringValue,
                                   image: iconView.image(),

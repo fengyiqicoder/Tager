@@ -10,7 +10,7 @@ import FinderSync
 
 class FinderSync: FIFinderSync {
     
-    var myFolderURL = URL(fileURLWithPath: "/")
+    private var myFolderURL = URL(fileURLWithPath: "/")
     
     override init() {
         super.init()
@@ -19,30 +19,37 @@ class FinderSync: FIFinderSync {
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
-        // Produce a menu for the extension.
         let menu = NSMenu()
         if menuKind == .contextualMenuForItems {
-            menu.addItem(withTitle: "Clean Icon", action: #selector(testAction1(_:)), keyEquivalent: "")
-            menu.addItem(withTitle: "Add Test Icon", action: #selector(testAction2(_:)), keyEquivalent: "")
+            let menuItems = IconModelController.shared.iconModels.enumerated().map { (order, model) -> NSMenuItem in
+                let menuItem = NSMenuItem(title: model.name, action: #selector(changeIcon(item:)), keyEquivalent: "")
+                menuItem.toolTip = model.uuid
+                menuItem.tag = order
+                menuItem.image = model.image
+                return menuItem
+            }
+            menuItems.forEach { item in
+                menu.addItem(item)
+            }
         }
+
+        menu.addItem(withTitle: "clear icon", action: #selector(clearIcon), keyEquivalent: "")
         return menu
     }
     
-    @IBAction func testAction1(_ sender: AnyObject?) {
-        
+    @objc
+    func changeIcon(item: NSMenuItem) {
+        let model = IconModelController.shared.iconModels[item.tag]
         FIFinderSyncController.default().selectedItemURLs()?.forEach({ url in
-            NSWorkspace.shared.setIcon(nil, forFile: url.path)
+            NSWorkspace.shared.setIcon(model.image, forFile: url.path)
+            NSWorkspace.shared.noteFileSystemChanged(url.path)
         })
-        
-        UserDefaults.appGroup.test = "Clean up"
     }
     
-    @IBAction func testAction2(_ sender: AnyObject?) {
-//        let models = IconModelController.shared.iconModels
-//        print(models.map{ $0.image })
-        let testImage = NSImage(named: "TestImage")
+    @objc
+    func clearIcon(_ sender: AnyObject?) {
         FIFinderSyncController.default().selectedItemURLs()?.forEach({ url in
-            NSWorkspace.shared.setIcon(testImage, forFile: url.path)
+            NSWorkspace.shared.setIcon(nil, forFile: url.path)
         })
     }
     
