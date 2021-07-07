@@ -220,7 +220,7 @@ class IconEditorViewController: NSViewController {
 extension IconEditorViewController: NSTextFieldDelegate {
     
     func controlTextDidChange(_ obj: Notification) {
-        //名称textfield会触发这个
+        //FIXME: 名称textfield会触发这个
         setMarker(string: model.markerStr ?? "nil")
         save()
     }

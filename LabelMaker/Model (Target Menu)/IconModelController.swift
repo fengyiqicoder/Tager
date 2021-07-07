@@ -33,6 +33,21 @@ class IconModelController {
     }
     
     func delete(model: IconModel) {
-        
+        let index = iconModels.firstIndex {
+            $0.uuid == model.uuid
+        }
+        guard let index = index else { return }
+        iconModels.remove(at: index)
     }
+    
+    func top(model: IconModel) {
+        let index = iconModels.firstIndex {
+            $0.uuid == model.uuid
+        }
+        guard let index = index else { return }
+        let model = iconModels.remove(at: index)
+        iconModels.insert(model, at: 0)
+    }
+    
+    
 }

@@ -14,6 +14,7 @@ class IconItem: NSCollectionViewItem {
             setState(isSeleted: isSelected)
         }
     }
+    weak var delegate: IconItemDelegate!
     var text: String = "defualt"
     
     @IBOutlet weak var label: NSTextField!
@@ -28,6 +29,26 @@ class IconItem: NSCollectionViewItem {
         backgroundBox.borderWidth = 0
         backgroundBox.cornerRadius = 14
         backgroundBox.layer?.cornerCurve = .continuous
+        
+    }
+
+    override func rightMouseDown(with event: NSEvent) {
+        let menu = NSMenu()
+         
+        menu.addItem(withTitle: "Delete", action: #selector(deleteItem), keyEquivalent: "")
+        menu.addItem(withTitle: "Top", action: #selector(topItem), keyEquivalent: "")
+
+        NSMenu.popUpContextMenu(menu, with: event, for: self.view)
+    }
+    
+    @objc
+    func deleteItem(sender: NSMenu) {
+        delegate.didDelete(item: self)
+    }
+    
+    @objc
+    func topItem(sender: NSMenu) {
+        delegate.didTop(item: self)
     }
     
     func setState(isSeleted: Bool) {
@@ -38,4 +59,9 @@ class IconItem: NSCollectionViewItem {
             backgroundBox.borderWidth = 0
         }
     }
+}
+
+protocol IconItemDelegate: AnyObject {
+    func didDelete(item: IconItem)
+    func didTop(item: IconItem)
 }

@@ -36,7 +36,7 @@ class MainController: NSViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    
+
     func deselect(id: String) {
         model.iconModels.enumerated().forEach { (order, itemModel) in
             if itemModel.uuid == id {
@@ -70,6 +70,8 @@ extension MainController: NSCollectionViewDataSource {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "IconItem"), for: indexPath) as! IconItem
         item.label.stringValue = itemModel.name
         item.image.image = itemModel.image
+        item.delegate = self
+
         return item
     }
 }
@@ -91,4 +93,29 @@ extension MainController: NSCollectionViewDelegate {
             item.isSelected = false
         }
     }
+}
+
+
+extension MainController: IconItemDelegate {
+    
+    func didDelete(item: IconItem) {
+        
+        guard let iconItemIndex = collectionView.indexPath(for: item)?.item else { return }
+        let iconModel = model.iconModels[iconItemIndex]
+        model.delete(model: iconModel)
+        
+        collectionView.reloadData()
+    }
+    
+    func didTop(item: IconItem) {
+        
+        guard let iconItemIndex = collectionView.indexPath(for: item)?.item else { return }
+        let iconModel = model.iconModels[iconItemIndex]
+        model.top(model: iconModel)
+        
+        collectionView.reloadData()
+        
+    }
+    
+    
 }
