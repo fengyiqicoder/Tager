@@ -55,7 +55,12 @@ class MainController: NSViewController {
     
     func addNewIcon() {
         model.iconModels.append(IconModel.defualt)
+        reloadIcons()
+    }
+    
+    func reloadIcons() {
         collectionView.reloadData()
+        (self.view.window?.windowController as? MainWindowController)?.updateTitle()
     }
 }
 
@@ -108,7 +113,7 @@ extension MainController: IconItemDelegate {
         let iconModel = model.iconModels[iconItemIndex]
         model.delete(model: iconModel)
         
-        collectionView.reloadData()
+        reloadIcons()
     }
     
     func didTop(item: IconItem) {
@@ -117,8 +122,7 @@ extension MainController: IconItemDelegate {
         let iconModel = model.iconModels[iconItemIndex]
         model.top(model: iconModel)
         
-        collectionView.reloadData()
-        
+        reloadIcons()
     }
     
     

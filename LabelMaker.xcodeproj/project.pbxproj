@@ -72,7 +72,7 @@
 		13B5EB69267F372F0018D717 /* IconModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModelController.swift; sourceTree = "<group>"; };
 		13D11A6B2680701B00182F58 /* IconEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconEditorViewController.swift; sourceTree = "<group>"; };
 		13E57C392684489B00EBD74F /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
-		13FF6A0F267568090043597D /* LabelMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13FF6A0F267568090043597D /* Tager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FF6A12267568090043597D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FF6A14267568090043597D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		13FF6A162675680A0043597D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		13FF6A10267568090043597D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13FF6A0F267568090043597D /* LabelMaker.app */,
+				13FF6A0F267568090043597D /* Tager.app */,
 				13FF6A262675681F0043597D /* Menu.appex */,
 			);
 			name = Products;
@@ -217,9 +217,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13FF6A0E267568090043597D /* LabelMaker */ = {
+		13FF6A0E267568090043597D /* Tager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13FF6A1F2675680A0043597D /* Build configuration list for PBXNativeTarget "LabelMaker" */;
+			buildConfigurationList = 13FF6A1F2675680A0043597D /* Build configuration list for PBXNativeTarget "Tager" */;
 			buildPhases = (
 				13FF6A0B267568090043597D /* Sources */,
 				13FF6A0C267568090043597D /* Frameworks */,
@@ -231,9 +231,9 @@
 			dependencies = (
 				13FF6A2D2675681F0043597D /* PBXTargetDependency */,
 			);
-			name = LabelMaker;
+			name = Tager;
 			productName = LabelMaker;
-			productReference = 13FF6A0F267568090043597D /* LabelMaker.app */;
+			productReference = 13FF6A0F267568090043597D /* Tager.app */;
 			productType = "com.apple.product-type.application";
 		};
 		13FF6A252675681F0043597D /* Menu */ = {
@@ -283,7 +283,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13FF6A0E267568090043597D /* LabelMaker */,
+				13FF6A0E267568090043597D /* Tager */,
 				13FF6A252675681F0043597D /* Menu */,
 			);
 		};
@@ -583,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13FF6A1F2675680A0043597D /* Build configuration list for PBXNativeTarget "LabelMaker" */ = {
+		13FF6A1F2675680A0043597D /* Build configuration list for PBXNativeTarget "Tager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13FF6A202675680A0043597D /* Debug */,

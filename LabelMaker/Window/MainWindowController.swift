@@ -15,8 +15,12 @@ class MainWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        window?.title = "Tager 图标库"
-        window?.subtitle = "\(IconModelController.shared.iconModels.count) 个图标"
+        updateTitle()
+    }
+    
+    func updateTitle() {
+        window?.title = "Tager's Icons" //图标库
+        window?.subtitle = "\(IconModelController.shared.iconModels.count) icons"
     }
     
     @IBOutlet weak var infoItem: NSToolbarItem!

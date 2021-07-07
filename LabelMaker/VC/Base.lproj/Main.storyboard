@@ -760,16 +760,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-dX-DkM">
-                                <rect key="frame" x="255" y="226" width="31" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="名称" id="mFI-sh-niY">
-                                    <font key="font" metaFont="system"/>
+                                <rect key="frame" x="255" y="226" width="42" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Name" id="mFI-sh-niY">
+                                    <font key="font" textStyle="headline" name=".SFNS-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="umG-Kl-JZ4">
-                                <rect key="frame" x="255" y="154" width="31" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="记号" id="wjM-LF-ATo">
+                                <rect key="frame" x="255" y="154" width="40" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="wjM-LF-ATo">
                                     <font key="font" textStyle="headline" name=".SFNS-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -780,7 +780,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="lyT-X7-0ek"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" placeholderString="Name" drawsBackground="YES" id="UKG-w1-xy7">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" placeholderString="Name of the icon" drawsBackground="YES" id="UKG-w1-xy7">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -788,27 +788,27 @@
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bqb-8Y-JqY">
                                 <rect key="frame" x="257" y="122" width="148" height="21"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" placeholderString="Marker" drawsBackground="YES" id="JvT-7e-upE">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="left" placeholderString="Label to print" drawsBackground="YES" id="JvT-7e-upE">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="09O-8I-M9H">
-                                <rect key="frame" x="255" y="75" width="31" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="颜色" id="BpO-lo-tEO">
-                                    <font key="font" metaFont="system"/>
+                                <rect key="frame" x="255" y="75" width="39" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Color" id="BpO-lo-tEO">
+                                    <font key="font" textStyle="headline" name=".SFNS-Bold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <segmentedControl verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVv-ey-PyJ">
-                                <rect key="frame" x="336" y="151" width="71" height="21"/>
+                                <rect key="frame" x="320" y="151" width="87" height="21"/>
                                 <segmentedCell key="cell" controlSize="small" borderStyle="border" alignment="left" style="texturedRounded" trackingMode="selectOne" id="ffl-og-zar">
                                     <font key="font" metaFont="smallSystem"/>
                                     <segments>
-                                        <segment label="文字" width="31"/>
-                                        <segment label="图标" selected="YES"/>
+                                        <segment label="Word" width="31"/>
+                                        <segment label="Symbol" selected="YES"/>
                                     </segments>
                                 </segmentedCell>
                                 <connections>
@@ -1035,8 +1035,8 @@
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Td-ll-PdQ">
-                                <rect key="frame" x="139" y="434" width="130" height="21"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="请选择一个图标" id="Mhx-nK-16m">
+                                <rect key="frame" x="141" y="434" width="126" height="21"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Choose an icon" id="Mhx-nK-16m">
                                     <font key="font" textStyle="title2" name=".SFNS-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

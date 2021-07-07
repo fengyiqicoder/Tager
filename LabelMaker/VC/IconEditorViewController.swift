@@ -228,7 +228,7 @@ extension IconEditorViewController: NSTextFieldDelegate {
     
     func save() {
         IconModelController.shared.save(model: model)
-        MainController.shared.collectionView.reloadData()
+        MainController.shared.reloadIcons()
     }
 }
 
