@@ -27,10 +27,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qS5-P3-VyG">
-                                <rect key="frame" x="27" y="27" width="93" height="93"/>
+                                <rect key="frame" x="29" y="29" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qS5-P3-VyG" secondAttribute="height" multiplier="1:1" id="Kag-1x-hzQ"/>
-                                    <constraint firstAttribute="height" constant="93" id="djo-hZ-tjM"/>
+                                    <constraint firstAttribute="height" constant="90" id="djo-hZ-tjM"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="10l-N9-MA2"/>
                             </imageView>
@@ -57,7 +57,7 @@
             </constraints>
             <point key="canvasLocation" x="16.5" y="142.5"/>
         </customView>
-        <collectionViewItem id="RkU-Qg-Due" customClass="IconItem" customModule="LabelMaker" customModuleProvider="target">
+        <collectionViewItem id="RkU-Qg-Due" customClass="IconItem" customModule="Tager" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundBox" destination="E8j-CE-r0i" id="I3g-jN-un0"/>
                 <outlet property="image" destination="qS5-P3-VyG" id="pTr-z3-vCu"/>
