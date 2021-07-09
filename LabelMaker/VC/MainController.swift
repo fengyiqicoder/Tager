@@ -44,6 +44,11 @@ class MainController: NSViewController {
 //            print(model.image.size)
 //        }
     }
+    
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        NSApp.terminate(nil)
+    }
 
     func deselect(id: String) {
         model.iconModels.enumerated().forEach { (order, itemModel) in
