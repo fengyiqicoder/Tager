@@ -14,6 +14,7 @@
 		139946312692F92100AD8CCA /* SymbolItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 139946302692F92100AD8CCA /* SymbolItem.xib */; };
 		1399464626940F9900AD8CCA /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399464526940F9900AD8CCA /* Symbols.swift */; };
 		139946482695519C00AD8CCA /* MenuTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139946472695519C00AD8CCA /* MenuTarget.swift */; };
+		1399464C269730C100AD8CCA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399464B269730C100AD8CCA /* InfoViewController.swift */; };
 		13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B5EB69267F372F0018D717 /* IconModelController.swift */; };
 		13D11A6C2680701B00182F58 /* IconEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D11A6B2680701B00182F58 /* IconEditorViewController.swift */; };
 		13E57C382684438800EBD74F /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A402675FE580043597D /* IconModel.swift */; };
@@ -69,6 +70,7 @@
 		139946302692F92100AD8CCA /* SymbolItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SymbolItem.xib; sourceTree = "<group>"; };
 		1399464526940F9900AD8CCA /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		139946472695519C00AD8CCA /* MenuTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTarget.swift; sourceTree = "<group>"; };
+		1399464B269730C100AD8CCA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		13B5EB69267F372F0018D717 /* IconModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModelController.swift; sourceTree = "<group>"; };
 		13D11A6B2680701B00182F58 /* IconEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconEditorViewController.swift; sourceTree = "<group>"; };
 		13E57C392684489B00EBD74F /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				13FF6A182675680A0043597D /* Main.storyboard */,
 				13FF6A14267568090043597D /* MainController.swift */,
+				1399464B269730C100AD8CCA /* InfoViewController.swift */,
 				13D11A6B2680701B00182F58 /* IconEditorViewController.swift */,
 				139945F02691C4AF00AD8CCA /* SymbolPickerViewController.swift */,
 			);
@@ -324,6 +327,7 @@
 				1399462F2692F88A00AD8CCA /* SymbolItem.swift in Sources */,
 				13E57C3A2684489B00EBD74F /* IconImage.swift in Sources */,
 				139946482695519C00AD8CCA /* MenuTarget.swift in Sources */,
+				1399464C269730C100AD8CCA /* InfoViewController.swift in Sources */,
 				13FF6A15267568090043597D /* MainController.swift in Sources */,
 				13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */,
 				13FF6A13267568090043597D /* AppDelegate.swift in Sources */,

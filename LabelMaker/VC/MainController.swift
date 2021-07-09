@@ -18,6 +18,10 @@ class MainController: NSViewController {
         return nil
     }
     
+    var mainWindowController: MainWindowController? {
+        return self.view.window?.windowController as? MainWindowController
+    }
+    
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var scrollView: NSScrollView!
     

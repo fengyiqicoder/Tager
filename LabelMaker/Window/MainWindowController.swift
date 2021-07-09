@@ -27,7 +27,16 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var toolbar: NSToolbar!
     
     @IBAction func info(_ sender: NSToolbarItem) {
+        let popover = NSPopover()
+        popover.behavior = .semitransient
+        popover.animates = true
+        let button: NSButton = (sender.value(forKey: "button") as? NSButton)!
         
+        let vc = NSStoryboard(name: "Main", bundle: nil).instantiateController(identifier: "InfoViewController") as InfoViewController
+        popover.contentViewController = vc
+        popover.show(relativeTo: button.bounds,
+                     of: button,
+                     preferredEdge: .maxY)
     }
     
     @IBAction func add(_ sender: NSToolbarItem) {
