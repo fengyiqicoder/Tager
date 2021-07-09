@@ -26,7 +26,7 @@
 		13FF6A172675680A0043597D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FF6A162675680A0043597D /* Assets.xcassets */; };
 		13FF6A1A2675680A0043597D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FF6A182675680A0043597D /* Main.storyboard */; };
 		13FF6A292675681F0043597D /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A282675681F0043597D /* FinderSync.swift */; };
-		13FF6A2E2675681F0043597D /* Menu.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13FF6A262675681F0043597D /* Menu.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		13FF6A2E2675681F0043597D /* Tager Menu.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13FF6A262675681F0043597D /* Tager Menu.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		13FF6A342675AD790043597D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FF6A162675680A0043597D /* Assets.xcassets */; };
 		13FF6A362675AE2A0043597D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A352675AE2A0043597D /* Helper.swift */; };
 		13FF6A372675AE2D0043597D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A352675AE2A0043597D /* Helper.swift */; };
@@ -55,7 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				13FF6A2E2675681F0043597D /* Menu.appex in Embed App Extensions */,
+				13FF6A2E2675681F0043597D /* Tager Menu.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +81,7 @@
 		13FF6A192675680A0043597D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13FF6A1B2675680A0043597D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13FF6A1C2675680A0043597D /* LabelMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LabelMaker.entitlements; sourceTree = "<group>"; };
-		13FF6A262675681F0043597D /* Menu.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Menu.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		13FF6A262675681F0043597D /* Tager Menu.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tager Menu.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FF6A282675681F0043597D /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		13FF6A2A2675681F0043597D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13FF6A2B2675681F0043597D /* Menu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Menu.entitlements; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				13FF6A0F267568090043597D /* Tager.app */,
-				13FF6A262675681F0043597D /* Menu.appex */,
+				13FF6A262675681F0043597D /* Tager Menu.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,9 +239,9 @@
 			productReference = 13FF6A0F267568090043597D /* Tager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		13FF6A252675681F0043597D /* Menu */ = {
+		13FF6A252675681F0043597D /* Tager Menu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13FF6A2F2675681F0043597D /* Build configuration list for PBXNativeTarget "Menu" */;
+			buildConfigurationList = 13FF6A2F2675681F0043597D /* Build configuration list for PBXNativeTarget "Tager Menu" */;
 			buildPhases = (
 				13FF6A222675681F0043597D /* Sources */,
 				13FF6A232675681F0043597D /* Frameworks */,
@@ -251,9 +251,9 @@
 			);
 			dependencies = (
 			);
-			name = Menu;
+			name = "Tager Menu";
 			productName = Menu;
-			productReference = 13FF6A262675681F0043597D /* Menu.appex */;
+			productReference = 13FF6A262675681F0043597D /* Tager Menu.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -287,7 +287,7 @@
 			projectRoot = "";
 			targets = (
 				13FF6A0E267568090043597D /* Tager */,
-				13FF6A252675681F0043597D /* Menu */,
+				13FF6A252675681F0043597D /* Tager Menu */,
 			);
 		};
 /* End PBXProject section */
@@ -357,7 +357,7 @@
 /* Begin PBXTargetDependency section */
 		13FF6A2D2675681F0043597D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13FF6A252675681F0043597D /* Menu */;
+			target = 13FF6A252675681F0043597D /* Tager Menu */;
 			targetProxy = 13FF6A2C2675681F0043597D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -596,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13FF6A2F2675681F0043597D /* Build configuration list for PBXNativeTarget "Menu" */ = {
+		13FF6A2F2675681F0043597D /* Build configuration list for PBXNativeTarget "Tager Menu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13FF6A302675681F0043597D /* Debug */,

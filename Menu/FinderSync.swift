@@ -31,9 +31,8 @@ class FinderSync: FIFinderSync {
             menuItems.forEach { item in
                 menu.addItem(item)
             }
+            menu.addItem(withTitle: "clear icon", action: #selector(clearIcon), keyEquivalent: "")
         }
-
-        menu.addItem(withTitle: "clear icon", action: #selector(clearIcon), keyEquivalent: "")
         return menu
     }
     

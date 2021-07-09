@@ -1106,8 +1106,8 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4LG-Zb-ISU">
-                                <rect key="frame" x="125" y="146" width="124" height="19"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Check Tager.app" id="esI-G6-hE1">
+                                <rect key="frame" x="119" y="146" width="137" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Check Tager Menu" id="esI-G6-hE1">
                                     <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1162,9 +1162,9 @@
                                 <color key="borderColor" red="0.26665622" green="0.5599358082" blue="0.8078722358" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </box>
                             <box boxType="custom" cornerRadius="12" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="BOG-Hr-3aC">
-                                <rect key="frame" x="117" y="142" width="140" height="27"/>
+                                <rect key="frame" x="111" y="142" width="153" height="27"/>
                                 <view key="contentView" id="pjO-M8-e8L">
-                                    <rect key="frame" x="1" y="1" width="138" height="25"/>
+                                    <rect key="frame" x="1" y="1" width="151" height="25"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="borderColor" red="0.26665622" green="0.5599358082" blue="0.8078722358" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
