@@ -15,6 +15,8 @@
 		1399464626940F9900AD8CCA /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399464526940F9900AD8CCA /* Symbols.swift */; };
 		139946482695519C00AD8CCA /* MenuTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139946472695519C00AD8CCA /* MenuTarget.swift */; };
 		1399464C269730C100AD8CCA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399464B269730C100AD8CCA /* InfoViewController.swift */; };
+		1399464E2699547F00AD8CCA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399464D2699547F00AD8CCA /* TextField.swift */; };
+		1399465026995D8D00AD8CCA /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399464F26995D8D00AD8CCA /* LaunchController.swift */; };
 		13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B5EB69267F372F0018D717 /* IconModelController.swift */; };
 		13D11A6C2680701B00182F58 /* IconEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D11A6B2680701B00182F58 /* IconEditorViewController.swift */; };
 		13E57C382684438800EBD74F /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A402675FE580043597D /* IconModel.swift */; };
@@ -28,8 +30,6 @@
 		13FF6A292675681F0043597D /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A282675681F0043597D /* FinderSync.swift */; };
 		13FF6A2E2675681F0043597D /* Tager Menu.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 13FF6A262675681F0043597D /* Tager Menu.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		13FF6A342675AD790043597D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FF6A162675680A0043597D /* Assets.xcassets */; };
-		13FF6A362675AE2A0043597D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A352675AE2A0043597D /* Helper.swift */; };
-		13FF6A372675AE2D0043597D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A352675AE2A0043597D /* Helper.swift */; };
 		13FF6A392675AE570043597D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A382675AE570043597D /* Storage.swift */; };
 		13FF6A3A2675AE5B0043597D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A382675AE570043597D /* Storage.swift */; };
 		13FF6A3E2675E45E0043597D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A3D2675E45E0043597D /* MainWindowController.swift */; };
@@ -71,6 +71,8 @@
 		1399464526940F9900AD8CCA /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		139946472695519C00AD8CCA /* MenuTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTarget.swift; sourceTree = "<group>"; };
 		1399464B269730C100AD8CCA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		1399464D2699547F00AD8CCA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		1399464F26995D8D00AD8CCA /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		13B5EB69267F372F0018D717 /* IconModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModelController.swift; sourceTree = "<group>"; };
 		13D11A6B2680701B00182F58 /* IconEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconEditorViewController.swift; sourceTree = "<group>"; };
 		13E57C392684489B00EBD74F /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
@@ -85,7 +87,6 @@
 		13FF6A282675681F0043597D /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		13FF6A2A2675681F0043597D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13FF6A2B2675681F0043597D /* Menu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Menu.entitlements; sourceTree = "<group>"; };
-		13FF6A352675AE2A0043597D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		13FF6A382675AE570043597D /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		13FF6A3D2675E45E0043597D /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		13FF6A402675FE580043597D /* IconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
@@ -115,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				139945EC268EB14700AD8CCA /* ViewSnaper.swift */,
+				1399464F26995D8D00AD8CCA /* LaunchController.swift */,
 				139946472695519C00AD8CCA /* MenuTarget.swift */,
 				139945EE268EBEF600AD8CCA /* MaxiumFontLabel.swift */,
 				1399464526940F9900AD8CCA /* Symbols.swift */,
@@ -169,7 +171,6 @@
 		13FF6A3B2675AE6A0043597D /* AppGroup */ = {
 			isa = PBXGroup;
 			children = (
-				13FF6A352675AE2A0043597D /* Helper.swift */,
 				13FF6A382675AE570043597D /* Storage.swift */,
 				13FF6A162675680A0043597D /* Assets.xcassets */,
 			);
@@ -210,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				1399462E2692F88A00AD8CCA /* SymbolItem.swift */,
+				1399464D2699547F00AD8CCA /* TextField.swift */,
 				139946302692F92100AD8CCA /* SymbolItem.xib */,
 				13FF6A4326765EDE0043597D /* IconItems.swift */,
 				13FF6A4626765F460043597D /* IconItem.xib */,
@@ -325,6 +327,7 @@
 				13FF6A4426765EDE0043597D /* IconItems.swift in Sources */,
 				139945ED268EB14700AD8CCA /* ViewSnaper.swift in Sources */,
 				1399462F2692F88A00AD8CCA /* SymbolItem.swift in Sources */,
+				1399464E2699547F00AD8CCA /* TextField.swift in Sources */,
 				13E57C3A2684489B00EBD74F /* IconImage.swift in Sources */,
 				139946482695519C00AD8CCA /* MenuTarget.swift in Sources */,
 				1399464C269730C100AD8CCA /* InfoViewController.swift in Sources */,
@@ -333,8 +336,8 @@
 				13FF6A13267568090043597D /* AppDelegate.swift in Sources */,
 				139945EF268EBEF600AD8CCA /* MaxiumFontLabel.swift in Sources */,
 				13FF6A412675FE580043597D /* IconModel.swift in Sources */,
-				13FF6A362675AE2A0043597D /* Helper.swift in Sources */,
 				13FF6A392675AE570043597D /* Storage.swift in Sources */,
+				1399465026995D8D00AD8CCA /* LaunchController.swift in Sources */,
 				13FF6A3E2675E45E0043597D /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +351,6 @@
 				13FF6A292675681F0043597D /* FinderSync.swift in Sources */,
 				13E57C3B2684489B00EBD74F /* IconImage.swift in Sources */,
 				13FF6A3A2675AE5B0043597D /* Storage.swift in Sources */,
-				13FF6A372675AE2D0043597D /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

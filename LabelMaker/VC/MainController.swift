@@ -64,10 +64,10 @@ class MainController: NSViewController {
     
     func addNewIcon() {
         model.iconModels.append(IconModel.defualt)
-        reloadIcons()
+        reload()
     }
     
-    func reloadIcons() {
+    func reload() {
         collectionView.reloadData()
         (self.view.window?.windowController as? MainWindowController)?.updateTitle()
     }
@@ -122,7 +122,7 @@ extension MainController: IconItemDelegate {
         let iconModel = model.iconModels[iconItemIndex]
         model.delete(model: iconModel)
         
-        reloadIcons()
+        reload()
     }
     
     func didTop(item: IconItem) {
@@ -131,7 +131,7 @@ extension MainController: IconItemDelegate {
         let iconModel = model.iconModels[iconItemIndex]
         model.top(model: iconModel)
         
-        reloadIcons()
+        reload()
     }
     
     

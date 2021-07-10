@@ -35,8 +35,8 @@ class IconEditorWindowController: NSWindowController {
 class IconEditorViewController: NSViewController {
     //MARK: - Properties
     @IBOutlet weak var imageView: NSImageView!
-    @IBOutlet weak var nameTextField: NSTextField!
-    @IBOutlet weak var markerTextField: NSTextField!
+    @IBOutlet weak var nameTextField: TextField!
+    @IBOutlet weak var markerTextField: TextField!
     @IBOutlet weak var markerTypeSwitch: NSSegmentedControl!
     
     var uuid: String!
@@ -138,8 +138,10 @@ class IconEditorViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameTextField.delegate = self
-        markerTextField.delegate = self
+        nameTextField.tag = 0
+        markerTextField.tag = 1
+        nameTextField.customDelegate = self
+        markerTextField.customDelegate = self
     }
     
     override func viewDidDisappear() {
@@ -218,17 +220,18 @@ class IconEditorViewController: NSViewController {
 
 }
 
-extension IconEditorViewController: NSTextFieldDelegate {
-    
-    func controlTextDidChange(_ obj: Notification) {
-        //FIXME: 名称textfield会触发这个
-        setMarker(string: model.markerStr ?? "nil")
+extension IconEditorViewController: TextFieldDelegate {
+    func textFieldDidChange(textField: NSTextField) {
+        //Meaning textField is marker
+        if textField.tag == 1 {
+            setMarker(string: model.markerStr ?? "nil")
+        }
         save()
     }
     
     func save() {
         IconModelController.shared.save(model: model)
-        MainController.shared.reloadIcons()
+        MainController.shared.reload()
     }
 }
 
