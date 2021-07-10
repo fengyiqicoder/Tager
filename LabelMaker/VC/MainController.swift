@@ -45,6 +45,11 @@ class MainController: NSViewController {
 //        }
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        Symbols.shared.initGroups()
+    }
+    
     override func viewDidDisappear() {
         super.viewDidDisappear()
         NSApp.terminate(nil)

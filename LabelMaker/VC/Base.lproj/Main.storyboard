@@ -659,10 +659,10 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-h5-jbw">
-                                <rect key="frame" x="17" y="429" width="76" height="25"/>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-h5-jbw">
+                                <rect key="frame" x="17" y="429" width="88" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="All" bezelStyle="rounded" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="prQ-Lz-fTt" id="whl-69-a9p">
+                                <popUpButtonCell key="cell" type="push" title="All" bezelStyle="rounded" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="prQ-Lz-fTt" id="whl-69-a9p">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ahr-le-zTS">
@@ -948,8 +948,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TagerIcon" width="512" height="512"/>
-        <image name="folderIcon" width="512" height="512"/>
+        <image name="TagerIcon" width="256" height="256"/>
+        <image name="folderIcon" width="256" height="256"/>
         <image name="info.circle" catalog="system" width="19" height="19"/>
         <image name="plus" catalog="system" width="17" height="16"/>
         <image name="rectangle.grid.2x2" catalog="system" width="18" height="14"/>
