@@ -19,8 +19,8 @@ class FinderSync: FIFinderSync {
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
-        let menu = NSMenu()
         if menuKind == .contextualMenuForItems {
+            let menu = NSMenu()
             let menuItems = IconModelController.shared.iconModels.enumerated().map { (order, model) -> NSMenuItem in
                 let menuItem = NSMenuItem(title: model.name, action: #selector(changeIcon(item:)), keyEquivalent: "")
                 menuItem.toolTip = model.uuid
@@ -31,9 +31,18 @@ class FinderSync: FIFinderSync {
             menuItems.forEach { item in
                 menu.addItem(item)
             }
-            menu.addItem(withTitle: "clear icon", action: #selector(clearIcon), keyEquivalent: "")
+            menu.addItem(withTitle: "Clear Tager Icon", action: #selector(clearIcon), keyEquivalent: "")
+            
+            //FIXME: 2.0 Feature
+//            let fatherMenu = NSMenu()
+//            let fatherItem = NSMenuItem(title: "Change to Tager Icon", action: nil, keyEquivalent: "")
+//            fatherMenu.addItem(fatherItem)
+//            fatherMenu.setSubmenu(menu, for: fatherItem)
+//            return fatherMenu
+            return menu
         }
-        return menu
+        
+        return NSMenu()
     }
     
     @objc
