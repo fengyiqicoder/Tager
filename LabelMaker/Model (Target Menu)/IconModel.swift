@@ -68,7 +68,7 @@ struct IconModel: Codable {
     static var standardInitModels: [IconModel] {
         return [
             IconModel(uuid: UUID().uuidString, name: "File", markerStr: "File", image: NSImage(named: "DefualtFileIcon")!, color: .white),
-            IconModel(uuid: UUID().uuidString, name: "Code", symbolStr: "terminal.fill", image: NSImage(named: "DefualtCodeIcon")!, color: .black),
+            IconModel(uuid: UUID().uuidString, name: "Code", symbolStr: "terminal.fill", image: NSImage(named: "DefualtCodeIcon")!, color: .white),
             IconModel(uuid: UUID().uuidString, name: "Video", markerStr: "🎬", image: NSImage(named: "DefualtVideoIcon")!, color: .white),
         ]
     }

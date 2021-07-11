@@ -16,7 +16,6 @@ class IconImage: Codable {
     private let uuid: String
     
     private var imageURL: URL {
-//        var url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
         var url = FileManager().containerURL(forSecurityApplicationGroupIdentifier: appGroupSuitName)!
         url.appendPathComponent(self.uuid)
         return url

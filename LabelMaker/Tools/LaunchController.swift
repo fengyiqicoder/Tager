@@ -11,11 +11,10 @@ class LaunchController {
     static var shared = LaunchController()
     
     func checkFistTimeLaunch() -> Bool {
-        return true
         if firstTimeLaunch {
+            firstTimeLaunch = false
             return true
         } else {
-            firstTimeLaunch = true
             return false
         }
     }
