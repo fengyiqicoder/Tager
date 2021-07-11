@@ -19,8 +19,8 @@ class MainWindowController: NSWindowController {
     }
     
     func updateTitle() {
-        window?.title = "Tager's Icons" //图标库
-        window?.subtitle = "\(IconModelController.shared.iconModels.count) icons"
+        window?.title = "Tager's Icons".localize //图标库
+        window?.subtitle = "\(IconModelController.shared.iconModels.count) " + "icons".localize
     }
     
     @IBOutlet weak var infoItem: NSToolbarItem!

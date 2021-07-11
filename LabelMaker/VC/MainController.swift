@@ -29,7 +29,6 @@ class MainController: NSViewController {
         super.viewDidLoad()
 //        IconModelController.shared.iconModels.removeAll()
         
-        //FIXME: Show it in first time launch
         if LaunchController.shared.checkFistTimeLaunch() {
             InfoViewController.showAsWindow()
             IconModelController.shared.initLanuch()

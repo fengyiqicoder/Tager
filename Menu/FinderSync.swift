@@ -31,7 +31,7 @@ class FinderSync: FIFinderSync {
             menuItems.forEach { item in
                 menu.addItem(item)
             }
-            menu.addItem(withTitle: "Clear Tager Icon", action: #selector(clearIcon), keyEquivalent: "")
+            menu.addItem(withTitle: "Clear Tager Icon".localize, action: #selector(clearIcon), keyEquivalent: "")
             
             //FIXME: 2.0 Feature
 //            let fatherMenu = NSMenu()

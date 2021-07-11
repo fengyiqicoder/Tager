@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  LabelMaker
+
+  Created by Edmund Feng on 2021/7/11.
+  
+*/
+
+"Clear Tager Icon" = "Clear Tager Icon";
+
+"Tager's Icons" = "Tager's Icons";
+
+"icons" = "icons";
+
+"Delete" = "Delete";
+
+"Top" = "Top";
+
+"All" = "All";
+"Communication" = "Communication";
+"Weather" = "Weather";
+"ObjectsTools" = "ObjectsTools";
+"Devices" = "Devices";
+"Gaming" = "Gaming";
+"Connectivity" = "Connectivity";
+"Transportation" = "Transportation";
+"Human" = "Human";
+"Nature" = "Nature";
+"Editing" = "Editing";
+"TextFormatting" = "TextFormatting";
+"Media" = "Media";
+"Keyboard" = "Keyboard";
+"Commerce" = "Commerce";
+"Time" = "Time";
+"Health" = "Health";
+"Shapes" = "Shapes";
+"Arrows" = "Arrows";
+"Indices" = "Indices";

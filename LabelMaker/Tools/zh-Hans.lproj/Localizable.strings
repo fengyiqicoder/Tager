@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  LabelMaker
+
+  Created by Edmund Feng on 2021/7/11.
+  
+*/
+
+"Clear Tager Icon" = "清除 Tager 图标";
+
+"Tager's Icons" = "Tager 的图标库";
+
+"icons" = "个图标";
+
+"Delete" = "删除";
+
+"Top" = "置顶";
+
+"All" = "全部";
+"Communication" = "交流";
+"Weather" = "天气";
+"ObjectsTools" = "物体";
+"Devices" = "设备";
+"Gaming" = "游戏";
+"Connectivity" = "连结";
+"Transportation" = "交通";
+"Human" = "用户";
+"Nature" = "自然";
+"Editing" = "编辑";
+"TextFormatting" = "格式";
+"Media" = "媒体";
+"Keyboard" = "键盘";
+"Commerce" = "商业";
+"Time" = "时间";
+"Health" = "健康";
+"Shapes" = "形状";
+"Arrows" = "箭头";
+"Indices" = "骰子";
+"Math" = "数学";

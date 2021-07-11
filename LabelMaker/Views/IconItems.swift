@@ -15,7 +15,7 @@ class IconItem: NSCollectionViewItem {
         }
     }
     weak var delegate: IconItemDelegate!
-    var text: String = "defualt"
+    var text: String = ""
     
     @IBOutlet weak var label: NSTextField!
     @IBOutlet weak var image: NSImageView!
@@ -35,8 +35,8 @@ class IconItem: NSCollectionViewItem {
     override func rightMouseDown(with event: NSEvent) {
         let menu = NSMenu()
          
-        menu.addItem(withTitle: "Delete", action: #selector(deleteItem), keyEquivalent: "")
-        menu.addItem(withTitle: "Top", action: #selector(topItem), keyEquivalent: "")
+        menu.addItem(withTitle: "Delete".localize, action: #selector(deleteItem), keyEquivalent: "")
+        menu.addItem(withTitle: "Top".localize, action: #selector(topItem), keyEquivalent: "")
 
         NSMenu.popUpContextMenu(menu, with: event, for: self.view)
     }
