@@ -10,6 +10,10 @@ import Foundation
 class IconModelController {
     static var shared = IconModelController()
     
+    func initLanuch() {
+        iconModels = IconModel.standardInitModels
+    }
+    
     var iconModels: [IconModel] {
         set {
             guard let newData = try? JSONEncoder().encode(newValue) else { return }

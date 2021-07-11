@@ -29,6 +29,12 @@ class MainController: NSViewController {
         super.viewDidLoad()
 //        IconModelController.shared.iconModels.removeAll()
         
+        //FIXME: Show it in first time launch
+        if LaunchController.shared.checkFistTimeLaunch() {
+            InfoViewController.showAsWindow()
+            IconModelController.shared.initLanuch()
+        }
+        
         let flowLayout = NSCollectionViewGridLayout()
         flowLayout.minimumItemSize = NSSize(width: 160.0, height: 210.0)
         flowLayout.minimumInteritemSpacing = 10.0
@@ -39,10 +45,6 @@ class MainController: NSViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-//        model.iconModels.forEach { model in
-//            print(model.image.size)
-//        }
     }
     
     override func viewDidAppear() {
@@ -50,11 +52,6 @@ class MainController: NSViewController {
         Symbols.shared.initGroups()
     }
     
-    override func viewDidDisappear() {
-        super.viewDidDisappear()
-        NSApp.terminate(nil)
-    }
-
     func deselect(id: String) {
         model.iconModels.enumerated().forEach { (order, itemModel) in
             if itemModel.uuid == id {

@@ -7,10 +7,11 @@
 
 import AppKit
 
-class LanuchController {
-    static var shared = LanuchController()
+class LaunchController {
+    static var shared = LaunchController()
     
     func checkFistTimeLaunch() -> Bool {
+        return true
         if firstTimeLaunch {
             return true
         } else {
@@ -21,7 +22,7 @@ class LanuchController {
     
     private var firstTimeLaunch: Bool {
         get {
-            UserDefaults.standard.object(forKey: "firstTime") as? Bool ?? false
+            UserDefaults.standard.object(forKey: "firstTime") as? Bool ?? true
         }
         set {
             UserDefaults.standard.setValue(newValue, forKey: "firstTime")

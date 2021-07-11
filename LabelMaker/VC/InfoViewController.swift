@@ -10,7 +10,12 @@ import AppKit
 class InfoViewController: NSViewController {
         
     static func showAsWindow() {
-        //FIXME: Show it in first time launch
+        let vc = NSStoryboard(name: "Main", bundle: nil).instantiateController(identifier: "InfoViewController") as InfoViewController
+
+        let window = NSWindow(contentViewController: vc)
+        let windowController = NSWindowController(window: window)
+        
+        windowController.showWindow(nil)
     }
     
     override func viewDidLoad() {
