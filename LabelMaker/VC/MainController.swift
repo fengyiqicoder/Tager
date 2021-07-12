@@ -49,6 +49,7 @@ class MainController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         Symbols.shared.initGroups()
+        view.window?.delegate = self
     }
     
     func deselect(id: String) {
@@ -136,4 +137,11 @@ extension MainController: IconItemDelegate {
     }
     
     
+}
+
+extension MainController: NSWindowDelegate {
+    
+    func windowWillClose(_ notification: Notification) {
+        NSApp.terminate(nil)
+    }
 }
