@@ -4,7 +4,8 @@
 //
 //  Created by Edmund Feng on 2021/7/13.
 //
-
+// https://developer.apple.com/forums/thread/66259?answerId=278355022#278355022
+// https://stackoverflow.com/questions/37897118/using-security-scoped-bookmark-in-finder-sync-extension-with-app-group-userdefau?rq=1
 import AppKit
 
 class SandBoxController {
