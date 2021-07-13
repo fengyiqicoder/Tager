@@ -65,8 +65,9 @@ class MainController: NSViewController {
     }
     
     func addNewIcon() {
-        model.iconModels.append(IconModel.defualt)
-        reload()
+        NSWorkspace.shared.setIcon(NSImage(named: "DefualtVideoIcon")!, forFile: "/Users/fengyq/Desktop/untitled")
+//        model.iconModels.append(IconModel.defualt)
+//        reload()
     }
     
     func reload() {

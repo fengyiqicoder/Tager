@@ -19,6 +19,7 @@ class FinderSync: FIFinderSync {
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
+        
         if menuKind == .contextualMenuForItems {
             let menu = NSMenu()
             let menuItems = IconModelController.shared.iconModels.enumerated().map { (order, model) -> NSMenuItem in
@@ -47,6 +48,7 @@ class FinderSync: FIFinderSync {
     
     @objc
     func changeIcon(item: NSMenuItem) {
+        SandBoxController.shared.getAccess()
         let model = IconModelController.shared.iconModels[item.tag]
         FIFinderSyncController.default().selectedItemURLs()?.forEach({ url in
             NSWorkspace.shared.setIcon(model.image, forFile: url.path)
@@ -56,6 +58,7 @@ class FinderSync: FIFinderSync {
     
     @objc
     func clearIcon(_ sender: AnyObject?) {
+        SandBoxController.shared.getAccess()
         FIFinderSyncController.default().selectedItemURLs()?.forEach({ url in
             NSWorkspace.shared.setIcon(nil, forFile: url.path)
         })

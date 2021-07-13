@@ -18,10 +18,19 @@ class InfoViewController: NSViewController {
         windowController.showWindow(nil)
     }
     
+    @IBOutlet weak var authorizeButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    
+    @IBAction func authorize(_ sender: NSButton) {
+        //BookMark shit
+        SandBoxController.shared.openChooseFoldPanel()
+    }
+    
+    
     @IBAction func done(_ sender: NSButton) {
         dismissPopover()
     }
