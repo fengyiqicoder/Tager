@@ -25,7 +25,7 @@ class InfoViewController: NSViewController {
     }
     
     func reloadAuthorizeState()  {
-        authorizeButton.isEnabled = !SandBoxController.shared.hasAccess
+//        authorizeButton.isEnabled = !SandBoxController.shared.hasAccess
         authorizeButton.image = SandBoxController.shared.hasAccess ? NSImage(systemSymbolName: "checkmark.circle", accessibilityDescription: nil) : NSImage(systemSymbolName: "folder", accessibilityDescription: nil)
     }
     
