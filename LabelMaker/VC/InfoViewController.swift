@@ -21,12 +21,22 @@ class InfoViewController: NSViewController {
     @IBOutlet weak var authorizeButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
         reloadAuthorizeState()
     }
     
     func reloadAuthorizeState()  {
-//        authorizeButton.isEnabled = !SandBoxController.shared.hasAccess
+        let hasAccess = SandBoxController.shared.hasAccess
+        authorizeButton.isEnabled = !SandBoxController.shared.hasAccess
         authorizeButton.image = SandBoxController.shared.hasAccess ? NSImage(systemSymbolName: "checkmark.circle", accessibilityDescription: nil) : NSImage(systemSymbolName: "folder", accessibilityDescription: nil)
+        if let window = self.view.window {
+            var frame = window.frame
+            frame.set(height: hasAccess ? 597 : 280)
+            window.setFrame(frame, display: true, animate: true)
+        }
     }
     
     
@@ -43,4 +53,13 @@ class InfoViewController: NSViewController {
         dismissPopover()
     }
     
+}
+
+extension CGRect {
+    mutating func set(height: CGFloat) {
+        let oldHeight = self.size.height
+        self.size.height = height
+        let gap = oldHeight - height
+        self.origin.y += gap
+    }
 }
