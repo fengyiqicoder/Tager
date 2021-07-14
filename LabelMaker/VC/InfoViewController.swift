@@ -21,13 +21,21 @@ class InfoViewController: NSViewController {
     @IBOutlet weak var authorizeButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        reloadAuthorizeState()
+    }
+    
+    func reloadAuthorizeState()  {
+        authorizeButton.isEnabled = !SandBoxController.shared.hasAccess
+        authorizeButton.image = SandBoxController.shared.hasAccess ? NSImage(systemSymbolName: "checkmark.circle", accessibilityDescription: nil) : NSImage(systemSymbolName: "folder", accessibilityDescription: nil)
     }
     
     
     @IBAction func authorize(_ sender: NSButton) {
         //BookMark shit
-        SandBoxController.shared.openChooseFoldPanel()
+        SandBoxController.shared.openChooseFoldPanel {
+            self.reloadAuthorizeState()
+            MainController.shared.reloadAccessState()
+        }
     }
     
     

@@ -22,12 +22,13 @@ class MainController: NSViewController {
         return self.view.window?.windowController as? MainWindowController
     }
     
+    @IBOutlet weak var accessBlockView: NSVisualEffectView!
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var scrollView: NSScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Current ")
+//        print("Access url \(SandBoxController.shared.accessableURL)")
 //        IconModelController.shared.iconModels.removeAll()
         
         if LaunchController.shared.checkFistTimeLaunch() {
@@ -45,12 +46,18 @@ class MainController: NSViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        reloadAccessState()
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         Symbols.shared.initGroups()
         view.window?.delegate = self
+    }
+    
+    func reloadAccessState() {
+        accessBlockView.isHidden = SandBoxController.shared.hasAccess
     }
     
     func deselect(id: String) {
@@ -66,9 +73,8 @@ class MainController: NSViewController {
     }
     
     func addNewIcon() {
-        NSWorkspace.shared.setIcon(NSImage(named: "DefualtVideoIcon")!, forFile: "/Users/fengyq/Desktop/untitled")
-//        model.iconModels.append(IconModel.defualt)
-//        reload()
+        model.iconModels.append(IconModel.defualt)
+        reload()
     }
     
     func reload() {

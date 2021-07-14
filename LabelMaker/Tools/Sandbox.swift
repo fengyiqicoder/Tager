@@ -13,32 +13,42 @@ class SandBoxController {
     
     static let shared = SandBoxController()
     
-    func openChooseFoldPanel() {
+    func openChooseFoldPanel(handler: (()->Void)? = nil ) {
         let openPanel = NSOpenPanel()
+        openPanel.directoryURL = URL(fileURLWithPath: "/")
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = true
         openPanel.canChooseFiles = false
-        openPanel.message = "Choose home folder"
+        openPanel.message = "Click Open Button".localize
         openPanel.begin { (result) -> Void in
             if result == NSApplication.ModalResponse.OK {
-                
                 guard let url = openPanel.urls.first else { return }
+                //using .minimalBookmark to make it work in extension
+                //it do not have any app scope so it can't work on the app itself
                 let data = try! url.bookmarkData(options: [.minimalBookmark], includingResourceValuesForKeys: nil, relativeTo: nil)
                 self.bookmarkData = data
-                self.getAccess()
+                self.accessableURL = url.path
+                
+                handler?()
             }
         }
     }
     
+    //Only used in Extension
     func getAccess() {
         restoreBookmark()
     }
     
+    var hasAccess: Bool { accessableURL == "/" }
+    
     var accessableURL: String? {
-        guard let data = bookmarkData else { return nil }
-        let url = try? NSURL(resolvingBookmarkData: data, options: URL.BookmarkResolutionOptions.withSecurityScope, relativeTo: nil, bookmarkDataIsStale: nil)
-        return url?.path
+        set {
+            UserDefaults.appGroup.setValue(newValue, forKey: "accessableURL")
+        }
+        get {
+            (UserDefaults.appGroup.object(forKey: "accessableURL") as? String)
+        }
     }
     
     private var bookmarkData: Data? {
@@ -80,96 +90,3 @@ class SandBoxController {
     }
     
 }
-
-//var bookmarks = [URL: Data]()
-//
-//func openFolderSelection() -> URL? {
-//    let openPanel = NSOpenPanel()
-//    openPanel.allowsMultipleSelection = false
-//    openPanel.canChooseDirectories = true
-//    openPanel.canCreateDirectories = true
-//    openPanel.canChooseFiles = false
-//    openPanel.begin
-//    { (result) -> Void in
-//        if result.rawValue == NSApplication.ModalResponse.OK.rawValue
-//        {
-//            let url = openPanel.url
-//            storeFolderInBookmark(url: url!)
-//        }
-//    }
-//    return openPanel.url
-//}
-//
-//func saveBookmarksData() {
-//    let data = try? NSKeyedArchiver.archivedData(withRootObject: bookmarks, requiringSecureCoding: false)
-//    UserDefaults.appGroup.setValue(data, forKey: "bookmark")
-//}
-//
-//func getBookmarkData() -> [URL: Data] {
-//    let data = UserDefaults.appGroup.object(forKey: "bookmark") as! Data
-//    let bookmark = try! NSKeyedUnarchiver.unarchivedDictionary(ofKeyClass: URL.self, objectClass: Data.self, from: data)
-//    return bookmark
-//
-//}
-//
-//func storeFolderInBookmark(url: URL) {
-//    do
-//    {
-//        let data = try url.bookmarkData(options: NSURL.BookmarkCreationOptions.withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
-//        bookmarks[url] = data
-//    }
-//    catch
-//    {
-//        Swift.print ("Error storing bookmarks")
-//    }
-//
-//}
-//
-////func getBookmarkPath() -> URL {
-////    var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
-////    url = url.appendingPathComponent("Bookmarks.dict")
-////    return url
-////}
-//
-//func loadBookmarks() {
-//    let path = getBookmarkPath()
-////    bookmarks = NSKeyedUnarchiver.unarchiveObject(withFile: path) as! [URL: Data]
-//
-//    for bookmark in bookmarks
-//    {
-//        restoreBookmark(bookmark)
-//    }
-//}
-//
-//
-//
-//func restoreBookmark(_ bookmark: (key: URL, value: Data)) {
-//    let restoredUrl: URL?
-//    var isStale = false
-//
-//    Swift.print ("Restoring \\(bookmark.key)")
-//    do
-//    {
-//        restoredUrl = try URL.init(resolvingBookmarkData: bookmark.value, options: NSURL.BookmarkResolutionOptions.withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isStale)
-//    }
-//    catch
-//    {
-//        Swift.print ("Error restoring bookmarks")
-//        restoredUrl = nil
-//    }
-//
-//    if let url = restoredUrl
-//    {
-//        if isStale
-//        {
-//            Swift.print ("URL is stale")
-//        }
-//        else
-//        {
-//            if !url.startAccessingSecurityScopedResource()
-//            {
-//                Swift.print ("Couldn't access: \\(url.path)")
-//            }
-//        }
-//    }
-//}

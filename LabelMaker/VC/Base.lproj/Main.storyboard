@@ -845,8 +845,8 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gjO-kY-jer">
-                                <rect key="frame" x="97" y="364" width="182" height="32"/>
-                                <buttonCell key="cell" type="push" title="Authorize Permission" bezelStyle="rounded" image="folder" catalog="system" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w8p-Yq-61F">
+                                <rect key="frame" x="113" y="364" width="150" height="32"/>
+                                <buttonCell key="cell" type="push" title="Authorize Tager" bezelStyle="rounded" image="folder" catalog="system" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w8p-Yq-61F">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -964,15 +964,47 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <visualEffectView hidden="YES" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SmU-sV-ekg">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="399"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mRg-Uu-Ngk">
+                                        <rect key="frame" x="106" y="190" width="269" height="19"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Check 􀅴 button to Give Authorization " id="C1B-VQ-LmV">
+                                            <font key="font" textStyle="title3" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ubM-kr-cRs">
+                                        <rect key="frame" x="142" y="217" width="196" height="19"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Oh no! Tager is not working " id="Ecu-Z5-f6h">
+                                            <font key="font" textStyle="title3" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ubM-kr-cRs" firstAttribute="centerX" secondItem="mRg-Uu-Ngk" secondAttribute="centerX" id="LcD-qV-z7w"/>
+                                    <constraint firstItem="mRg-Uu-Ngk" firstAttribute="centerX" secondItem="SmU-sV-ekg" secondAttribute="centerX" id="Mgl-2F-SAW"/>
+                                    <constraint firstItem="mRg-Uu-Ngk" firstAttribute="centerY" secondItem="SmU-sV-ekg" secondAttribute="centerY" id="YHd-cI-cjm"/>
+                                    <constraint firstItem="mRg-Uu-Ngk" firstAttribute="top" secondItem="ubM-kr-cRs" secondAttribute="bottom" constant="8" symbolic="YES" id="hO1-pH-Mxa"/>
+                                </constraints>
+                            </visualEffectView>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SmU-sV-ekg" secondAttribute="trailing" id="2xf-BN-T8I"/>
+                            <constraint firstItem="SmU-sV-ekg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="DDv-oJ-1Uv"/>
+                            <constraint firstItem="SmU-sV-ekg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Mys-hP-2JU"/>
                             <constraint firstAttribute="bottom" secondItem="jFD-Zd-XA8" secondAttribute="bottom" id="RsV-XF-Tte"/>
                             <constraint firstItem="jFD-Zd-XA8" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="cmC-VX-t5i"/>
                             <constraint firstItem="jFD-Zd-XA8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="da3-pW-6QN"/>
+                            <constraint firstAttribute="bottom" secondItem="SmU-sV-ekg" secondAttribute="bottom" id="gMr-wL-UhN"/>
                             <constraint firstAttribute="trailing" secondItem="jFD-Zd-XA8" secondAttribute="trailing" id="wPH-6l-1OV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accessBlockView" destination="SmU-sV-ekg" id="eTu-sD-QQe"/>
                         <outlet property="collectionView" destination="oCB-xO-kKj" id="4LW-A5-4Po"/>
                         <outlet property="scrollView" destination="jFD-Zd-XA8" id="lUD-ds-ROo"/>
                     </connections>
