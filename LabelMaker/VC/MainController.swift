@@ -27,6 +27,7 @@ class MainController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Current ")
 //        IconModelController.shared.iconModels.removeAll()
         
         if LaunchController.shared.checkFistTimeLaunch() {

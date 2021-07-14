@@ -6,6 +6,7 @@
 //
 // https://developer.apple.com/forums/thread/66259?answerId=278355022#278355022
 // https://stackoverflow.com/questions/37897118/using-security-scoped-bookmark-in-finder-sync-extension-with-app-group-userdefau?rq=1
+
 import AppKit
 
 class SandBoxController {
@@ -18,12 +19,12 @@ class SandBoxController {
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = true
         openPanel.canChooseFiles = false
-        openPanel.message = "Choose fengyq folder"
+        openPanel.message = "Choose home folder"
         openPanel.begin { (result) -> Void in
             if result == NSApplication.ModalResponse.OK {
                 
                 guard let url = openPanel.urls.first else { return }
-                let data = try! url.bookmarkData(options: [.withSecurityScope], includingResourceValuesForKeys: nil, relativeTo: nil)
+                let data = try! url.bookmarkData(options: [.minimalBookmark], includingResourceValuesForKeys: nil, relativeTo: nil)
                 self.bookmarkData = data
                 self.getAccess()
             }
@@ -34,8 +35,13 @@ class SandBoxController {
         restoreBookmark()
     }
     
+    var accessableURL: String? {
+        guard let data = bookmarkData else { return nil }
+        let url = try? NSURL(resolvingBookmarkData: data, options: URL.BookmarkResolutionOptions.withSecurityScope, relativeTo: nil, bookmarkDataIsStale: nil)
+        return url?.path
+    }
     
-    var bookmarkData: Data? {
+    private var bookmarkData: Data? {
         set {
             UserDefaults.appGroup.setValue(newValue, forKey: "bookmark")
         }
@@ -44,7 +50,7 @@ class SandBoxController {
         }
     }
     
-    func restoreBookmark() {
+    private func restoreBookmark() {
         guard let bookmarkData = bookmarkData else {
             print("Bookmarkdata nil")
             return
@@ -62,15 +68,13 @@ class SandBoxController {
           }
           
           if !url.startAccessingSecurityScopedResource(){
-//            alert("Failed to access sandbox files")
+            print("Failed to access sandbox files")
           }
           
           print("Started accessing")
-//          return true
           
         } catch {
-//          alert(error.localizedDescription)
-//          return false
+          print(error.localizedDescription)
         }
 
     }
