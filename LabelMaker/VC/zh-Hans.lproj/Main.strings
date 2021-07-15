@@ -90,13 +90,13 @@
 "Mhx-nK-16m.title" = "选择一个符号";
 
 /* Class = "NSTextFieldCell"; title = "Extenstions"; ObjectID = "NHm-ep-Ce3"; */
-"NHm-ep-Ce3.title" = "插件";
+"NHm-ep-Ce3.title" = "扩展";
 
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
 "NMo-om-nkz.title" = "Services";
 
 /* Class = "NSTextFieldCell"; title = "\"Finder\" Extenstions"; ObjectID = "OIa-bh-dCN"; */
-"OIa-bh-dCN.title" = "\"访达\" 插件";
+"OIa-bh-dCN.title" = "\"访达\" 扩展";
 
 /* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "OwM-mh-QMV"; */
 "OwM-mh-QMV.title" = "Find Previous";
@@ -292,7 +292,7 @@
 
 "Ecu-Z5-f6h.title" = "Oh no！Tager暂时无法使用";
 
-"C1B-VQ-LmV.title" = "点击􀅴按钮给予权限";
+"C1B-VQ-LmV.title" = "点击右上角 i 按钮给予权限";
 
 "iji-gc-1S8.title" = "第一步";
 

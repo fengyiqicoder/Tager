@@ -34,7 +34,7 @@ class InfoViewController: NSViewController {
         authorizeButton.image = SandBoxController.shared.hasAccess ? NSImage(systemSymbolName: "checkmark.circle", accessibilityDescription: nil) : NSImage(systemSymbolName: "folder", accessibilityDescription: nil)
         if let window = self.view.window {
             var frame = window.frame
-            frame.set(height: hasAccess ? 597 : 280)
+            frame.set(height: hasAccess ? 620 : 280)
             window.setFrame(frame, display: true, animate: true)
         }
     }
