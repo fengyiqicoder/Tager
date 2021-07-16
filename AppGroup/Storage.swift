@@ -14,13 +14,4 @@ extension UserDefaults {
     static var appGroup: UserDefaults {
         return UserDefaults(suiteName: appGroupSuitName)!
     }
-    
-    var test: String {
-        set {
-            UserDefaults.appGroup.setValue(newValue, forKey: "test")
-        }
-        get {
-            UserDefaults.appGroup.string(forKey: "test") ?? ""
-        }
-    }
 }

@@ -22,6 +22,7 @@ class Symbols {
     static var shared = Symbols()
     var group: [SymbolGroup] = []
     
+    //init on fatherViewController init
     func initGroups() {
         group = allSymbolsGroup.map { $0.checkAvailable() }
     }

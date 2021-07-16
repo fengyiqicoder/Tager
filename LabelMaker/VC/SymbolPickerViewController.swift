@@ -34,11 +34,11 @@ class SymbolPickerViewController: NSViewController {
         setUpSwitch()
     }
     
-    var currentSymbolGroup: SymbolGroup {
+    private var currentSymbolGroup: SymbolGroup {
         Symbols.shared.group[switcherButton.indexOfSelectedItem]
     }
     
-    func setUpSwitch() {
+    private func setUpSwitch() {
         switcherButton.menu?.removeAllItems()
         
         Symbols.shared.group.forEach { group in

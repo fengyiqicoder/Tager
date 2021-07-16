@@ -48,7 +48,7 @@ class FinderSync: FIFinderSync {
     
     @objc
     func changeIcon(item: NSMenuItem) {
-        SandBoxController.shared.getAccess()
+        SandBoxController.shared.getAccessInExtension()
         let model = IconModelController.shared.iconModels[item.tag]
         FIFinderSyncController.default().selectedItemURLs()?.forEach({ url in
             NSWorkspace.shared.setIcon(model.image, forFile: url.path)
@@ -58,7 +58,7 @@ class FinderSync: FIFinderSync {
     
     @objc
     func clearIcon(_ sender: AnyObject?) {
-        SandBoxController.shared.getAccess()
+        SandBoxController.shared.getAccessInExtension()
         FIFinderSyncController.default().selectedItemURLs()?.forEach({ url in
             NSWorkspace.shared.setIcon(nil, forFile: url.path)
         })

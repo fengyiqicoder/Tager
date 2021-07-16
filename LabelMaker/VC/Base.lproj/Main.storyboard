@@ -583,16 +583,19 @@
                             <constraint firstItem="GdG-Mi-zIa" firstAttribute="trailing" secondItem="bqb-8Y-JqY" secondAttribute="trailing" id="L8K-da-5Ax"/>
                             <constraint firstItem="bqb-8Y-JqY" firstAttribute="top" secondItem="umG-Kl-JZ4" secondAttribute="bottom" constant="10" id="N55-7G-Nua"/>
                             <constraint firstItem="Wyb-8z-j0a" firstAttribute="leading" secondItem="RW2-JB-GKk" secondAttribute="leading" constant="30" id="NFv-0a-HeM"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="09O-8I-M9H" secondAttribute="trailing" constant="20" symbolic="YES" id="O04-IV-eip"/>
+                            <constraint firstItem="5GL-dX-DkM" firstAttribute="leading" secondItem="5rC-0s-KZm" secondAttribute="leading" id="R9G-xg-IJd"/>
                             <constraint firstItem="GdG-Mi-zIa" firstAttribute="leading" secondItem="09O-8I-M9H" secondAttribute="leading" id="Rz9-QL-AYq"/>
                             <constraint firstItem="5rC-0s-KZm" firstAttribute="top" secondItem="5GL-dX-DkM" secondAttribute="bottom" constant="10" id="TBl-9Q-Knj"/>
                             <constraint firstItem="bqb-8Y-JqY" firstAttribute="trailing" secondItem="yVv-ey-PyJ" secondAttribute="trailing" id="UDo-SK-Qen"/>
                             <constraint firstItem="umG-Kl-JZ4" firstAttribute="leading" secondItem="5rC-0s-KZm" secondAttribute="leading" id="UI6-Gn-dVF"/>
                             <constraint firstItem="yVv-ey-PyJ" firstAttribute="trailing" secondItem="5rC-0s-KZm" secondAttribute="trailing" id="X9Q-cj-3dV"/>
+                            <constraint firstItem="yVv-ey-PyJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="umG-Kl-JZ4" secondAttribute="trailing" constant="8" symbolic="YES" id="XRQ-p6-OqV"/>
                             <constraint firstItem="yVv-ey-PyJ" firstAttribute="centerY" secondItem="umG-Kl-JZ4" secondAttribute="centerY" id="aMz-dF-YXR"/>
                             <constraint firstItem="Wyb-8z-j0a" firstAttribute="centerY" secondItem="RW2-JB-GKk" secondAttribute="centerY" id="cAy-II-4je"/>
                             <constraint firstAttribute="trailing" secondItem="5rC-0s-KZm" secondAttribute="trailing" constant="30" id="gkH-1z-Tgw"/>
                             <constraint firstItem="GdG-Mi-zIa" firstAttribute="bottom" secondItem="bqb-8Y-JqY" secondAttribute="bottom" constant="80" id="ksK-Se-VPG"/>
-                            <constraint firstItem="5GL-dX-DkM" firstAttribute="leading" secondItem="5rC-0s-KZm" secondAttribute="leading" id="mVc-Ov-X9G"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5GL-dX-DkM" secondAttribute="trailing" constant="20" symbolic="YES" id="oPi-Ly-T0y"/>
                             <constraint firstItem="b32-5i-RqG" firstAttribute="top" secondItem="09O-8I-M9H" secondAttribute="bottom" constant="10" id="t0j-TF-vCD"/>
                         </constraints>
                     </view>
@@ -659,9 +662,8 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-h5-jbw">
+                            <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-h5-jbw">
                                 <rect key="frame" x="17" y="429" width="88" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="All" bezelStyle="rounded" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="prQ-Lz-fTt" id="whl-69-a9p">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -676,11 +678,14 @@
                             </popUpButton>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="njz-h5-jbw" firstAttribute="leading" secondItem="gGR-ly-j3W" secondAttribute="leading" constant="20" symbolic="YES" id="1ZV-sv-L0b"/>
                             <constraint firstItem="hvF-Zn-KLc" firstAttribute="top" secondItem="gGR-ly-j3W" secondAttribute="top" constant="50" id="7iP-OF-opc"/>
+                            <constraint firstItem="njz-h5-jbw" firstAttribute="baseline" secondItem="7Td-ll-PdQ" secondAttribute="firstBaseline" id="KKm-66-cvx"/>
                             <constraint firstItem="7Td-ll-PdQ" firstAttribute="centerX" secondItem="gGR-ly-j3W" secondAttribute="centerX" id="KdR-gJ-hUb"/>
                             <constraint firstItem="7Td-ll-PdQ" firstAttribute="top" secondItem="gGR-ly-j3W" secondAttribute="top" constant="17" id="MEn-jg-CMZ"/>
                             <constraint firstAttribute="bottom" secondItem="hvF-Zn-KLc" secondAttribute="bottom" id="U4n-hQ-4Q1"/>
                             <constraint firstItem="hvF-Zn-KLc" firstAttribute="leading" secondItem="gGR-ly-j3W" secondAttribute="leading" id="bZE-dq-hXD"/>
+                            <constraint firstItem="7Td-ll-PdQ" firstAttribute="leading" secondItem="njz-h5-jbw" secondAttribute="trailing" constant="42" id="iHv-2p-whH"/>
                             <constraint firstAttribute="trailing" secondItem="hvF-Zn-KLc" secondAttribute="trailing" id="qhY-r2-WIn"/>
                         </constraints>
                     </view>
@@ -964,7 +969,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <visualEffectView hidden="YES" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SmU-sV-ekg">
+                            <visualEffectView hidden="YES" blendingMode="withinWindow" material="contentBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="SmU-sV-ekg">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="399"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mRg-Uu-Ngk">

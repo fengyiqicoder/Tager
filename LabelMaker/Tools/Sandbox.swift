@@ -36,13 +36,13 @@ class SandBoxController {
     }
     
     //Only used in Extension
-    func getAccess() {
+    func getAccessInExtension() {
         restoreBookmark()
     }
     
     var hasAccess: Bool { accessableURL == "/" }
     
-    var accessableURL: String? {
+    private var accessableURL: String? {
         set {
             UserDefaults.appGroup.setValue(newValue, forKey: "accessableURL")
         }
