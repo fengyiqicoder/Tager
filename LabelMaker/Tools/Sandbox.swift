@@ -73,7 +73,8 @@ class SandBoxController {
           
           if isStale.boolValue{
             print("renew bookmark data")
-            let renewBookMark = try url.bookmarkData(options: .withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+            //Does it need to do this at main app?
+            let renewBookMark = try url.bookmarkData(options: [.minimalBookmark], includingResourceValuesForKeys: nil, relativeTo: nil)
             self.bookmarkData = renewBookMark
           }
           
