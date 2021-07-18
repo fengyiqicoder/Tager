@@ -16,7 +16,7 @@
 
 "Top" = "置顶";
 
-"Click Open Button" = "请点击\"打开\"按钮";
+"Click Open Button" = "请点击\"打开\"按钮 \n (不低于用户文件夹)";
 
 "All" = "全部";
 "Communication" = "交流";
