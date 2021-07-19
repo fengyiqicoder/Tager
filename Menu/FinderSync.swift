@@ -9,9 +9,12 @@ import Cocoa
 import FinderSync
 
 class FinderSync: FIFinderSync {
-        
+    
+    private var URLwillAddMenu = URL(fileURLWithPath: "/")
+    
     override init() {
-        super.init()        
+        super.init()
+        FIFinderSyncController.default().directoryURLs = [self.URLwillAddMenu]
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {
