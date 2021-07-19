@@ -9,13 +9,9 @@ import Cocoa
 import FinderSync
 
 class FinderSync: FIFinderSync {
-    
-    private var myFolderURL = URL(fileURLWithPath: "/")
-    
-    override init() {
-        super.init()
-        FIFinderSyncController.default().directoryURLs = [self.myFolderURL]
         
+    override init() {
+        super.init()        
     }
     
     override func menu(for menuKind: FIMenuKind) -> NSMenu {

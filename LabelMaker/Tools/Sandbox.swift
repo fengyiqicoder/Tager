@@ -12,10 +12,16 @@ import AppKit
 class SandBoxController {
     
     static let shared = SandBoxController()
+    lazy var homeURLPath: String = {
+        let paths = FileManager.default.homeDirectoryForCurrentUser.pathComponents
+        let path = paths[0]+paths[1]+"/"+paths[2]
+        return path
+    }()
+    
     
     func openChooseFoldPanel(handler: (()->Void)? = nil ) {
         let openPanel = NSOpenPanel()
-        openPanel.directoryURL = URL(fileURLWithPath: "/")
+        openPanel.directoryURL = URL(string: homeURLPath)
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = true
         openPanel.canCreateDirectories = true
@@ -29,7 +35,7 @@ class SandBoxController {
                 let data = try! url.bookmarkData(options: [.minimalBookmark], includingResourceValuesForKeys: nil, relativeTo: nil)
                 self.bookmarkData = data
                 self.accessableURL = url.path
-                
+                print(url.path)
                 handler?()
             }
         }
@@ -40,9 +46,11 @@ class SandBoxController {
         restoreBookmark()
     }
     
-    var hasAccess: Bool { accessableURL == "/" }
+    var hasAccess: Bool {
+        accessableURL == "/" || accessableURL == homeURLPath
+    }
     
-    private var accessableURL: String? {
+    var accessableURL: String? {
         set {
             UserDefaults.appGroup.setValue(newValue, forKey: "accessableURL")
         }
