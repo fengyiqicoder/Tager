@@ -10,7 +10,7 @@ import FinderSync
 
 class FinderSync: FIFinderSync {
     
-    private var URLwillAddMenu = URL(fileURLWithPath: "/")
+    private var URLwillAddMenu = URL(fileURLWithPath: SandBoxController.shared.homeURLPath)
     
     override init() {
         super.init()

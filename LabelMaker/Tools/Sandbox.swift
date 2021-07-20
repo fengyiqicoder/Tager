@@ -9,7 +9,7 @@
 
 import AppKit
 
-class SandBoxController {
+class SandBoxController: NSObject {
     
     static let shared = SandBoxController()
     lazy var homeURLPath: String = {
@@ -24,9 +24,9 @@ class SandBoxController {
         openPanel.directoryURL = URL(string: homeURLPath)
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = true
-        openPanel.canCreateDirectories = true
         openPanel.canChooseFiles = false
         openPanel.message = "Click Open Button".localize
+        openPanel.delegate = self
         openPanel.begin { (result) -> Void in
             if result == NSApplication.ModalResponse.OK {
                 guard let url = openPanel.urls.first else { return }
@@ -98,4 +98,11 @@ class SandBoxController {
 
     }
     
+}
+
+extension SandBoxController: NSOpenSavePanelDelegate {
+     
+    func panel(_ sender: Any, shouldEnable url: URL) -> Bool {
+        return url.path == homeURLPath
+    }
 }
