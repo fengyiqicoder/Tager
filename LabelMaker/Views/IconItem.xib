@@ -9,11 +9,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="235" height="249"/>
+            <rect key="frame" x="0.0" y="0.0" width="279" height="257"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lkz-ke-Uhn">
-                    <rect key="frame" x="42" y="22" width="152" height="16"/>
+                    <rect key="frame" x="64" y="34" width="152" height="16"/>
                     <textFieldCell key="cell" alignment="center" title="Label" id="XMF-ux-Fvh">
                         <font key="font" textStyle="headline" name=".SFNS-Bold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -21,7 +21,7 @@
                     </textFieldCell>
                 </textField>
                 <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="E8j-CE-r0i">
-                    <rect key="frame" x="43" y="50" width="150" height="150"/>
+                    <rect key="frame" x="65" y="62" width="150" height="150"/>
                     <view key="contentView" id="fbz-DM-DlG">
                         <rect key="frame" x="1" y="1" width="148" height="148"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,11 +51,11 @@
             <constraints>
                 <constraint firstItem="lkz-ke-Uhn" firstAttribute="width" secondItem="fbz-DM-DlG" secondAttribute="width" id="6S5-3V-7ud"/>
                 <constraint firstItem="lkz-ke-Uhn" firstAttribute="top" secondItem="E8j-CE-r0i" secondAttribute="bottom" constant="12" id="8O4-OQ-YcE"/>
-                <constraint firstItem="E8j-CE-r0i" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="EBK-MN-YCZ"/>
+                <constraint firstItem="E8j-CE-r0i" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" constant="-8" id="EBK-MN-YCZ"/>
                 <constraint firstItem="lkz-ke-Uhn" firstAttribute="centerX" secondItem="fbz-DM-DlG" secondAttribute="centerX" id="QI2-lt-S75"/>
                 <constraint firstItem="E8j-CE-r0i" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="pHD-IF-S4c"/>
             </constraints>
-            <point key="canvasLocation" x="16.5" y="142.5"/>
+            <point key="canvasLocation" x="38.5" y="240.5"/>
         </customView>
         <collectionViewItem id="RkU-Qg-Due" customClass="IconItem" customModule="Tager" customModuleProvider="target">
             <connections>

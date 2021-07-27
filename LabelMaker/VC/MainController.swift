@@ -47,6 +47,9 @@ class MainController: NSViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+//        scrollView.scrollerInsets.bottom = 20
+//        scrollView.contentInsets.bottom = 20
+        
         reloadAccessState()
     }
     

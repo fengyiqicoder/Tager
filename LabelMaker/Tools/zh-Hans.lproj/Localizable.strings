@@ -6,7 +6,7 @@
   
 */
 
-"Clear Tager Icon" = "清除 Tager 图标";
+"Clear Tager Icon" = "清除图标";
 
 "Tager's Icons" = "Tager 的图标库";
 
@@ -39,3 +39,5 @@
 "Arrows" = "箭头";
 "Indices" = "骰子";
 "Math" = "数学";
+
+"Change to Tager Icon" = "更改为Tager图标";
