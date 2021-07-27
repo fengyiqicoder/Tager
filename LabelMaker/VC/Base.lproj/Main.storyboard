@@ -1011,7 +1011,6 @@
                     <connections>
                         <outlet property="accessBlockView" destination="SmU-sV-ekg" id="eTu-sD-QQe"/>
                         <outlet property="collectionView" destination="oCB-xO-kKj" id="4LW-A5-4Po"/>
-                        <outlet property="scrollView" destination="jFD-Zd-XA8" id="lUD-ds-ROo"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

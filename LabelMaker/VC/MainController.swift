@@ -24,7 +24,6 @@ class MainController: NSViewController {
     
     @IBOutlet weak var accessBlockView: NSVisualEffectView!
     @IBOutlet weak var collectionView: NSCollectionView!
-    @IBOutlet weak var scrollView: NSScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +45,6 @@ class MainController: NSViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-//        scrollView.scrollerInsets.bottom = 20
-//        scrollView.contentInsets.bottom = 20
         
         reloadAccessState()
     }
@@ -78,6 +74,11 @@ class MainController: NSViewController {
     func addNewIcon() {
         model.iconModels.append(IconModel.defualt)
         reload()
+        let newIconIndexPath = IndexPath(item: model.iconModels.count-1, section: 0)
+        collectionView.scrollToItems(at: [newIconIndexPath], scrollPosition: .bottom)
+        //with bug
+//        editIcon(index: newIconIndexPath)
+//        collectionView.deselectItems(at: [newIconIndexPath])
     }
     
     func reload() {
@@ -111,11 +112,7 @@ extension MainController: NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
         let index = indexPaths.first!
-        let item = collectionView.item(at: index.item) as! IconItem
-        item.isSelected = true
-        
-        let itemModel = model.iconModels[index.item]
-        IconEditorWindowController.shared.show(model: itemModel)
+        editIcon(index: index)
     }
     
     func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
@@ -123,6 +120,14 @@ extension MainController: NSCollectionViewDelegate {
             let item = collectionView.item(at: $0) as! IconItem
             item.isSelected = false
         }
+    }
+    
+    fileprivate func editIcon(index: IndexPath) {
+        let item = collectionView.item(at: index.item) as! IconItem
+        item.isSelected = true
+        
+        let itemModel = model.iconModels[index.item]
+        IconEditorWindowController.shared.show(model: itemModel)
     }
 }
 
