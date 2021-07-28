@@ -43,11 +43,21 @@ class SandBoxController: NSObject {
     
     //Only used in Extension
     func getAccessInExtension() {
+        //using this try to update bookmark data
+        let _ = hasAccess
         restoreBookmark()
     }
     
     var hasAccess: Bool {
-        accessableURL == "/" || accessableURL == homeURLPath
+        //update bookmark no matter what
+        var isStale = ObjCBool(false)
+        if let bookMarkUrl = try? NSURL(resolvingBookmarkData: bookmarkData!, options: [], relativeTo: nil, bookmarkDataIsStale: &isStale) {
+            //isStale not working
+            if let renewBookMark = try? bookMarkUrl.bookmarkData(options: [.minimalBookmark], includingResourceValuesForKeys: nil, relativeTo: nil) {
+                self.bookmarkData = renewBookMark
+            }
+        }
+        return accessableURL == "/" || accessableURL == homeURLPath
     }
     
     var accessableURL: String? {

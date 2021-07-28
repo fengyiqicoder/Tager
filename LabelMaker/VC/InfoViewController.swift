@@ -30,7 +30,8 @@ class InfoViewController: NSViewController {
     
     func reloadAuthorizeState()  {
         let hasAccess = SandBoxController.shared.hasAccess
-        authorizeButton.isEnabled = !SandBoxController.shared.hasAccess
+        //FIXME: 还没解决bookmark过期问题,这个入口先一直开着
+//        authorizeButton.isEnabled = !SandBoxController.shared.hasAccess
         authorizeButton.image = SandBoxController.shared.hasAccess ? NSImage(systemSymbolName: "checkmark.circle", accessibilityDescription: nil) : NSImage(systemSymbolName: "folder", accessibilityDescription: nil)
         if let window = self.view.window {
             var frame = window.frame
