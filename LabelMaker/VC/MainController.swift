@@ -57,6 +57,7 @@ class MainController: NSViewController {
     
     func reloadAccessState() {
         accessBlockView.isHidden = SandBoxController.shared.hasAccess
+        SandBoxController.shared.renewBookMark()
     }
     
     func deselect(id: String) {
