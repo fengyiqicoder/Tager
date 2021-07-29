@@ -21,6 +21,7 @@ class InfoViewController: NSViewController {
     @IBOutlet weak var authorizeButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = ""
     }
     
     override func viewWillAppear() {

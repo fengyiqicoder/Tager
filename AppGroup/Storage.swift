@@ -8,6 +8,7 @@
 import AppKit
 
 let appGroupSuitName = "group.LabelMaker"
+//let AppGroupSuitNameWithTeamID = "K2D6DE8NGJ.Tager"
 
 extension UserDefaults {
     
