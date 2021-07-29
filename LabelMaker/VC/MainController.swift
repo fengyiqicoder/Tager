@@ -27,8 +27,13 @@ class MainController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Only use in debug
 //        print("Access url \(SandBoxController.shared.accessableURL)")
 //        IconModelController.shared.iconModels.removeAll()
+//        let appGroup = UserDefaults.appGroup
+//        appGroup.removeObject(forKey: "accessableURL")
+//        appGroup.removeObject(forKey: "bookmark")
+        
         
         if LaunchController.shared.checkFistTimeLaunch() {
             InfoViewController.showAsWindow()
