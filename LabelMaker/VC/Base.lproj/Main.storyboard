@@ -273,6 +273,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
+                                        <menuItem title="Copy Support Email (tagerapp@gmail.com)" id="1sM-NT-sXr">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="copyEmail:" target="Voe-Tx-rLC" id="NoZ-mc-HL1"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Tager Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
@@ -287,11 +293,15 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Tager" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Tager" customModuleProvider="target">
+                    <connections>
+                        <outlet property="copySupportEmailMenu" destination="1sM-NT-sXr" id="mRB-DQ-BTf"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="-42"/>
+            <point key="canvasLocation" x="-57" y="-111"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">

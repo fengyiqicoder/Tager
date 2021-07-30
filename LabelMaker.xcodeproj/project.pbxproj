@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		135125F026B44B280020E21C /* AppStoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135125EF26B44B280020E21C /* AppStoreReview.swift */; };
 		136DCEE3269D3A4A00F95E17 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DCEE2269D3A4A00F95E17 /* Sandbox.swift */; };
 		136DCEE4269D421700F95E17 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DCEE2269D3A4A00F95E17 /* Sandbox.swift */; };
 		139945ED268EB14700AD8CCA /* ViewSnaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139945EC268EB14700AD8CCA /* ViewSnaper.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		135125EF26B44B280020E21C /* AppStoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReview.swift; sourceTree = "<group>"; };
 		136DCEE2269D3A4A00F95E17 /* Sandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sandbox.swift; sourceTree = "<group>"; };
 		139945EC268EB14700AD8CCA /* ViewSnaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnaper.swift; sourceTree = "<group>"; };
 		139945EE268EBEF600AD8CCA /* MaxiumFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxiumFontLabel.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				139945EE268EBEF600AD8CCA /* MaxiumFontLabel.swift */,
 				1399464526940F9900AD8CCA /* Symbols.swift */,
 				136DCEE2269D3A4A00F95E17 /* Sandbox.swift */,
+				135125EF26B44B280020E21C /* AppStoreReview.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				1399464C269730C100AD8CCA /* InfoViewController.swift in Sources */,
 				13FF6A15267568090043597D /* MainController.swift in Sources */,
 				136DCEE3269D3A4A00F95E17 /* Sandbox.swift in Sources */,
+				135125F026B44B280020E21C /* AppStoreReview.swift in Sources */,
 				13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */,
 				13FF6A13267568090043597D /* AppDelegate.swift in Sources */,
 				139945EF268EBEF600AD8CCA /* MaxiumFontLabel.swift in Sources */,

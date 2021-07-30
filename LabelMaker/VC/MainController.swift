@@ -52,6 +52,8 @@ class MainController: NSViewController {
         collectionView.delegate = self
         
         reloadAccessState()
+        
+        ReviewController.shared.checkForReviewRequest()
     }
     
     override func viewDidAppear() {
