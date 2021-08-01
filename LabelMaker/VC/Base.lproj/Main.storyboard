@@ -665,15 +665,15 @@
                                 </scroller>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Td-ll-PdQ">
-                                <rect key="frame" x="141" y="434" width="126" height="21"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Choose an icon" id="Mhx-nK-16m">
+                                <rect key="frame" x="159" y="434" width="90" height="21"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Symbols" id="Mhx-nK-16m">
                                     <font key="font" textStyle="title2" name=".SFNS-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-h5-jbw">
-                                <rect key="frame" x="17" y="429" width="88" height="25"/>
+                            <popUpButton horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-h5-jbw">
+                                <rect key="frame" x="17" y="429" width="78" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="All" bezelStyle="rounded" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="prQ-Lz-fTt" id="whl-69-a9p">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -686,6 +686,14 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
+                            <searchField wantsLayer="YES" horizontalHuggingPriority="1000" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqW-wF-Ou8">
+                                <rect key="frame" x="279" y="432" width="109" height="22"/>
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="HRI-Gm-LRT">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </searchFieldCell>
+                            </searchField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="njz-h5-jbw" firstAttribute="leading" secondItem="gGR-ly-j3W" secondAttribute="leading" constant="20" symbolic="YES" id="1ZV-sv-L0b"/>
@@ -694,13 +702,17 @@
                             <constraint firstItem="7Td-ll-PdQ" firstAttribute="centerX" secondItem="gGR-ly-j3W" secondAttribute="centerX" id="KdR-gJ-hUb"/>
                             <constraint firstItem="7Td-ll-PdQ" firstAttribute="top" secondItem="gGR-ly-j3W" secondAttribute="top" constant="17" id="MEn-jg-CMZ"/>
                             <constraint firstAttribute="bottom" secondItem="hvF-Zn-KLc" secondAttribute="bottom" id="U4n-hQ-4Q1"/>
+                            <constraint firstItem="iqW-wF-Ou8" firstAttribute="centerY" secondItem="njz-h5-jbw" secondAttribute="centerY" id="WZS-ge-laf"/>
+                            <constraint firstItem="iqW-wF-Ou8" firstAttribute="leading" secondItem="7Td-ll-PdQ" secondAttribute="trailing" constant="32" id="agU-MH-wUJ"/>
                             <constraint firstItem="hvF-Zn-KLc" firstAttribute="leading" secondItem="gGR-ly-j3W" secondAttribute="leading" id="bZE-dq-hXD"/>
-                            <constraint firstItem="7Td-ll-PdQ" firstAttribute="leading" secondItem="njz-h5-jbw" secondAttribute="trailing" constant="42" id="iHv-2p-whH"/>
+                            <constraint firstItem="7Td-ll-PdQ" firstAttribute="leading" secondItem="njz-h5-jbw" secondAttribute="trailing" constant="70" id="iHv-2p-whH"/>
+                            <constraint firstAttribute="trailing" secondItem="iqW-wF-Ou8" secondAttribute="trailing" constant="20" symbolic="YES" id="ivg-d0-nNi"/>
                             <constraint firstAttribute="trailing" secondItem="hvF-Zn-KLc" secondAttribute="trailing" id="qhY-r2-WIn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="RYN-6P-B0J" id="dVK-MB-LAI"/>
+                        <outlet property="searchField" destination="iqW-wF-Ou8" id="YSo-Qq-8If"/>
                         <outlet property="switcherButton" destination="njz-h5-jbw" id="EuO-I6-yAi"/>
                     </connections>
                 </viewController>

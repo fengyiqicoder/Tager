@@ -87,7 +87,7 @@
 "JvT-7e-upE.placeholderString" = "Label to print";
 
 /* Class = "NSTextFieldCell"; title = "Choose an icon"; ObjectID = "Mhx-nK-16m"; */
-"Mhx-nK-16m.title" = "选择一个符号";
+"Mhx-nK-16m.title" = "符号";
 
 /* Class = "NSTextFieldCell"; title = "Extenstions"; ObjectID = "NHm-ep-Ce3"; */
 "NHm-ep-Ce3.title" = "扩展";

@@ -11,6 +11,7 @@ class SymbolPickerViewController: NSViewController {
     
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var switcherButton: NSPopUpButton!
+    @IBOutlet weak var searchField: NSSearchField!
     
     weak var symbolDelegate: SymbolItemDelegate!
     
@@ -32,10 +33,15 @@ class SymbolPickerViewController: NSViewController {
         collectionView.delegate = self
         
         setUpSwitch()
+        setUpSearchField()
     }
     
     private var currentSymbolGroup: SymbolGroup {
         Symbols.shared.group[switcherButton.indexOfSelectedItem]
+    }
+    
+    private func setUpSearchField() {
+        searchField.delegate = self
     }
     
     private func setUpSwitch() {
@@ -61,16 +67,50 @@ class SymbolPickerViewController: NSViewController {
 extension SymbolPickerViewController: NSCollectionViewDataSource, NSCollectionViewDelegate {
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentSymbolGroup.symbolNames.count
+        if let searchWordStr = currentSearchingValue {
+            return makeSearchItem(inputStr: searchWordStr).count
+        } else {
+            return currentSymbolGroup.symbolNames.count
+        }
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SymbolItem"), for: indexPath) as! SymbolItem
-        item.symbol = currentSymbolGroup.symbolNames[indexPath.item]
+        
+        if let searchWordStr = currentSearchingValue {
+            item.symbol = makeSearchItem(inputStr: searchWordStr)[indexPath.item]
+        } else {
+            item.symbol = currentSymbolGroup.symbolNames[indexPath.item]
+        }
+        
         item.delegate = self.symbolDelegate
         return item
     }
     
+}
+
+extension SymbolPickerViewController: NSSearchFieldDelegate {
+    
+    var currentSearchingValue: String? {
+        return searchField.stringValue == "" ? nil : searchField.stringValue
+    }
+    
+    func controlTextDidChange(_ obj: Notification) {
+        switcherButton.selectItem(at: 0)
+        collectionView.reloadData()
+    }
+
+    func makeSearchItem(inputStr: String) -> [String] {
+        let keywords = inputStr.split(separator: " ")
+        let allSymbolNames = Symbols.shared.group.first!.symbolNames
+        var result: [String] = []
+        keywords.forEach { keyword in
+            result = allSymbolNames.compactMap({ symbol in
+                return symbol.contains(keyword) ? symbol : nil
+            })
+        }
+        return result
+    }
 }
 
 extension NSViewController {
