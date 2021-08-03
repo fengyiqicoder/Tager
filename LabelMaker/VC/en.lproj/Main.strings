@@ -34,7 +34,7 @@
 
 /* Class = "NSTextFieldCell"; title = "PS: RIght click Icon Item to delete or change order."; ObjectID = "7Mp-5O-8cL"; */
 //"7Mp-5O-8cL.title" = "PS: Right click Icon Item to delete or change order.";
-"7Mp-5O-8cL.title" = "PS: If changing the icon does not work \n click the permission button again.";
+"7Mp-5O-8cL.title" = "PS: If changing the icon does not work \n click the authorize button again.";
 
 /* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "9ic-FL-obx"; */
 "9ic-FL-obx.title" = "Substitutions";
