@@ -30,9 +30,8 @@ class SandBoxController: NSObject {
         openPanel.begin { (result) -> Void in
             if result == NSApplication.ModalResponse.OK {
                 guard let url = openPanel.urls.first else { return }
-                //using .minimalBookmark to make it work in extension
                 //it do not have any app scope so it can't work on the app itself
-                let data = try! url.bookmarkData(options: [.minimalBookmark], includingResourceValuesForKeys: nil, relativeTo: nil)
+                let data = try! url.bookmarkData(options: [], includingResourceValuesForKeys: nil, relativeTo: nil)
                 self.bookmarkData = data
                 self.accessableURL = url.path
                 print(url.path)
@@ -44,19 +43,7 @@ class SandBoxController: NSObject {
     //Only used in Extension
     func getAccessInExtension() {
         //using this try to update bookmark data
-        renewBookMark()
-        restoreBookmark()
-    }
-    
-    func renewBookMark() {
-        //update bookmark no matter what
-        var isStale = ObjCBool(false)
-        if let data = bookmarkData, let bookMarkUrl = try? NSURL(resolvingBookmarkData: data, options: [], relativeTo: nil, bookmarkDataIsStale: &isStale) {
-            //isStale not working
-            if let renewBookMark = try? bookMarkUrl.bookmarkData(options: [.minimalBookmark], includingResourceValuesForKeys: nil, relativeTo: nil) {
-                self.bookmarkData = renewBookMark
-            }
-        }
+       restoreBookmark()
     }
     
     var hasAccess: Bool {
@@ -81,6 +68,7 @@ class SandBoxController: NSObject {
         }
     }
     
+    //等待重构需要能在menu上显示出现问题
     private func restoreBookmark() {
         guard let bookmarkData = bookmarkData else {
             print("Bookmarkdata nil")
@@ -88,14 +76,14 @@ class SandBoxController: NSObject {
         }
         do{
           var isStale = ObjCBool(false)
-          let url = try NSURL(resolvingBookmarkData: bookmarkData, options: URL.BookmarkResolutionOptions.withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isStale)
+          let url = try NSURL(resolvingBookmarkData: bookmarkData, options: [], relativeTo: nil, bookmarkDataIsStale: &isStale)
           
           print("resolved url \(url)")
           
           if isStale.boolValue{
             print("renew bookmark data")
             //Does it need to do this at main app?
-            let renewBookMark = try url.bookmarkData(options: [.minimalBookmark], includingResourceValuesForKeys: nil, relativeTo: nil)
+            let renewBookMark = try url.bookmarkData(options: [], includingResourceValuesForKeys: nil, relativeTo: nil)
             self.bookmarkData = renewBookMark
           }
           
