@@ -54,7 +54,7 @@ class InfoViewController: NSViewController {
     @IBAction func done(_ sender: NSButton) {
         dismissPopover()
     }
-    
+        
 }
 
 extension CGRect {

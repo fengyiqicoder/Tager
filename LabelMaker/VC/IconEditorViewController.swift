@@ -44,6 +44,7 @@ class IconEditorViewController: NSViewController {
     private let markerMaxFontSize: CGFloat = 50
     var model: IconModel {
         set {
+            view.window?.title = newValue.name
             imageView.image = NSImage(named: "folderIcon")
             nameTextField.stringValue = newValue.name
             
@@ -218,6 +219,59 @@ class IconEditorViewController: NSViewController {
         }
     }
 
+    //Editing buttons
+    @IBOutlet weak var editLabelButton: NSButton!
+    @IBOutlet weak var editColorButton: NSButton!
+    @IBOutlet weak var editTypeButton: NSButton!
+    @IBOutlet weak var editCustomizeButton: NSButton!
+    fileprivate var editButtons: [NSButton] {
+        [editLabelButton, editColorButton, editTypeButton, editCustomizeButton]
+    }
+    fileprivate let editTintColor: NSColor = #colorLiteral(red: 0.4434176981, green: 0.8099910617, blue: 0.9819725156, alpha: 1)
+    
+    fileprivate
+    var buttonToTypeDict: [NSButton: EditingSchema] {
+        [ editLabelButton: .label,
+          editColorButton: .color,
+          editTypeButton: .type,
+          editCustomizeButton: .custom]
+    }
+    
+    fileprivate
+    var typeToButtonDict: [EditingSchema: NSButton] {
+        [ .label: editLabelButton,
+          .color: editColorButton,
+          .type: editTypeButton,
+          .custom: editCustomizeButton]
+    }
+    
+    
+    fileprivate
+    var currentEditingType: EditingSchema = .label {
+        didSet {
+            editButtons.forEach { button in
+                button.contentTintColor = nil
+            }
+            let button = typeToButtonDict[currentEditingType]
+            button?.contentTintColor = editTintColor
+        }
+    }
+    
+    @IBAction
+    func openEditPanel(sender: NSButton) {
+        let typedType = buttonToTypeDict[sender]!
+        if currentEditingType != typedType {
+            currentEditingType = typedType
+        }
+    }
+    
+}
+
+enum EditingSchema {
+    case label
+    case color
+    case type
+    case custom
 }
 
 extension IconEditorViewController: TextFieldDelegate {
@@ -231,6 +285,7 @@ extension IconEditorViewController: TextFieldDelegate {
     
     func save() {
         IconModelController.shared.save(model: model)
+        view.window?.title = model.name
         MainController.shared.reload()
     }
 }
