@@ -86,22 +86,26 @@ class IconEditorViewController: NSViewController {
     @IBOutlet weak var color5View: NSBox!
     @IBOutlet weak var color6View: NSBox!
     private var colorViews: [NSBox] { [ color1View, color2View, color3View, color4View, color5View, color6View ]}
+    
+    private func initColorPicker() {
+        
+        colorViews.forEach { view in
+            view.wantsLayer = true
+            view.layer?.cornerRadius = 11
+            view.layer?.cornerCurve = .continuous
 
-    @IBAction func clickColorPicker(_ sender: NSClickGestureRecognizer) {
-        let colorCount = 6
-        let location = sender.location(in: colorPickerView)
-        let colorWidth = colorPickerView.frame.width/CGFloat(colorCount)
-        
-        var selected = 0
-        for selectedColor in 1...colorCount
-            where location.x < CGFloat(selectedColor)*colorWidth {
-                selected = selectedColor
-                break
         }
+    }
+    
+    @IBAction func clickColorPicker(_ sender: NSClickGestureRecognizer) {
+        let location = sender.location(in: colorPickerView)
         
-        selected -= 1
-        selectedColor(order: selected)
-        save()
+        colorViews.enumerated().forEach { (order, box) in
+            if box.frame.contains(location) {
+                selectedColor(order: order)
+                save()
+            }
+        }
     }
     
     private var selectedMarker: NSImageView?
@@ -143,8 +147,12 @@ class IconEditorViewController: NSViewController {
         markerTextField.tag = 1
         nameTextField.customDelegate = self
         markerTextField.customDelegate = self
+        initColorPicker()
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+    }
     override func viewDidDisappear() {
         super.viewDidDisappear()
         MainController.shared.deselect(id: uuid)
@@ -219,7 +227,8 @@ class IconEditorViewController: NSViewController {
         }
     }
 
-    //Editing buttons
+    //MARK: - Editing buttons
+    
     @IBOutlet weak var editLabelButton: NSButton!
     @IBOutlet weak var editColorButton: NSButton!
     @IBOutlet weak var editTypeButton: NSButton!
@@ -254,6 +263,9 @@ class IconEditorViewController: NSViewController {
             }
             let button = typeToButtonDict[currentEditingType]
             button?.contentTintColor = editTintColor
+            
+            editorViews.forEach { $0.isHidden = true}
+            typeToEditorView[currentEditingType]?.isHidden = false
         }
     }
     
@@ -263,6 +275,24 @@ class IconEditorViewController: NSViewController {
         if currentEditingType != typedType {
             currentEditingType = typedType
         }
+    }
+    
+    //MARK: - Editing views
+    @IBOutlet weak var labelEditorView: NSBox!
+    @IBOutlet weak var colorEditorView: NSBox!
+    @IBOutlet weak var typeEditorView: NSBox!
+    @IBOutlet weak var customizeEditorView: NSBox!
+    
+    fileprivate
+    var editorViews: [NSBox] {
+        [labelEditorView, colorEditorView, typeEditorView, customizeEditorView]
+    }
+    fileprivate
+    var typeToEditorView: [EditingSchema: NSBox] {
+        [ .label: labelEditorView,
+          .color: colorEditorView,
+          .type: typeEditorView,
+          .custom: customizeEditorView ]
     }
     
 }
