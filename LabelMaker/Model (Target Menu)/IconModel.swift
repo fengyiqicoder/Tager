@@ -19,10 +19,26 @@ struct IconModel: Codable {
     var uuid: String
     var name: String
     
-    //MARK
+    //TYPE
+    //nil is old version data do not have this
+    private var typeName: String? = ItemTypeWithColor.defaultName
+    var type: ItemTypeWithColor? {
+        get {
+            typeName == nil ? nil : ItemTypeWithColor(name: typeName!)
+        }
+        set {
+            typeName = newValue?.imageAssetName
+        }
+    }
+    
+    
+    //LABEL
     private(set) var markerStr: String? = nil
     private(set) var symbolStr: String? = nil
     
+    //nil 是自动大小
+    var assignLabelSize: CGFloat? = nil
+
     mutating func set(symbolStr: String) {
         markerStr = nil
         self.symbolStr = symbolStr
@@ -58,7 +74,7 @@ struct IconModel: Codable {
     
     static var defualt:IconModel {
         IconModel(uuid: UUID().uuidString,
-                  name: "",
+                  name: "Default".localize,
                   markerStr: "",
                   image: NSImage(named: "folderIcon")!,
                   color: NSColor.white)

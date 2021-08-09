@@ -549,7 +549,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="t4c-hj-9gu">
-                                <rect key="frame" x="262" y="840" width="31" height="37"/>
+                                <rect key="frame" x="262" y="841" width="31" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="t4c-hj-9gu" secondAttribute="height" multiplier="30:31" id="aat-8h-wAl"/>
                                     <constraint firstAttribute="width" constant="30" id="jjz-jM-uP3"/>
@@ -682,6 +682,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24z-lk-6Et">
+                                            <rect key="frame" x="-2" y="14" width="256" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" numberOfTickMarks="5" sliderType="linear" id="yZO-AF-WZQ"/>
+                                        </slider>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="GdG-Mi-zIa" firstAttribute="top" secondItem="09O-8I-M9H" secondAttribute="bottom" constant="10" id="4wL-ld-ddu"/>
