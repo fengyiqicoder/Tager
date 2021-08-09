@@ -57,6 +57,7 @@ class IconEditorViewController: NSViewController {
             
             uuid = newValue.uuid
             selected(color: newValue.color)
+            opacitySlider.floatValue = Float(newValue.color.alphaComponent)
         }
         get {
             //FIXME: ICON image 分辨率不够高
@@ -73,7 +74,7 @@ class IconEditorViewController: NSViewController {
         }
     }
     
-    //MARK: - ColorPicker
+    //MARK: - Color View
     
     private var selectedColor: NSColor?
     
@@ -88,7 +89,6 @@ class IconEditorViewController: NSViewController {
     private var colorViews: [NSBox] { [ color1View, color2View, color3View, color4View, color5View, color6View ]}
     
     private func initColorPicker() {
-        
         colorViews.forEach { view in
             view.wantsLayer = true
             view.layer?.cornerRadius = 11
@@ -102,14 +102,16 @@ class IconEditorViewController: NSViewController {
         
         colorViews.enumerated().forEach { (order, box) in
             if box.frame.contains(location) {
-                selectedColor(order: order)
+                selectMarkShowOn(order: order)
+                let color = colorViews[order].fillColor
+                set(color: color.withAlphaComponent(CGFloat(opacitySlider.floatValue)))
                 save()
             }
         }
     }
     
     private var selectedMarker: NSImageView?
-    private func selectedColor(order: Int) {
+    private func selectMarkShowOn(order: Int) {
         //color selected marker
         selectedMarker?.removeFromSuperview()
         
@@ -119,24 +121,36 @@ class IconEditorViewController: NSViewController {
         colorPickerView.addSubview(selectedImage)
         
         selectedMarker = selectedImage
-        
+    }
+    
+    private func set(color: NSColor) {
         //color changed
-        let color = colorViews[order].fillColor
         markerLabel.textColor = color
         symbolImageView.contentTintColor = color
         selectedColor = color
     }
     
-    
     private func selected(color: NSColor) {
         var colorOrder = 0
+        let originColor = color.withAlphaComponent(1.0)
         colorViews.enumerated().forEach { (order, view) in
-            if view.fillColor.cgColor == color.cgColor {
+            if view.fillColor.cgColor == originColor.cgColor {
                 colorOrder = order
             }   
 
         }
-        selectedColor(order: colorOrder)
+        selectMarkShowOn(order: colorOrder)
+        set(color: color)
+    }
+    
+    //Opacity
+    
+    @IBOutlet weak var opacitySlider: NSSlider!
+    @IBAction func opacity(_ sender: NSSlider) {
+        let currentOpacity = CGFloat(sender.floatValue)
+        guard let color = selectedColor?.withAlphaComponent(currentOpacity) else { return }
+        set(color: color)
+        save()
     }
     
     //MARK: - Life cycle
@@ -294,6 +308,8 @@ class IconEditorViewController: NSViewController {
           .type: typeEditorView,
           .custom: customizeEditorView ]
     }
+    
+    
     
 }
 
