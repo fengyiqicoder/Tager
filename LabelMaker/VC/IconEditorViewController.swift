@@ -74,6 +74,71 @@ class IconEditorViewController: NSViewController {
         }
     }
     
+    //MARK: - Life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameTextField.tag = 0
+        markerTextField.tag = 1
+        nameTextField.customDelegate = self
+        markerTextField.customDelegate = self
+        
+        configTypeSelection()
+        initColorPicker()
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+    }
+    
+    
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        MainController.shared.deselect(id: uuid)
+        
+    }
+    
+    //MARK: - Type
+    @IBOutlet weak var typeSelectCollectionView: TypeCollectionView!
+    @IBOutlet weak var typeSelectScrollView: NSScrollView!
+    @IBOutlet weak var typeColorSelectCollectionView: TypeCollectionView!
+    
+    var selectedTypeItem: ItemType? {
+        didSet {
+            typeColorSelectCollectionView.reloadData()
+        }
+    }
+    var selectedItemColor: ItemType? {
+        didSet {
+            //save
+        }
+    }
+    
+    var typeItems: [ItemType] {
+        IconModel.ItemTypes
+    }
+    var typeColorfulItems: [ItemType] {
+        guard let item = selectedTypeItem else { return [] }
+        let colorTypes = IconModel.ItemsColorDict[item.itemType]!
+        let currentTypeColorItem = colorTypes.map{
+            ItemType(type: item.itemType, color: $0)
+        }
+        return currentTypeColorItem
+    }
+    
+    func configTypeSelection() {
+        typeSelectCollectionView.isTypeItem = true
+        typeColorSelectCollectionView.isTypeItem = false
+        
+        typeSelectCollectionView.config()
+        typeSelectCollectionView.delegate = self
+        typeSelectCollectionView.dataSource = self
+
+        typeColorSelectCollectionView.config()
+        typeColorSelectCollectionView.delegate = self
+        typeColorSelectCollectionView.dataSource = self
+    }
+    
     //MARK: - Color View
     
     private var selectedColor: NSColor?
@@ -153,24 +218,6 @@ class IconEditorViewController: NSViewController {
         save()
     }
     
-    //MARK: - Life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        nameTextField.tag = 0
-        markerTextField.tag = 1
-        nameTextField.customDelegate = self
-        markerTextField.customDelegate = self
-        initColorPicker()
-    }
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
-    }
-    override func viewDidDisappear() {
-        super.viewDidDisappear()
-        MainController.shared.deselect(id: uuid)
-    }
     
     //MARK: - Icon generator
     

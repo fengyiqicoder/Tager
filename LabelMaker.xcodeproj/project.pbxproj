@@ -31,6 +31,9 @@
 		13E57C3C268448E900EBD74F /* IconModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B5EB69267F372F0018D717 /* IconModelController.swift */; };
 		13EBCCBC26C0F93300600594 /* IconItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCBB26C0F93300600594 /* IconItemType.swift */; };
 		13EBCCBD26C0F93300600594 /* IconItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCBB26C0F93300600594 /* IconItemType.swift */; };
+		13EBCCD226C22B8C00600594 /* TypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCD126C22B8C00600594 /* TypeCollectionView.swift */; };
+		13EBCCD426C22ED800600594 /* TypeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EBCCD326C22ED800600594 /* TypeItem.xib */; };
+		13EBCCD626C230AF00600594 /* TypeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCD526C230AF00600594 /* TypeItem.swift */; };
 		13FF6A13267568090043597D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A12267568090043597D /* AppDelegate.swift */; };
 		13FF6A15267568090043597D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A14267568090043597D /* MainController.swift */; };
 		13FF6A172675680A0043597D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FF6A162675680A0043597D /* Assets.xcassets */; };
@@ -91,6 +94,9 @@
 		13D11A6B2680701B00182F58 /* IconEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconEditorViewController.swift; sourceTree = "<group>"; };
 		13E57C392684489B00EBD74F /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
 		13EBCCBB26C0F93300600594 /* IconItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconItemType.swift; sourceTree = "<group>"; };
+		13EBCCD126C22B8C00600594 /* TypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionView.swift; sourceTree = "<group>"; };
+		13EBCCD326C22ED800600594 /* TypeItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeItem.xib; sourceTree = "<group>"; };
+		13EBCCD526C230AF00600594 /* TypeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeItem.swift; sourceTree = "<group>"; };
 		13FF6A0F267568090043597D /* Tager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FF6A12267568090043597D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FF6A14267568090043597D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -234,6 +240,9 @@
 				139946302692F92100AD8CCA /* SymbolItem.xib */,
 				13FF6A4326765EDE0043597D /* IconItems.swift */,
 				13FF6A4626765F460043597D /* IconItem.xib */,
+				13EBCCD126C22B8C00600594 /* TypeCollectionView.swift */,
+				13EBCCD526C230AF00600594 /* TypeItem.swift */,
+				13EBCCD326C22ED800600594 /* TypeItem.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EBCCD426C22ED800600594 /* TypeItem.xib in Resources */,
 				1399465C269AED4600AD8CCA /* Localizable.strings in Resources */,
 				139946312692F92100AD8CCA /* SymbolItem.xib in Resources */,
 				13FF6A172675680A0043597D /* Assets.xcassets in Resources */,
@@ -346,6 +356,7 @@
 				1399464626940F9900AD8CCA /* Symbols.swift in Sources */,
 				139945F12691C4AF00AD8CCA /* SymbolPickerViewController.swift in Sources */,
 				13D11A6C2680701B00182F58 /* IconEditorViewController.swift in Sources */,
+				13EBCCD626C230AF00600594 /* TypeItem.swift in Sources */,
 				13FF6A4426765EDE0043597D /* IconItems.swift in Sources */,
 				139945ED268EB14700AD8CCA /* ViewSnaper.swift in Sources */,
 				1399462F2692F88A00AD8CCA /* SymbolItem.swift in Sources */,
@@ -353,6 +364,7 @@
 				13E57C3A2684489B00EBD74F /* IconImage.swift in Sources */,
 				1399464C269730C100AD8CCA /* InfoViewController.swift in Sources */,
 				13FF6A15267568090043597D /* MainController.swift in Sources */,
+				13EBCCD226C22B8C00600594 /* TypeCollectionView.swift in Sources */,
 				136DCEE3269D3A4A00F95E17 /* Sandbox.swift in Sources */,
 				135125F026B44B280020E21C /* AppStoreReview.swift in Sources */,
 				13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */,

@@ -9,12 +9,35 @@ import AppKit
 
 extension IconModel {
     
-    struct ItemTypeWithColor {
+    static let ItemTypes: [ItemTypeWithColor] = [
+        ItemTypeWithColor(type: .folderIcon, color: .defualt),
+        ItemTypeWithColor(type: .fileIcon, color: .defualt),
+        ItemTypeWithColor(type: .pdfIcon, color: .defualt),
+        ItemTypeWithColor(type: .trashIcon, color: .defualt),
+        ItemTypeWithColor(type: .fullTrashIcon, color: .defualt),
+        ItemTypeWithColor(type: .zipFileIcon, color: .defualt),
+        ItemTypeWithColor(type: .projectIcon, color: .defualt),
+    ]
+    static let ItemsColorDict: [ItemType: [ItemType.Color]] = [
+        .folderIcon: [.defualt, .blue, .green, .mint, .orange, .pink, .purple],
+        .fileIcon: [.defualt, .blue, .green, .mint, .orange, .pink, .purple],
+        .pdfIcon: [.defualt, .blue, .green, .mint, .orange, .pink, .purple],
+        .fullTrashIcon: [.defualt],
+        .projectIcon: [.defualt],
+        .trashIcon: [.defualt],
+        .zipFileIcon: [.defualt],
+    ]
+    
+    struct ItemTypeWithColor: Hashable {
         
         static let defaultName: String = "folderIcon"
         
         init(type: ItemType, color: ItemType.Color) {
-            imageAssetName = type.rawValue + color.rawValue
+            if color == .defualt {
+                imageAssetName = type.rawValue
+            } else {
+                imageAssetName = type.rawValue + "-" + color.rawValue
+            }
         }
         
         init(name: String) {
@@ -73,7 +96,7 @@ extension IconModel {
         
         enum Color: String {
             case defualt
-            case pink, oringe, mint, red, purple, blue, green
+            case pink, orange, mint, red, purple, blue, green
         }
     }
 }
