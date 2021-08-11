@@ -15,9 +15,12 @@ class TypeCollectionView: NSCollectionView {
     func config() {
         self.collectionViewLayout = flow
         self.isSelectable = true
-        //selecte first one
     }
     
+    func selectFirst() {
+        selectItems(at: [IndexPath(item: 0, section: 0)], scrollPosition: .left)
+    }
+
     private var flow: NSCollectionViewFlowLayout {
         let flow = NSCollectionViewFlowLayout()
         let itemSize = CGFloat(50)

@@ -106,6 +106,9 @@ class IconEditorViewController: NSViewController {
     var selectedTypeItem: ItemType? {
         didSet {
             typeColorSelectCollectionView.reloadData()
+            DispatchQueue.main.async {
+                self.typeColorSelectCollectionView.selectFirst()
+            }
         }
     }
     var selectedItemColor: ItemType? {
@@ -137,6 +140,9 @@ class IconEditorViewController: NSViewController {
         typeColorSelectCollectionView.config()
         typeColorSelectCollectionView.delegate = self
         typeColorSelectCollectionView.dataSource = self
+        
+        typeSelectCollectionView.selectFirst()
+        collectionView(typeSelectCollectionView, didSelectItemsAt: [IndexPath(item: 0, section: 0)])
     }
     
     //MARK: - Color View

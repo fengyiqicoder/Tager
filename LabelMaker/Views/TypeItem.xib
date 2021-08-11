@@ -10,6 +10,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <collectionViewItem id="7Lh-NA-hOK" customClass="TypeItem" customModule="Tager" customModuleProvider="target">
             <connections>
+                <outlet property="borderView" destination="cHc-Yc-gFW" id="LxN-Og-D19"/>
                 <outlet property="itemImage" destination="6d4-JC-SeH" id="jsM-GI-MX3"/>
                 <outlet property="view" destination="c22-O7-iKe" id="FX3-nm-fGe"/>
             </connections>
@@ -18,16 +19,27 @@
             <rect key="frame" x="0.0" y="0.0" width="175" height="164"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <box boxType="custom" borderWidth="0.0" cornerRadius="1" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="cHc-Yc-gFW">
+                    <rect key="frame" x="3" y="3" width="169" height="158"/>
+                    <view key="contentView" id="lWG-zO-aRt">
+                        <rect key="frame" x="0.0" y="0.0" width="169" height="158"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </box>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6d4-JC-SeH">
                     <rect key="frame" x="5" y="5" width="165" height="154"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="hgx-nc-gAA"/>
                 </imageView>
             </subviews>
             <constraints>
+                <constraint firstItem="cHc-Yc-gFW" firstAttribute="leading" secondItem="6d4-JC-SeH" secondAttribute="leading" constant="-2" id="9nE-hL-l0I"/>
+                <constraint firstItem="cHc-Yc-gFW" firstAttribute="trailing" secondItem="6d4-JC-SeH" secondAttribute="trailing" constant="2" id="CK1-FM-WYm"/>
                 <constraint firstAttribute="bottom" secondItem="6d4-JC-SeH" secondAttribute="bottom" constant="5" id="QYR-fO-YkG"/>
                 <constraint firstItem="6d4-JC-SeH" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="5" id="aDc-x8-ifh"/>
                 <constraint firstItem="6d4-JC-SeH" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="5" id="aKg-RV-Mct"/>
+                <constraint firstItem="cHc-Yc-gFW" firstAttribute="top" secondItem="6d4-JC-SeH" secondAttribute="top" constant="-2" id="er2-1Z-IGQ"/>
                 <constraint firstAttribute="trailing" secondItem="6d4-JC-SeH" secondAttribute="trailing" constant="5" id="jP2-9L-Wjz"/>
+                <constraint firstItem="cHc-Yc-gFW" firstAttribute="bottom" secondItem="6d4-JC-SeH" secondAttribute="bottom" constant="2" id="uEm-Uo-EjP"/>
             </constraints>
             <point key="canvasLocation" x="-133.5" y="104"/>
         </customView>
