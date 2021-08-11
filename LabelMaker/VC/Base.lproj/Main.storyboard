@@ -478,7 +478,10 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ANg-7h-h0w"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UpM-XA-3ip">
-                                            <rect key="frame" x="6" y="64" width="195" height="60"/>
+                                            <rect key="frame" x="7" y="64" width="194" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="190" id="8S7-P1-AAt"/>
+                                            </constraints>
                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" id="jOh-XH-acU">
                                                 <font key="font" size="50" name="SFCompact-Semibold"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -492,10 +495,9 @@
                                         <constraint firstItem="UpM-XA-3ip" firstAttribute="centerY" secondItem="HGf-xt-0Yc" secondAttribute="centerY" id="M1J-2A-i9h"/>
                                         <constraint firstItem="wdY-z6-OSx" firstAttribute="leading" secondItem="fdS-lY-Ys0" secondAttribute="leading" id="Pyd-AK-Z5E"/>
                                         <constraint firstAttribute="trailing" secondItem="wdY-z6-OSx" secondAttribute="trailing" id="Pzz-MB-V0x"/>
-                                        <constraint firstItem="UpM-XA-3ip" firstAttribute="leading" secondItem="fdS-lY-Ys0" secondAttribute="leading" constant="8" id="X8x-G2-adR"/>
                                         <constraint firstAttribute="bottom" secondItem="HGf-xt-0Yc" secondAttribute="bottom" constant="20" symbolic="YES" id="e57-T6-SL7"/>
-                                        <constraint firstAttribute="trailing" secondItem="UpM-XA-3ip" secondAttribute="trailing" constant="9" id="kXm-Gu-Tza"/>
                                         <constraint firstAttribute="bottom" secondItem="wdY-z6-OSx" secondAttribute="bottom" id="p1s-Bp-oyT"/>
+                                        <constraint firstItem="UpM-XA-3ip" firstAttribute="centerX" secondItem="fdS-lY-Ys0" secondAttribute="centerX" id="uA4-cH-uGP"/>
                                         <constraint firstAttribute="trailing" secondItem="HGf-xt-0Yc" secondAttribute="trailing" constant="9" id="vGo-Do-8yd"/>
                                         <constraint firstItem="HGf-xt-0Yc" firstAttribute="top" secondItem="fdS-lY-Ys0" secondAttribute="top" constant="40" id="zAj-98-Uba"/>
                                     </constraints>
@@ -757,7 +759,7 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
-                                        <scrollView wantsLayer="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91C-H7-WEv">
+                                        <scrollView wantsLayer="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="91C-H7-WEv">
                                             <rect key="frame" x="0.0" y="7" width="252" height="70"/>
                                             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="gSA-Ej-ogi">
                                                 <rect key="frame" x="2" y="2" width="248" height="66"/>
@@ -872,10 +874,10 @@
                         <outlet property="opacitySlider" destination="24z-lk-6Et" id="q8r-sV-N9C"/>
                         <outlet property="symbolImageView" destination="HGf-xt-0Yc" id="Dyl-lS-mzb"/>
                         <outlet property="symbolLabel" destination="Pxp-ul-HiG" id="wik-sR-6HB"/>
-                        <outlet property="typeColorSelectCollectionView" destination="vHv-fw-pkY" id="ITB-Yt-J2z"/>
+                        <outlet property="typeCollectionView" destination="BwF-eI-xH5" id="fgp-hX-456"/>
                         <outlet property="typeEditorView" destination="lEF-pq-WqI" id="C91-OO-8IJ"/>
-                        <outlet property="typeSelectCollectionView" destination="BwF-eI-xH5" id="fgp-hX-456"/>
                         <outlet property="typeSelectScrollView" destination="urv-Ut-kPU" id="hkf-lc-2pl"/>
+                        <outlet property="typeWithColorCollectionView" destination="vHv-fw-pkY" id="ITB-Yt-J2z"/>
                     </connections>
                 </viewController>
                 <customObject id="New-Gd-jhQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1290,11 +1292,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TagerIcon" width="512" height="512"/>
+        <image name="TagerIcon" width="256" height="256"/>
         <image name="character.textbox" catalog="system" width="19" height="14"/>
         <image name="folder" catalog="system" width="18" height="14"/>
         <image name="folder.fill.badge.gear" catalog="system" width="19" height="14"/>
-        <image name="folderIcon" width="512" height="512"/>
+        <image name="folderIcon" width="256" height="256"/>
         <image name="info.circle" catalog="system" width="19" height="19"/>
         <image name="paintpalette.fill" catalog="system" width="18" height="15"/>
         <image name="plus" catalog="system" width="17" height="16"/>

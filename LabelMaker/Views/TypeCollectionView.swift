@@ -7,7 +7,7 @@
 
 import AppKit
 
-typealias ItemType = IconModel.ItemTypeWithColor
+typealias ColorfulType = IconModel.ItemTypeWithColor
 
 class TypeCollectionView: NSCollectionView {
     var isTypeItem: Bool!
@@ -17,8 +17,10 @@ class TypeCollectionView: NSCollectionView {
         self.isSelectable = true
     }
     
-    func selectFirst() {
-        selectItems(at: [IndexPath(item: 0, section: 0)], scrollPosition: .left)
+    func select(order: Int, onlySelectedState: Bool = false) {
+        selectItems(at: [IndexPath(item: order, section: 0)], scrollPosition: .left)
+        if onlySelectedState { return }
+        delegate?.collectionView?(self, didSelectItemsAt: [IndexPath(item: order, section: 0)])
     }
 
     private var flow: NSCollectionViewFlowLayout {
@@ -39,19 +41,19 @@ extension IconEditorViewController: NSCollectionViewDelegate {
         if typeCollectionView.isTypeItem {
             selectedTypeItem = typeItems[indexPaths.first!.item]
         } else {
-            selectedItemColor = typeColorfulItems[indexPaths.first!.item]
+            selectedItemWithColor = typeItemsWithColor[indexPaths.first!.item]
         }
     }
 }
 extension IconEditorViewController: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         let typeCollectionView = collectionView as! TypeCollectionView
-        return typeCollectionView.isTypeItem ? typeItems.count : typeColorfulItems.count
+        return typeCollectionView.isTypeItem ? typeItems.count : typeItemsWithColor.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let typeCollectionView = collectionView as! TypeCollectionView
-        let items = typeCollectionView.isTypeItem ? typeItems : typeColorfulItems
+        let items = typeCollectionView.isTypeItem ? typeItems : typeItemsWithColor
         
         let image = NSImage(named: items[indexPath.item].imageAssetName)
         let itemCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TypeItem"), for: indexPath) as! TypeItem

@@ -15,7 +15,7 @@ extension IconModel {
         ItemTypeWithColor(type: .pdfIcon, color: .defualt),
         ItemTypeWithColor(type: .trashIcon, color: .defualt),
         ItemTypeWithColor(type: .fullTrashIcon, color: .defualt),
-        ItemTypeWithColor(type: .zipFileIcon, color: .defualt),
+//        ItemTypeWithColor(type: .zipFileIcon, color: .defualt),
         ItemTypeWithColor(type: .projectIcon, color: .defualt),
     ]
     static let ItemsColorDict: [ItemType: [ItemType.Color]] = [
@@ -31,6 +31,7 @@ extension IconModel {
     struct ItemTypeWithColor: Hashable {
         
         static let defaultName: String = "folderIcon"
+        static let defualt: ItemTypeWithColor = ItemTypeWithColor(name: defaultName)
         
         init(type: ItemType, color: ItemType.Color) {
             if color == .defualt {
@@ -97,6 +98,14 @@ extension IconModel {
         enum Color: String {
             case defualt
             case pink, orange, mint, red, purple, blue, green
+        }
+        
+        var defualtColor: ItemTypeWithColor {
+            ItemTypeWithColor(type: self, color: .defualt)
+        }
+        
+        func with(color: ItemType.Color) -> ItemTypeWithColor {
+            return ItemTypeWithColor(type: self, color: color)
         }
     }
 }

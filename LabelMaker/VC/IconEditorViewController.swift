@@ -45,7 +45,8 @@ class IconEditorViewController: NSViewController {
     var model: IconModel {
         set {
             view.window?.title = newValue.name
-            imageView.image = NSImage(named: "folderIcon")
+            let imageName = newValue.type?.imageAssetName ?? "folderIcon"
+            imageView.image = NSImage(named: imageName)
             nameTextField.stringValue = newValue.name
             
             if let markerStr = newValue.markerStr {
@@ -56,15 +57,18 @@ class IconEditorViewController: NSViewController {
             }
             
             uuid = newValue.uuid
+            
             selected(color: newValue.color)
             opacitySlider.floatValue = Float(newValue.color.alphaComponent)
+            //Select image asset
+            initSelected(item: newValue.type ?? ColorfulType.defualt)
         }
         get {
-            //FIXME: ICON image 分辨率不够高
             var model = IconModel(uuid: uuid,
                                   name: nameTextField.stringValue,
                                   image: iconView.image(),
                                   color: selectedColor ?? NSColor.white)
+            model.type = selectedItemWithColor ?? selectedTypeItem
             if isUsingSymbol {
                 model.set(symbolStr: symbolName ?? "")
             } else {
@@ -99,50 +103,68 @@ class IconEditorViewController: NSViewController {
     }
     
     //MARK: - Type
-    @IBOutlet weak var typeSelectCollectionView: TypeCollectionView!
+    @IBOutlet weak var typeCollectionView: TypeCollectionView!
     @IBOutlet weak var typeSelectScrollView: NSScrollView!
-    @IBOutlet weak var typeColorSelectCollectionView: TypeCollectionView!
+    @IBOutlet weak var typeWithColorCollectionView: TypeCollectionView!
     
-    var selectedTypeItem: ItemType? {
-        didSet {
-            typeColorSelectCollectionView.reloadData()
-            DispatchQueue.main.async {
-                self.typeColorSelectCollectionView.selectFirst()
+    func initSelected(item: ColorfulType) {
+        let type = item.itemType.defualtColor
+        typeItems.enumerated().forEach {
+            if $1.imageAssetName == type.imageAssetName {
+                typeCollectionView.select(order: $0)
+            }
+        }
+        typeItemsWithColor.enumerated().forEach {
+            if $1.imageAssetName == item.imageAssetName {
+                let order = $0
+                DispatchQueue.main.async {
+                    self.typeWithColorCollectionView.select(order: order)
+                }
             }
         }
     }
-    var selectedItemColor: ItemType? {
+    
+    var selectedTypeItem: ColorfulType? {
         didSet {
+            typeWithColorCollectionView.reloadData()
+            DispatchQueue.main.async {
+                self.typeWithColorCollectionView.select(order: 0)
+            }
+        }
+    }
+    var selectedItemWithColor: ColorfulType? {
+        didSet {
+            guard let item = selectedItemWithColor, let image = item.image else { return }
+            imageView.image = image
             //save
+            save()
         }
     }
     
-    var typeItems: [ItemType] {
+    var typeItems: [ColorfulType] {
         IconModel.ItemTypes
     }
-    var typeColorfulItems: [ItemType] {
+    var typeItemsWithColor: [ColorfulType] {
         guard let item = selectedTypeItem else { return [] }
         let colorTypes = IconModel.ItemsColorDict[item.itemType]!
         let currentTypeColorItem = colorTypes.map{
-            ItemType(type: item.itemType, color: $0)
+            ColorfulType(type: item.itemType, color: $0)
         }
         return currentTypeColorItem
     }
     
     func configTypeSelection() {
-        typeSelectCollectionView.isTypeItem = true
-        typeColorSelectCollectionView.isTypeItem = false
+        typeCollectionView.isTypeItem = true
+        typeWithColorCollectionView.isTypeItem = false
         
-        typeSelectCollectionView.config()
-        typeSelectCollectionView.delegate = self
-        typeSelectCollectionView.dataSource = self
+        typeCollectionView.config()
+        typeCollectionView.delegate = self
+        typeCollectionView.dataSource = self
 
-        typeColorSelectCollectionView.config()
-        typeColorSelectCollectionView.delegate = self
-        typeColorSelectCollectionView.dataSource = self
+        typeWithColorCollectionView.config()
+        typeWithColorCollectionView.delegate = self
+        typeWithColorCollectionView.dataSource = self
         
-        typeSelectCollectionView.selectFirst()
-        collectionView(typeSelectCollectionView, didSelectItemsAt: [IndexPath(item: 0, section: 0)])
     }
     
     //MARK: - Color View
@@ -274,7 +296,8 @@ class IconEditorViewController: NSViewController {
         popoverVC = vc
     }
     
-    //Abount symbol
+    //Abount Icon Generator
+    
     private var symbolName: String?
     private func setSymbol(name: String) {
         symbolName = name
@@ -384,6 +407,7 @@ extension IconEditorViewController: TextFieldDelegate {
     
     func save() {
         IconModelController.shared.save(model: model)
+        print(model.type)
         view.window?.title = model.name
         MainController.shared.reload()
     }
