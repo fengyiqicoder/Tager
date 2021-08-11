@@ -18,8 +18,6 @@ extension NSTextField {
             let smallerFont = self.font!.to(pointSize: fitFontSize)
             currentTextWidth = stringValue.calculateWidth(font: smallerFont)
         }
-        
-//        print("Font size \(fitFontSize) \(frame.width - 10) \(currentTextWidth)")
         self.font = self.font!.to(pointSize: fitFontSize)
     }
     
@@ -28,7 +26,9 @@ extension NSTextField {
         changeFontToFit(maxFontSize: fontSize)
     }
     
-    
+    func resizeText() {
+        set(text: stringValue, with: 50)
+    }
 }
 
 fileprivate

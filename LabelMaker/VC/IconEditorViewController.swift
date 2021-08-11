@@ -62,6 +62,7 @@ class IconEditorViewController: NSViewController {
             opacitySlider.floatValue = Float(newValue.color.alphaComponent)
             //Select image asset
             initSelected(item: newValue.type ?? ColorfulType.defualt)
+            configPostionWith(type: newValue.type?.itemType ?? ColorfulType.defualt.itemType)
         }
         get {
             var model = IconModel(uuid: uuid,
@@ -91,8 +92,10 @@ class IconEditorViewController: NSViewController {
         initColorPicker()
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
+    var isViewAppeared: Bool = false
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        isViewAppeared = true
     }
     
     
@@ -126,9 +129,13 @@ class IconEditorViewController: NSViewController {
     
     var selectedTypeItem: ColorfulType? {
         didSet {
+            guard let newType = selectedTypeItem else { return }
+            configPostionWith(type: newType.itemType)
             typeWithColorCollectionView.reloadData()
-            DispatchQueue.main.async {
-                self.typeWithColorCollectionView.select(order: 0)
+            if isViewAppeared {
+                DispatchQueue.main.async {
+                    self.typeWithColorCollectionView.select(order: 0)
+                }
             }
         }
     }
@@ -139,6 +146,15 @@ class IconEditorViewController: NSViewController {
             //save
             save()
         }
+    }
+    
+    func configPostionWith(type: IconModel.ItemType) {
+        guard let postionConfig = IconModel.ItemsPostionConfigDict[type] else { return }
+        markerLabelWidthConstraint.constant = postionConfig.markerWidth
+        markerLabelCenterYConstraint.constant = postionConfig.markerCenterOffset
+        symbolLabelTopConstraint.constant = postionConfig.symbolsCenterOffset
+        view.layoutSubtreeIfNeeded()
+        markerLabel.resizeText()
     }
     
     var typeItems: [ColorfulType] {
@@ -254,6 +270,10 @@ class IconEditorViewController: NSViewController {
     @IBOutlet weak var symbolImageView: NSImageView!
     @IBOutlet weak var markerLabel: NSTextField!
     @IBOutlet weak var symbolLabel: NSImageView!
+    
+    @IBOutlet weak var markerLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var markerLabelCenterYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var symbolLabelTopConstraint: NSLayoutConstraint!
     
     //MARK: - Popover symbolPicker
     
@@ -407,7 +427,6 @@ extension IconEditorViewController: TextFieldDelegate {
     
     func save() {
         IconModelController.shared.save(model: model)
-        print(model.type)
         view.window?.title = model.name
         MainController.shared.reload()
     }

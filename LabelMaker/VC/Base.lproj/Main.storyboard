@@ -868,12 +868,15 @@
                         <outlet property="imageView" destination="wdY-z6-OSx" id="ISl-m8-IB2"/>
                         <outlet property="labelEditorView" destination="guR-fg-Srp" id="6ub-ek-6C5"/>
                         <outlet property="markerLabel" destination="UpM-XA-3ip" id="uc0-pC-Asg"/>
+                        <outlet property="markerLabelCenterYConstraint" destination="M1J-2A-i9h" id="wko-2V-gHj"/>
+                        <outlet property="markerLabelWidthConstraint" destination="8S7-P1-AAt" id="1Dx-l8-EJD"/>
                         <outlet property="markerTextField" destination="bqb-8Y-JqY" id="m5r-Lm-Oh4"/>
                         <outlet property="markerTypeSwitch" destination="yVv-ey-PyJ" id="4fT-2G-RY2"/>
                         <outlet property="nameTextField" destination="5rC-0s-KZm" id="Hd8-sZ-PVa"/>
                         <outlet property="opacitySlider" destination="24z-lk-6Et" id="q8r-sV-N9C"/>
                         <outlet property="symbolImageView" destination="HGf-xt-0Yc" id="Dyl-lS-mzb"/>
                         <outlet property="symbolLabel" destination="Pxp-ul-HiG" id="wik-sR-6HB"/>
+                        <outlet property="symbolLabelTopConstraint" destination="zAj-98-Uba" id="nvk-Ld-URJ"/>
                         <outlet property="typeCollectionView" destination="BwF-eI-xH5" id="fgp-hX-456"/>
                         <outlet property="typeEditorView" destination="lEF-pq-WqI" id="C91-OO-8IJ"/>
                         <outlet property="typeSelectScrollView" destination="urv-Ut-kPU" id="hkf-lc-2pl"/>

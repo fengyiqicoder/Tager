@@ -28,6 +28,22 @@ extension IconModel {
         .zipFileIcon: [.defualt],
     ]
     
+    static let ItemsPostionConfigDict: [ItemType: ItemPosition] = [
+        .folderIcon: ItemPosition(markerWidth: 190, markerCenterOffset: 0, symbolsCenterOffset: 40),
+        .fileIcon: ItemPosition(markerWidth: 150, markerCenterOffset: -6, symbolsCenterOffset: 30),
+        .pdfIcon: ItemPosition(markerWidth: 150, markerCenterOffset: -6, symbolsCenterOffset: 20),
+        .fullTrashIcon: ItemPosition(markerWidth: 100, markerCenterOffset: 0, symbolsCenterOffset: 40),
+        .projectIcon: ItemPosition(markerWidth: 150, markerCenterOffset: 35, symbolsCenterOffset: 20),
+        .trashIcon: ItemPosition(markerWidth: 120, markerCenterOffset: 0, symbolsCenterOffset: 40),
+        .zipFileIcon: ItemPosition(markerWidth: 190, markerCenterOffset: 0, symbolsCenterOffset: 40),
+    ]
+    
+    struct ItemPosition {
+        var markerWidth: CGFloat
+        var markerCenterOffset: CGFloat
+        var symbolsCenterOffset: CGFloat
+    }
+    
     struct ItemTypeWithColor: Hashable {
         
         static let defaultName: String = "folderIcon"
