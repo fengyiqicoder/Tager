@@ -61,15 +61,20 @@ class IconEditorViewController: NSViewController {
             selected(color: newValue.color)
             opacitySlider.floatValue = Float(newValue.color.alphaComponent)
             //Select image asset
-            initSelected(item: newValue.type ?? ColorfulType.defualt)
+            initSelectedType(item: newValue.type ?? ColorfulType.defualt)
             configPostionWith(type: newValue.type?.itemType ?? ColorfulType.defualt.itemType)
+            
+            configCustomEditorView(size: newValue.assignLabelSize)
         }
         get {
             var model = IconModel(uuid: uuid,
                                   name: nameTextField.stringValue,
                                   image: iconView.image(),
                                   color: selectedColor ?? NSColor.white)
+            
+            //这两个属性可能是空的,用户使用的是旧版本的Tager
             model.type = selectedItemWithColor ?? selectedTypeItem
+            model.assignLabelSize = assignLabelSize
             if isUsingSymbol {
                 model.set(symbolStr: symbolName ?? "")
             } else {
@@ -92,10 +97,9 @@ class IconEditorViewController: NSViewController {
         initColorPicker()
     }
     
-    var isViewAppeared: Bool = false
+    var justLoaeded: Bool = true
     override func viewDidAppear() {
         super.viewDidAppear()
-        isViewAppeared = true
     }
     
     
@@ -110,83 +114,31 @@ class IconEditorViewController: NSViewController {
     @IBOutlet weak var typeSelectScrollView: NSScrollView!
     @IBOutlet weak var typeWithColorCollectionView: TypeCollectionView!
     
-    func initSelected(item: ColorfulType) {
-        let type = item.itemType.defualtColor
-        typeItems.enumerated().forEach {
-            if $1.imageAssetName == type.imageAssetName {
-                typeCollectionView.select(order: $0)
-            }
-        }
-        typeItemsWithColor.enumerated().forEach {
-            if $1.imageAssetName == item.imageAssetName {
-                let order = $0
+    var selectedTypeItem: ColorfulType? {
+        didSet {
+            guard let newType = selectedTypeItem else { return }
+            configPostionIfNoAutosize(type: newType.itemType)
+            
+            typeWithColorCollectionView.reloadData()
+            if !justLoaeded {
                 DispatchQueue.main.async {
-                    self.typeWithColorCollectionView.select(order: order)
+                    self.typeWithColorCollectionView.select(order: 0)
                 }
+            } else {
+                justLoaeded = false
             }
         }
     }
     
-    var selectedTypeItem: ColorfulType? {
-        didSet {
-            guard let newType = selectedTypeItem else { return }
-            configPostionWith(type: newType.itemType)
-            typeWithColorCollectionView.reloadData()
-            if isViewAppeared {
-                DispatchQueue.main.async {
-                    self.typeWithColorCollectionView.select(order: 0)
-                }
-            }
-        }
-    }
     var selectedItemWithColor: ColorfulType? {
         didSet {
             guard let item = selectedItemWithColor, let image = item.image else { return }
             imageView.image = image
-            //save
             save()
         }
     }
     
-    func configPostionWith(type: IconModel.ItemType) {
-        guard let postionConfig = IconModel.ItemsPostionConfigDict[type] else { return }
-        markerLabelWidthConstraint.constant = postionConfig.markerWidth
-        markerLabelCenterYConstraint.constant = postionConfig.markerCenterOffset
-        symbolLabelTopConstraint.constant = postionConfig.symbolsCenterOffset
-        view.layoutSubtreeIfNeeded()
-        markerLabel.resizeText()
-    }
-    
-    var typeItems: [ColorfulType] {
-        IconModel.ItemTypes
-    }
-    var typeItemsWithColor: [ColorfulType] {
-        guard let item = selectedTypeItem else { return [] }
-        let colorTypes = IconModel.ItemsColorDict[item.itemType]!
-        let currentTypeColorItem = colorTypes.map{
-            ColorfulType(type: item.itemType, color: $0)
-        }
-        return currentTypeColorItem
-    }
-    
-    func configTypeSelection() {
-        typeCollectionView.isTypeItem = true
-        typeWithColorCollectionView.isTypeItem = false
-        
-        typeCollectionView.config()
-        typeCollectionView.delegate = self
-        typeCollectionView.dataSource = self
-
-        typeWithColorCollectionView.config()
-        typeWithColorCollectionView.delegate = self
-        typeWithColorCollectionView.dataSource = self
-        
-    }
-    
     //MARK: - Color View
-    
-    private var selectedColor: NSColor?
-    
     @IBOutlet weak var colorPickerView: NSBox!
     @IBOutlet weak var clickGesture: NSClickGestureRecognizer!
     @IBOutlet weak var color1View: NSBox!
@@ -195,72 +147,12 @@ class IconEditorViewController: NSViewController {
     @IBOutlet weak var color4View: NSBox!
     @IBOutlet weak var color5View: NSBox!
     @IBOutlet weak var color6View: NSBox!
-    private var colorViews: [NSBox] { [ color1View, color2View, color3View, color4View, color5View, color6View ]}
     
-    private func initColorPicker() {
-        colorViews.forEach { view in
-            view.wantsLayer = true
-            view.layer?.cornerRadius = 11
-            view.layer?.cornerCurve = .continuous
-
-        }
-    }
-    
-    @IBAction func clickColorPicker(_ sender: NSClickGestureRecognizer) {
-        let location = sender.location(in: colorPickerView)
-        
-        colorViews.enumerated().forEach { (order, box) in
-            if box.frame.contains(location) {
-                selectMarkShowOn(order: order)
-                let color = colorViews[order].fillColor
-                set(color: color.withAlphaComponent(CGFloat(opacitySlider.floatValue)))
-                save()
-            }
-        }
-    }
-    
-    private var selectedMarker: NSImageView?
-    private func selectMarkShowOn(order: Int) {
-        //color selected marker
-        selectedMarker?.removeFromSuperview()
-        
-        let selectedColorView = colorViews[order]
-        let selectedImage = NSImageView(frame: selectedColorView.frame)
-        selectedImage.image = NSImage(named: "checkmark")
-        colorPickerView.addSubview(selectedImage)
-        
-        selectedMarker = selectedImage
-    }
-    
-    private func set(color: NSColor) {
-        //color changed
-        markerLabel.textColor = color
-        symbolImageView.contentTintColor = color
-        selectedColor = color
-    }
-    
-    private func selected(color: NSColor) {
-        var colorOrder = 0
-        let originColor = color.withAlphaComponent(1.0)
-        colorViews.enumerated().forEach { (order, view) in
-            if view.fillColor.cgColor == originColor.cgColor {
-                colorOrder = order
-            }   
-
-        }
-        selectMarkShowOn(order: colorOrder)
-        set(color: color)
-    }
+    var selectedMarker: NSImageView?
+    var selectedColor: NSColor?
     
     //Opacity
-    
     @IBOutlet weak var opacitySlider: NSSlider!
-    @IBAction func opacity(_ sender: NSSlider) {
-        let currentOpacity = CGFloat(sender.floatValue)
-        guard let color = selectedColor?.withAlphaComponent(currentOpacity) else { return }
-        set(color: color)
-        save()
-    }
     
     
     //MARK: - Icon generator
@@ -274,6 +166,11 @@ class IconEditorViewController: NSViewController {
     @IBOutlet weak var markerLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var markerLabelCenterYConstraint: NSLayoutConstraint!
     @IBOutlet weak var symbolLabelTopConstraint: NSLayoutConstraint!
+    
+    //MARK: - Custom
+    @IBOutlet weak var autoSizeCheckBox: NSButton!
+    @IBOutlet weak var customSizeSlider: NSSlider!
+    
     
     //MARK: - Popover symbolPicker
     
@@ -303,7 +200,7 @@ class IconEditorViewController: NSViewController {
         markerTextField.isHidden = isUsingSymbol
     }
     
-    private var popoverVC: NSViewController?
+    var popoverVC: NSViewController?
     func showSymbolePicker(from sourceView: NSView){
         let popover = NSPopover()
         popover.behavior = .semitransient
@@ -319,17 +216,24 @@ class IconEditorViewController: NSViewController {
     //Abount Icon Generator
     
     private var symbolName: String?
-    private func setSymbol(name: String) {
+    let symbolDefaultSize: CGFloat = 60
+
+     func setSymbol(name: String) {
         symbolName = name
         isUsingSymbol = true
         
-        let symbolSize: CGFloat = 60
         symbolLabel.image = NSImage(systemSymbolName: name, accessibilityDescription: nil)?.withSymbolConfiguration(NSImage.SymbolConfiguration(pointSize: 20, weight: .regular))
-        symbolImageView.image = NSImage(systemSymbolName: name, accessibilityDescription: nil)?.withSymbolConfiguration(NSImage.SymbolConfiguration(pointSize: symbolSize, weight: .regular))
+        symbolImageView.image = NSImage(systemSymbolName: name, accessibilityDescription: nil)?.withSymbolConfiguration(NSImage.SymbolConfiguration(pointSize: symbolDefaultSize, weight: .regular))
         symbolImageView.contentTintColor = selectedColor ?? NSColor.white
     }
     
-    private func setMarker(string: String) {
+    func resetSymbol(size: CGFloat) {
+        guard let name = symbolName else { return }
+        let symbolSize: CGFloat = size
+        symbolImageView.image = NSImage(systemSymbolName: name, accessibilityDescription: nil)?.withSymbolConfiguration(NSImage.SymbolConfiguration(pointSize: symbolSize, weight: .regular))
+    }
+    
+    func setMarker(string: String) {
         isUsingSymbol = false
         markerLabel.set(text: string, with: 50)
         if markerTextField.stringValue != string {
@@ -388,6 +292,7 @@ class IconEditorViewController: NSViewController {
     }
     
     //MARK: - Editing views
+    
     @IBOutlet weak var labelEditorView: NSBox!
     @IBOutlet weak var colorEditorView: NSBox!
     @IBOutlet weak var typeEditorView: NSBox!
@@ -407,35 +312,4 @@ class IconEditorViewController: NSViewController {
     
     
     
-}
-
-enum EditingSchema {
-    case label
-    case color
-    case type
-    case custom
-}
-
-extension IconEditorViewController: TextFieldDelegate {
-    func textFieldDidChange(textField: NSTextField) {
-        //Meaning textField is marker
-        if textField.tag == 1 {
-            setMarker(string: model.markerStr ?? "nil")
-        }
-        save()
-    }
-    
-    func save() {
-        IconModelController.shared.save(model: model)
-        view.window?.title = model.name
-        MainController.shared.reload()
-    }
-}
-
-extension IconEditorViewController: SymbolItemDelegate {
-    func didSelect(item: SymbolItem) {
-        setSymbol(name: item.symbol)
-        popoverVC?.dismissPopover()
-        save()
-    }
 }

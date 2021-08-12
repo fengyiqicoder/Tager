@@ -34,6 +34,10 @@
 		13EBCCD226C22B8C00600594 /* TypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCD126C22B8C00600594 /* TypeCollectionView.swift */; };
 		13EBCCD426C22ED800600594 /* TypeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EBCCD326C22ED800600594 /* TypeItem.xib */; };
 		13EBCCD626C230AF00600594 /* TypeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCD526C230AF00600594 /* TypeItem.swift */; };
+		13EBCCD926C4D18400600594 /* IconEditor+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCD826C4D18400600594 /* IconEditor+Color.swift */; };
+		13EBCCDB26C4D19500600594 /* IconEditor+Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCDA26C4D19500600594 /* IconEditor+Labels.swift */; };
+		13EBCCDD26C4D1AD00600594 /* IconEditor+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCDC26C4D1AD00600594 /* IconEditor+Type.swift */; };
+		13EBCCDF26C4D1B900600594 /* IconEditor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EBCCDE26C4D1B900600594 /* IconEditor+Custom.swift */; };
 		13FF6A13267568090043597D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A12267568090043597D /* AppDelegate.swift */; };
 		13FF6A15267568090043597D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF6A14267568090043597D /* MainController.swift */; };
 		13FF6A172675680A0043597D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FF6A162675680A0043597D /* Assets.xcassets */; };
@@ -97,6 +101,10 @@
 		13EBCCD126C22B8C00600594 /* TypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionView.swift; sourceTree = "<group>"; };
 		13EBCCD326C22ED800600594 /* TypeItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeItem.xib; sourceTree = "<group>"; };
 		13EBCCD526C230AF00600594 /* TypeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeItem.swift; sourceTree = "<group>"; };
+		13EBCCD826C4D18400600594 /* IconEditor+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconEditor+Color.swift"; sourceTree = "<group>"; };
+		13EBCCDA26C4D19500600594 /* IconEditor+Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconEditor+Labels.swift"; sourceTree = "<group>"; };
+		13EBCCDC26C4D1AD00600594 /* IconEditor+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconEditor+Type.swift"; sourceTree = "<group>"; };
+		13EBCCDE26C4D1B900600594 /* IconEditor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IconEditor+Custom.swift"; sourceTree = "<group>"; };
 		13FF6A0F267568090043597D /* Tager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FF6A12267568090043597D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FF6A14267568090043597D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -145,6 +153,18 @@
 				135125EF26B44B280020E21C /* AppStoreReview.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		13EBCCD726C4D16B00600594 /* IconEditor */ = {
+			isa = PBXGroup;
+			children = (
+				13D11A6B2680701B00182F58 /* IconEditorViewController.swift */,
+				13EBCCDA26C4D19500600594 /* IconEditor+Labels.swift */,
+				13EBCCD826C4D18400600594 /* IconEditor+Color.swift */,
+				13EBCCDC26C4D1AD00600594 /* IconEditor+Type.swift */,
+				13EBCCDE26C4D1B900600594 /* IconEditor+Custom.swift */,
+			);
+			path = IconEditor;
 			sourceTree = "<group>";
 		};
 		13FF6A06267568090043597D = {
@@ -207,7 +227,7 @@
 				13FF6A182675680A0043597D /* Main.storyboard */,
 				13FF6A14267568090043597D /* MainController.swift */,
 				1399464B269730C100AD8CCA /* InfoViewController.swift */,
-				13D11A6B2680701B00182F58 /* IconEditorViewController.swift */,
+				13EBCCD726C4D16B00600594 /* IconEditor */,
 				139945F02691C4AF00AD8CCA /* SymbolPickerViewController.swift */,
 			);
 			path = VC;
@@ -364,16 +384,20 @@
 				13E57C3A2684489B00EBD74F /* IconImage.swift in Sources */,
 				1399464C269730C100AD8CCA /* InfoViewController.swift in Sources */,
 				13FF6A15267568090043597D /* MainController.swift in Sources */,
+				13EBCCD926C4D18400600594 /* IconEditor+Color.swift in Sources */,
 				13EBCCD226C22B8C00600594 /* TypeCollectionView.swift in Sources */,
 				136DCEE3269D3A4A00F95E17 /* Sandbox.swift in Sources */,
 				135125F026B44B280020E21C /* AppStoreReview.swift in Sources */,
 				13B5EB6A267F372F0018D717 /* IconModelController.swift in Sources */,
+				13EBCCDB26C4D19500600594 /* IconEditor+Labels.swift in Sources */,
 				13FF6A13267568090043597D /* AppDelegate.swift in Sources */,
 				139945EF268EBEF600AD8CCA /* MaxiumFontLabel.swift in Sources */,
 				13EBCCBC26C0F93300600594 /* IconItemType.swift in Sources */,
 				1399465A269AEBA000AD8CCA /* LocalizeString.swift in Sources */,
 				13FF6A412675FE580043597D /* IconModel.swift in Sources */,
 				13FF6A392675AE570043597D /* Storage.swift in Sources */,
+				13EBCCDF26C4D1B900600594 /* IconEditor+Custom.swift in Sources */,
+				13EBCCDD26C4D1AD00600594 /* IconEditor+Type.swift in Sources */,
 				1399465026995D8D00AD8CCA /* LaunchController.swift in Sources */,
 				13FF6A3E2675E45E0043597D /* MainWindowController.swift in Sources */,
 			);
