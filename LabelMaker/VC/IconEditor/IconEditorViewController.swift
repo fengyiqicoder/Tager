@@ -95,6 +95,12 @@ class IconEditorViewController: NSViewController {
         
         configTypeSelection()
         initColorPicker()
+        
+        if #available(macOS 11.3, *) {
+            //do nothing
+        } else {
+            editLabelButton.image = NSImage(systemSymbolName: "character", accessibilityDescription: nil)
+        }
     }
     
     var justLoaeded: Bool = true
