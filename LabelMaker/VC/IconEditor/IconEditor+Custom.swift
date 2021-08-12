@@ -21,6 +21,7 @@ extension IconEditorViewController {
                 configCustomEditorView(size: nil)
                 configPostionWith(type: selectedTypeItem?.itemType ?? ColorfulType.defualt.itemType)
                 resetSymbol(size: symbolDefaultSize)
+                save()
             }
         }
     }
