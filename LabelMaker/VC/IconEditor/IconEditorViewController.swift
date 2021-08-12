@@ -268,6 +268,13 @@ class IconEditorViewController: NSViewController {
           .custom: editCustomizeButton]
     }
     
+    fileprivate
+    var typeToHieghtDict: [EditingSchema: CGFloat] {
+        [ .label: 575,
+          .color: 610,
+          .type: 675,
+          .custom: 570]
+    }
     
     fileprivate
     var currentEditingType: EditingSchema = .label {
@@ -288,6 +295,11 @@ class IconEditorViewController: NSViewController {
         let typedType = buttonToTypeDict[sender]!
         if currentEditingType != typedType {
             currentEditingType = typedType
+            if let window = self.view.window {
+                var frame = window.frame
+                frame.set(height: typeToHieghtDict[typedType]!)
+                window.setFrame(frame, display: true, animate: true)
+            }
         }
     }
     

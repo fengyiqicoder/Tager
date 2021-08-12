@@ -378,11 +378,11 @@
             <objects>
                 <viewController id="XFD-C7-oq4" customClass="IconEditorViewController" customModule="Tager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="RW2-JB-GKk">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="651"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="575"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="guR-fg-Srp">
-                                <rect key="frame" x="40" y="123" width="252" height="130"/>
+                                <rect key="frame" x="40" y="47" width="252" height="130"/>
                                 <view key="contentView" id="84N-nt-ebq">
                                     <rect key="frame" x="0.0" y="0.0" width="252" height="130"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,7 +464,7 @@
                                 <color key="borderColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                             <box boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Wyb-8z-j0a">
-                                <rect key="frame" x="64" y="383" width="208" height="208"/>
+                                <rect key="frame" x="64" y="307" width="208" height="208"/>
                                 <view key="contentView" id="fdS-lY-Ys0">
                                     <rect key="frame" x="0.0" y="0.0" width="208" height="208"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -508,7 +508,7 @@
                                 </constraints>
                             </box>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="eHp-IA-vsT">
-                                <rect key="frame" x="40" y="282.5" width="35" height="36"/>
+                                <rect key="frame" x="40" y="206.5" width="35" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9ZS-aA-b1o"/>
                                     <constraint firstAttribute="width" secondItem="eHp-IA-vsT" secondAttribute="height" multiplier="7:6" id="ydy-G8-0an"/>
@@ -523,7 +523,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="ANI-XE-YH1">
-                                <rect key="frame" x="115" y="282.5" width="33.5" height="36"/>
+                                <rect key="frame" x="115" y="206.5" width="33.5" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ANI-XE-YH1" secondAttribute="height" multiplier="16:15" id="nB3-gt-fJd"/>
                                     <constraint firstAttribute="height" constant="30" id="xs9-2B-le0"/>
@@ -537,7 +537,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="hm3-08-6Xq">
-                                <rect key="frame" x="188" y="283" width="34" height="35"/>
+                                <rect key="frame" x="188" y="207" width="34" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="JvY-uT-9Mt"/>
                                     <constraint firstAttribute="width" secondItem="hm3-08-6Xq" secondAttribute="height" multiplier="34:31" id="raD-uD-xID"/>
@@ -551,7 +551,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="t4c-hj-9gu">
-                                <rect key="frame" x="262" y="282" width="31" height="37"/>
+                                <rect key="frame" x="262" y="206" width="31" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="t4c-hj-9gu" secondAttribute="height" multiplier="30:31" id="aat-8h-wAl"/>
                                     <constraint firstAttribute="width" constant="30" id="jjz-jM-uP3"/>
@@ -565,7 +565,7 @@
                                 </connections>
                             </button>
                             <box hidden="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="fJt-fN-Ieg">
-                                <rect key="frame" x="40" y="93" width="252" height="160"/>
+                                <rect key="frame" x="40" y="17" width="252" height="160"/>
                                 <view key="contentView" id="Cw8-Jb-hTq">
                                     <rect key="frame" x="0.0" y="0.0" width="252" height="160"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -710,7 +710,7 @@
                                 <color key="borderColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                             <box hidden="YES" boxType="custom" borderType="none" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="lEF-pq-WqI">
-                                <rect key="frame" x="40" y="13" width="252" height="240"/>
+                                <rect key="frame" x="40" y="-63" width="252" height="240"/>
                                 <view key="contentView" id="0Tt-qR-pV4">
                                     <rect key="frame" x="0.0" y="0.0" width="252" height="240"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -807,7 +807,7 @@
                                 <color key="borderColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </box>
                             <box hidden="YES" boxType="custom" borderWidth="0.0" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="SEb-Fc-Wm4">
-                                <rect key="frame" x="40" y="78" width="252" height="175"/>
+                                <rect key="frame" x="40" y="2" width="252" height="175"/>
                                 <view key="contentView" id="OHy-hs-xdu">
                                     <rect key="frame" x="0.0" y="0.0" width="252" height="175"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1337,11 +1337,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TagerIcon" width="256" height="256"/>
+        <image name="TagerIcon" width="512" height="512"/>
         <image name="character.textbox" catalog="system" width="19" height="14"/>
         <image name="folder" catalog="system" width="18" height="14"/>
         <image name="folder.fill.badge.gear" catalog="system" width="19" height="14"/>
-        <image name="folderIcon" width="256" height="256"/>
+        <image name="folderIcon" width="512" height="512"/>
         <image name="info.circle" catalog="system" width="19" height="19"/>
         <image name="paintpalette.fill" catalog="system" width="18" height="15"/>
         <image name="plus" catalog="system" width="17" height="16"/>
