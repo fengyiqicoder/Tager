@@ -222,7 +222,7 @@ class IconEditorViewController: NSViewController {
     //Abount Icon Generator
     
     private var symbolName: String?
-    let symbolDefaultSize: CGFloat = 60
+    let symbolDefaultSize: CGFloat = 75
 
      func setSymbol(name: String) {
         symbolName = name
