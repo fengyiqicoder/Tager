@@ -8,6 +8,7 @@
 import AppKit
 
 extension NSTextField {
+    private var defaultMaxFontSize: CGFloat { 100 }
     
     func changeFontToFit(maxFontSize: CGFloat) {
         var currentTextWidth = CGFloat.greatestFiniteMagnitude
@@ -21,13 +22,13 @@ extension NSTextField {
         self.font = self.font!.to(pointSize: fitFontSize)
     }
     
-    func set(text: String, with fontSize: CGFloat) {
+    func set(text: String) {
         self.stringValue = text
-        changeFontToFit(maxFontSize: fontSize)
+        changeFontToFit(maxFontSize: defaultMaxFontSize)
     }
     
     func resizeText() {
-        set(text: stringValue, with: 50)
+        set(text: stringValue)
     }
 }
 

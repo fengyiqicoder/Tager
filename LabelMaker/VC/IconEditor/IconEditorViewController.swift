@@ -241,7 +241,7 @@ class IconEditorViewController: NSViewController {
     
     func setMarker(string: String) {
         isUsingSymbol = false
-        markerLabel.set(text: string, with: 50)
+        markerLabel.set(text: string)
         if markerTextField.stringValue != string {
             markerTextField.stringValue = string
         }
