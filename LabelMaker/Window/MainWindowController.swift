@@ -27,6 +27,11 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var toolbar: NSToolbar!
     
     @IBAction func info(_ sender: NSToolbarItem) {
+        if #available(macOS 12.0, *) {
+            InfoViewController.showAsWindow()
+            return
+        }
+        
         let popover = NSPopover()
         popover.behavior = .semitransient
         popover.animates = true

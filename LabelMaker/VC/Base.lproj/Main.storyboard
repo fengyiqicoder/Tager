@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19115.2"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -323,7 +324,7 @@
                                 <toolbarItem implicitItemIdentifier="2F6D7496-698E-4B45-AFE7-46D9BE35C612" explicitItemIdentifier="info" label="Info" paletteLabel="Info" tag="-1" bordered="YES" sizingBehavior="auto" id="zec-Ut-741">
                                     <imageReference key="image" image="info.circle" catalog="system" symbolScale="large"/>
                                     <connections>
-                                        <action selector="info:" target="B8D-0N-5wS" id="Zk9-Gm-mNm"/>
+                                        <action selector="info:" target="B8D-0N-5wS" id="4kC-N9-BHA"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="DjX-3i-Nn1"/>
@@ -508,7 +509,7 @@
                                 </constraints>
                             </box>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="eHp-IA-vsT">
-                                <rect key="frame" x="40" y="206.5" width="35" height="36"/>
+                                <rect key="frame" x="40" y="206.5" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9ZS-aA-b1o"/>
                                     <constraint firstAttribute="width" secondItem="eHp-IA-vsT" secondAttribute="height" multiplier="7:6" id="ydy-G8-0an"/>
@@ -551,7 +552,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="t4c-hj-9gu">
-                                <rect key="frame" x="262" y="206" width="31" height="37"/>
+                                <rect key="frame" x="262" y="207" width="31" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="t4c-hj-9gu" secondAttribute="height" multiplier="30:31" id="aat-8h-wAl"/>
                                     <constraint firstAttribute="width" constant="30" id="jjz-jM-uP3"/>
@@ -731,14 +732,14 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <scrollView wantsLayer="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="urv-Ut-kPU">
+                                        <scrollView wantsLayer="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="urv-Ut-kPU">
                                             <rect key="frame" x="0.0" y="144" width="252" height="70"/>
                                             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="YsR-0O-Jib">
-                                                <rect key="frame" x="2" y="2" width="248" height="66"/>
+                                                <rect key="frame" x="2" y="2" width="233" height="66"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <collectionView selectable="YES" id="BwF-eI-xH5" customClass="TypeCollectionView" customModule="Tager" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="66"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="aAx-lU-BMW">
                                                             <size key="itemSize" width="50" height="50"/>
@@ -754,19 +755,19 @@
                                                 <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
-                                            <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="nL1-Za-r39">
-                                                <rect key="frame" x="-100" y="-100" width="15" height="50"/>
+                                            <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="nL1-Za-r39">
+                                                <rect key="frame" x="235" y="2" width="15" height="66"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
-                                        <scrollView wantsLayer="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="91C-H7-WEv">
+                                        <scrollView wantsLayer="YES" borderType="groove" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="91C-H7-WEv">
                                             <rect key="frame" x="0.0" y="17" width="252" height="70"/>
                                             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="gSA-Ej-ogi">
-                                                <rect key="frame" x="2" y="2" width="248" height="66"/>
+                                                <rect key="frame" x="2" y="2" width="233" height="66"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <collectionView id="vHv-fw-pkY" customClass="TypeCollectionView" customModule="Tager" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="66"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="RSr-Uw-6bA">
                                                             <size key="itemSize" width="50" height="50"/>
@@ -782,8 +783,8 @@
                                                 <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
-                                            <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="qFt-HY-P2z">
-                                                <rect key="frame" x="-100" y="-100" width="15" height="85"/>
+                                            <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="qFt-HY-P2z">
+                                                <rect key="frame" x="235" y="2" width="15" height="66"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
@@ -937,14 +938,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="408" height="472"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvF-Zn-KLc">
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvF-Zn-KLc">
                                 <rect key="frame" x="0.0" y="0.0" width="408" height="422"/>
                                 <clipView key="contentView" drawsBackground="NO" id="7c2-cP-Naf">
                                     <rect key="frame" x="0.0" y="0.0" width="408" height="422"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="RYN-6P-B0J">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="422"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewGridLayout key="collectionViewLayout" id="fjw-7q-Da3"/>
                                             <color key="primaryBackgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -952,7 +953,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="yKt-5C-xr1">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="LPG-Hj-bs6">
