@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  LabelMaker
+
+  Created by Edmund Feng on 2024/11/13.
+  
+*/
+
+"CFBundleDisplayName" = "Folder Color Changer";
+
+"CFBundleName" = "Folder Color Changer";

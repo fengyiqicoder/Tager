@@ -169,9 +169,9 @@ class IconEditorViewController: NSViewController {
     @IBOutlet weak var markerLabel: NSTextField!
     @IBOutlet weak var symbolLabel: NSImageView!
     
-    @IBOutlet weak var markerLabelWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var markerLabelCenterYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var symbolLabelTopConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var markerLabelWidthConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var markerLabelCenterYConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var symbolLabelTopConstraint: NSLayoutConstraint!
     
     //MARK: - Custom
     @IBOutlet weak var autoSizeCheckBox: NSButton!

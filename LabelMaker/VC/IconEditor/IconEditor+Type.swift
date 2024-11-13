@@ -34,8 +34,8 @@ extension IconEditorViewController {
     func configPostionIfNoAutosize(type: IconModel.ItemType) {
         guard assignLabelSize == nil else {
             guard let postionConfig = IconModel.ItemsPostionConfigDict[type] else { return }
-            markerLabelCenterYConstraint.constant = postionConfig.markerCenterOffset
-            symbolLabelTopConstraint.constant = postionConfig.symbolsCenterOffset
+//            markerLabelCenterYConstraint.constant = postionConfig.markerCenterOffset
+//            symbolLabelTopConstraint.constant = postionConfig.symbolsCenterOffset
             view.layoutSubtreeIfNeeded()
             markerLabel.resizeText()
             return
@@ -45,9 +45,9 @@ extension IconEditorViewController {
     
     func configPostionWith(type: IconModel.ItemType) {
         guard let postionConfig = IconModel.ItemsPostionConfigDict[type] else { return }
-        markerLabelWidthConstraint.constant = postionConfig.markerWidth
-        markerLabelCenterYConstraint.constant = postionConfig.markerCenterOffset
-        symbolLabelTopConstraint.constant = postionConfig.symbolsCenterOffset
+//        markerLabelWidthConstraint.constant = postionConfig.markerWidth
+//        markerLabelCenterYConstraint.constant = postionConfig.markerCenterOffset
+//        symbolLabelTopConstraint.constant = postionConfig.symbolsCenterOffset
         view.layoutSubtreeIfNeeded()
         markerLabel.resizeText()
     }

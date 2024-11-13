@@ -6,7 +6,7 @@
   
 */
 
-"Clear Tager Icon" = "清除图标";
+"Clear Icon" = "清除图标";
 
 "Tager's Icons" = "Tager 的图标库";
 
@@ -40,8 +40,16 @@
 "Indices" = "骰子";
 "Math" = "数学";
 
-"Change to Tager Icon" = "更改为Tager图标";
+"Change Icon" = "更改图标";
 
 "Copy Support Email" = "拷贝Tager支持邮箱到剪贴板 (tagerapp@gmail.com)" ;
 
 "Default" = "默认";
+
+"Blue" = "蓝色";
+"Red" = "红色";
+"Green" = "绿色";
+"Mint" = "薄荷绿";
+"Orange" = "橙色";
+"Pink" = "粉色";
+"Purple" = "紫色";

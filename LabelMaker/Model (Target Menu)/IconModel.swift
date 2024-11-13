@@ -83,9 +83,13 @@ struct IconModel: Codable {
     
     static var standardInitModels: [IconModel] {
         return [
-            IconModel(uuid: UUID().uuidString, name: "File", markerStr: "File", image: NSImage(named: "DefualtFileIcon")!, color: .white),
-            IconModel(uuid: UUID().uuidString, name: "Code", symbolStr: "terminal.fill", image: NSImage(named: "DefualtCodeIcon")!, color: .white),
-            IconModel(uuid: UUID().uuidString, name: "Video", markerStr: "🎬", image: NSImage(named: "DefualtVideoIcon")!, color: .white),
+            IconModel(uuid: UUID().uuidString, name: "Blue".localize, markerStr: "", image: NSImage(named: "folderIcon-blue")!, color: .white),
+            IconModel(uuid: UUID().uuidString, name: "Red".localize, markerStr: "", image: NSImage(named: "folderIcon-red")!, color: .white),
+            IconModel(uuid: UUID().uuidString, name: "Green".localize, markerStr: "", image: NSImage(named: "folderIcon-green")!, color: .white),
+            IconModel(uuid: UUID().uuidString, name: "Mint".localize, markerStr: "", image: NSImage(named: "folderIcon-mint")!, color: .white),
+            IconModel(uuid: UUID().uuidString, name: "Orange".localize, markerStr: "", image: NSImage(named: "folderIcon-orange")!, color: .white),
+            IconModel(uuid: UUID().uuidString, name: "Pink".localize, markerStr: "", image: NSImage(named: "folderIcon-pink")!, color: .white),
+            IconModel(uuid: UUID().uuidString, name: "Purple".localize, markerStr: "", image: NSImage(named: "folderIcon-purple")!, color: .white),
         ]
     }
 }

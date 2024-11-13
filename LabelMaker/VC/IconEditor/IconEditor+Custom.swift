@@ -53,7 +53,7 @@ extension IconEditorViewController {
     }
     
     func setCustom(size: CGFloat) {
-        markerLabelWidthConstraint.constant = size
+//        markerLabelWidthConstraint.constant = size
         view.layoutSubtreeIfNeeded()
         markerLabel.resizeText()
         

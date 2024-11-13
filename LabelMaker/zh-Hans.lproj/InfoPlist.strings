@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  LabelMaker
+
+  Created by Edmund Feng on 2024/11/13.
+  
+*/
+
+
+"CFBundleDisplayName" = "文件夹右键";
+
+"CFBundleName" = "文件夹右键";

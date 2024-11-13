@@ -31,11 +31,11 @@ class FinderSync: FIFinderSync {
             menuItems.forEach { item in
                 menu.addItem(item)
             }
-            menu.addItem(withTitle: "Clear Tager Icon".localize, action: #selector(clearIcon), keyEquivalent: "")
+            menu.addItem(withTitle: "Clear Icon".localize, action: #selector(clearIcon), keyEquivalent: "")
             
             //FIXME: 2.0 Feature
             let fatherMenu = NSMenu()
-            let fatherItem = NSMenuItem(title: "Change to Tager Icon".localize, action: nil, keyEquivalent: "")
+            let fatherItem = NSMenuItem(title: "Change Icon".localize, action: nil, keyEquivalent: "")
             fatherMenu.addItem(fatherItem)
             fatherMenu.setSubmenu(menu, for: fatherItem)
             return fatherMenu

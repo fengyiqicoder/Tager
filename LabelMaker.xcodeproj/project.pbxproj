@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		135125F026B44B280020E21C /* AppStoreReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135125EF26B44B280020E21C /* AppStoreReview.swift */; };
+		136DA3A82CE4CB9300300D5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 136DA3A62CE4CB9300300D5E /* InfoPlist.strings */; };
 		136DCEE3269D3A4A00F95E17 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DCEE2269D3A4A00F95E17 /* Sandbox.swift */; };
 		136DCEE4269D421700F95E17 /* Sandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136DCEE2269D3A4A00F95E17 /* Sandbox.swift */; };
 		139945ED268EB14700AD8CCA /* ViewSnaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139945EC268EB14700AD8CCA /* ViewSnaper.swift */; };
@@ -79,6 +80,8 @@
 
 /* Begin PBXFileReference section */
 		135125EF26B44B280020E21C /* AppStoreReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReview.swift; sourceTree = "<group>"; };
+		136DA3A72CE4CB9300300D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		136DA3A92CE4CC6700300D5E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		136DCEE2269D3A4A00F95E17 /* Sandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sandbox.swift; sourceTree = "<group>"; };
 		139945EC268EB14700AD8CCA /* ViewSnaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSnaper.swift; sourceTree = "<group>"; };
 		139945EE268EBEF600AD8CCA /* MaxiumFontLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxiumFontLabel.swift; sourceTree = "<group>"; };
@@ -191,6 +194,7 @@
 			children = (
 				13FF6A1C2675680A0043597D /* LabelMaker.entitlements */,
 				13FF6A1B2675680A0043597D /* Info.plist */,
+				136DA3A62CE4CB9300300D5E /* InfoPlist.strings */,
 				1399465F269AED4600AD8CCA /* Localizable.strings */,
 				13FF6A12267568090043597D /* AppDelegate.swift */,
 				139945EB268EADE400AD8CCA /* Tools */,
@@ -349,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13EBCCD426C22ED800600594 /* TypeItem.xib in Resources */,
+				136DA3A82CE4CB9300300D5E /* InfoPlist.strings in Resources */,
 				1399465C269AED4600AD8CCA /* Localizable.strings in Resources */,
 				139946312692F92100AD8CCA /* SymbolItem.xib in Resources */,
 				13FF6A172675680A0043597D /* Assets.xcassets in Resources */,
@@ -429,6 +434,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		136DA3A62CE4CB9300300D5E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				136DA3A72CE4CB9300300D5E /* en */,
+				136DA3A92CE4CC6700300D5E /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		1399465F269AED4600AD8CCA /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -577,16 +591,17 @@
 				CODE_SIGN_ENTITLEMENTS = LabelMaker/LabelMaker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = K2D6DE8NGJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LabelMaker/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
-				PRODUCT_BUNDLE_IDENTIFIER = EdmundSoftware.LabelMaker;
+				MARKETING_VERSION = 1.4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = EdmundSoftware.LabelMaker.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -601,15 +616,16 @@
 				CODE_SIGN_ENTITLEMENTS = LabelMaker/LabelMaker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 28;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = K2D6DE8NGJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LabelMaker/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = EdmundSoftware.LabelMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -632,7 +648,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.3.4;
-				PRODUCT_BUNDLE_IDENTIFIER = EdmundSoftware.LabelMaker.Menu;
+				PRODUCT_BUNDLE_IDENTIFIER = EdmundSoftware.LabelMaker.debug.Menu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
