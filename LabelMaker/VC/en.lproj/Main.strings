@@ -1,6 +1,6 @@
 
-/* Class = "NSMenuItem"; title = "Tager"; ObjectID = "1Xt-HY-uBw"; */
-"1Xt-HY-uBw.title" = "Tager";
+/* Class = "NSMenuItem"; title = "Folder Color Changer"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "Folder Color Changer";
 
 /* Class = "NSMenu"; title = "Find"; ObjectID = "1b7-l0-nxx"; */
 "1b7-l0-nxx.title" = "Find";
@@ -17,14 +17,14 @@
 /* Class = "NSMenuItem"; title = "Find"; ObjectID = "4EN-yA-p0u"; */
 "4EN-yA-p0u.title" = "Find";
 
-/* Class = "NSMenuItem"; title = "Quit Tager"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit Tager";
+/* Class = "NSMenuItem"; title = "Quit Folder Color Changer"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit Folder Color Changer";
 
 /* Class = "NSMenuItem"; title = "Edit"; ObjectID = "5QF-Oa-p0T"; */
 "5QF-Oa-p0T.title" = "Edit";
 
-/* Class = "NSMenuItem"; title = "About Tager"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About Tager";
+/* Class = "NSMenuItem"; title = "About Folder Color Changer"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About Folder Color Changer";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "6dh-zS-Vam"; */
 "6dh-zS-Vam.title" = "Redo";
@@ -63,8 +63,8 @@
 /* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
 "F2S-fz-NVQ.title" = "Help";
 
-/* Class = "NSMenuItem"; title = "Tager Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Tager Help";
+/* Class = "NSMenuItem"; title = "Folder Color Changer Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Folder Color Changer Help";
 
 /* Class = "NSMenu"; title = "Substitutions"; ObjectID = "FeM-D8-WVr"; */
 "FeM-D8-WVr.title" = "Substitutions";
@@ -81,8 +81,8 @@
 /* Class = "NSBox"; title = "Box"; ObjectID = "Hla-xj-ECs"; */
 "Hla-xj-ECs.title" = "Box";
 
-/* Class = "NSWindow"; title = "Tager"; ObjectID = "IQv-IB-iLA"; */
-"IQv-IB-iLA.title" = "Tager";
+/* Class = "NSWindow"; title = "Folder Color Changer"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "Folder Color Changer";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Label to print"; ObjectID = "JvT-7e-upE"; */
 "JvT-7e-upE.placeholderString" = "Label to print";
@@ -168,11 +168,11 @@
 /* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "e2g-dA-aV0"; */
 "e2g-dA-aV0.title" = "Item 3";
 
-/* Class = "NSTextFieldCell"; title = "Check Tager Menu"; ObjectID = "esI-G6-hE1"; */
-"esI-G6-hE1.title" = "Check Tager Menu";
+/* Class = "NSTextFieldCell"; title = "Check Folder Color Changer Menu"; ObjectID = "esI-G6-hE1"; */
+"esI-G6-hE1.title" = "Check Folder Color Changer Menu";
 
-/* Class = "NSTextFieldCell"; title = "How to Use Tager"; ObjectID = "f7Z-aN-Y6d"; */
-"f7Z-aN-Y6d.title" = "How to Use Tager";
+/* Class = "NSTextFieldCell"; title = "How to Use Folder Color Changer"; ObjectID = "f7Z-aN-Y6d"; */
+"f7Z-aN-Y6d.title" = "How to Use Folder Color Changer";
 
 /* Class = "NSWindow"; title = "Window"; ObjectID = "fNC-19-hiZ"; */
 "fNC-19-hiZ.title" = "Window";
@@ -240,8 +240,8 @@
 /* Class = "NSBox"; title = "Box"; ObjectID = "uQi-Lw-rfm"; */
 "uQi-Lw-rfm.title" = "Box";
 
-/* Class = "NSMenu"; title = "Tager"; ObjectID = "uQy-DD-JDr"; */
-"uQy-DD-JDr.title" = "Tager";
+/* Class = "NSMenu"; title = "Folder Color Changer"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "Folder Color Changer";
 
 /* Class = "NSMenuItem"; title = "Cut"; ObjectID = "uRl-iY-unG"; */
 "uRl-iY-unG.title" = "Cut";
@@ -291,6 +291,6 @@
 /* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "zvI-n0-4eO"; */
 "zvI-n0-4eO.title" = "Item 2";
 
-"Ecu-Z5-f6h.title" = "Oh no! Tager is not working";
+"Ecu-Z5-f6h.title" = "Oh no! Folder Color Changer is not working";
 
 "C1B-VQ-LmV.title" = "Please Click \"i\" button to Give Authorization ";

@@ -1039,8 +1039,8 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gjO-kY-jer">
-                                <rect key="frame" x="113" y="364" width="150" height="32"/>
-                                <buttonCell key="cell" type="push" title="Authorize Tager" bezelStyle="rounded" image="folder" catalog="system" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w8p-Yq-61F">
+                                <rect key="frame" x="104" y="364" width="169" height="32"/>
+                                <buttonCell key="cell" type="push" title="Authorize This App" bezelStyle="rounded" image="folder" catalog="system" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w8p-Yq-61F">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

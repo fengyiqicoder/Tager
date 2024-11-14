@@ -21,7 +21,8 @@ class SandBoxController: NSObject {
     
     func openChooseFoldPanel(handler: (()->Void)? = nil ) {
         let openPanel = NSOpenPanel()
-        openPanel.directoryURL = URL(string: homeURLPath)
+        print(homeURLPath)
+        openPanel.directoryURL = URL(fileURLWithPath: homeURLPath)
         openPanel.allowsMultipleSelection = false
         openPanel.canChooseDirectories = true
         openPanel.canChooseFiles = false
@@ -104,6 +105,6 @@ class SandBoxController: NSObject {
 extension SandBoxController: NSOpenSavePanelDelegate {
      
     func panel(_ sender: Any, shouldEnable url: URL) -> Bool {
-        return url.path == homeURLPath
+        return url.path.hasPrefix(homeURLPath)
     }
 }
